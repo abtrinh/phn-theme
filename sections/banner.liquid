@@ -1,0 +1,77 @@
+<style>
+  .banner__image{
+    font-size: 0;
+    width: 100%;
+  }
+  .banner__url{
+    font-size: 0;
+    display: block;
+  }
+  .banner{
+    padding: 60px 0 30px;
+  }
+  @media(max-width: 991px){
+    .banner{
+      padding: 30px 0 15px;
+    }
+  }
+  {% if section.settings.image_mob %}
+    .banner__image.mob{
+        display: none;
+      }
+    @media(max-width: 991px){
+      .banner__image{
+        display: none;
+      }
+      .banner__image.mob{
+        display: block;
+      }
+    }
+  {% endif %}
+</style>
+<div class="banner">
+  {% if section.settings.image %}
+    <a
+      {% if section.settings.url != blank %}
+      href="{{ block.settings.url_text }}"
+      {% endif %}
+      class="banner__url"
+      ><img
+        src="{{ section.settings.image | image_url }}"
+        class="banner__image">
+        {% if section.settings.image_mob %}
+          <img
+          src="{{ section.settings.image_mob | image_url }}"
+          class="banner__image mob">
+        {% endif %}
+    </a>
+  {% endif %}
+</div>
+{% schema %}
+{
+  "name": "Banner",
+  "tag": "section",
+  "settings": [
+    {
+     "type": "image_picker",
+     "id": "image",
+     "label": "Image"
+   },
+    {
+     "type": "image_picker",
+     "id": "image_mob",
+     "label": "Image(Mobile)"
+   },
+    {
+     "type": "url",
+     "id": "url_text",
+     "label": "URL"
+   }
+  ],
+  "presets": [
+    {
+      "name": "Banner"
+    }
+  ]
+}
+{% endschema %}

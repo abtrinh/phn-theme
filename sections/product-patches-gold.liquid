@@ -1,0 +1,519 @@
+{% assign discount_percentage = product.compare_at_price
+| minus: product.price
+| times: 100.0
+| divided_by: product.compare_at_price
+| round: 0 
+%}
+{% assign discount_change = product.compare_at_price
+| minus: product.price
+| money
+%}
+
+<!-- product selection -->
+<section class="product">
+  <div class="product__container container">
+    <div class="product__galery">
+      <div class="notDescTop">
+        <h2 class="product__info__head">{{ product.metafields.product.basic_title }}</h2>
+        <div class="product__info__review review">
+          <script type="text/javascript">
+          !function(){"use strict";!function(){if(void 0===window.OMNISEND_STAR_RATINGS_SHOPIFY_LOADED){var t=(new Date).toISOString().slice(0,13);window.OMNISEND_STAR_RATINGS_SHOPIFY_LOADED=!0;var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="".concat("https://omnisnippet1.com/","reviews/star-ratings.js?v=").concat(t);var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)}}()}();
+          //# sourceMappingURL=shopify-star-ratings.js.map
+          </script>
+          <div id="omnisend-star-ratings-block"></div>
+        </div>
+      </div>
+      <div class="product__galery__bigImage" id="full_image">
+        <img
+          class="product__galery__bigImage_image"
+          src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/gold_patches_18_22f76cfb-0da6-47b1-8eec-c6bbd2684771.jpg?v=1678637849.jpg"
+        >
+      </div>
+      <div class="product__galery__smallImages">
+        <img
+          class="product__galery__smallImages_image active"
+          onclick="changePhoto();"
+          src="//cdn.shopify.com/s/files/1/0555/4300/5364/files/gold_patches_18.jpg"
+          data-src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/gold_patches_18_22f76cfb-0da6-47b1-8eec-c6bbd2684771.jpg?v=1678637849"
+        >
+        {% assign images_set = product.metafields.product.images_set.value %}
+        {% for file in images_set %}
+          
+          <img
+          class="product__galery__smallImages_image"
+          onclick="changePhoto();"
+          src="{{ file.preview_image |img_url  }}"
+          data-src="{{ file | img_url: 'master'  }}"
+        >
+        {% endfor %}
+      </div>
+    </div>
+    <div class="product__info cream_prod">
+      <h2 class="product__info__head onlyDescTop">{{ product.metafields.product.basic_title }}</h2>
+      <div class="product__info__review review onlyDescTop">
+        <span></span
+        ><a href="javascript:void(0)" class="product__info__review--active" data-name="Reviews"
+          ><span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span
+        ></a>
+      </div>
+      <div class="product__info-prices">
+        <span class="current_price">$39.73</span><span class="not-discount">$46.74</span>
+        <p class="save_text">You Save:<span id="precent">15%</span><span id="save-count">($5.96)</span></p>
+        <span><div class="yotpo-widget-instance" data-yotpo-instance-id="1267418" data-yotpo-product-id="{{product.id}}" data-yotpo-cart-product-id="{{item.product.id}}" data-yotpo-section-id="{{template.name}}"></div></span>
+      </div>
+      <p class="product__info__text">Buy More and Save</p>
+      <div class="product__info__changer">
+        <button
+          class="product__info--button active"
+          onclick="changePhoto('button');"
+          data-variant-id=""
+          data-src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/gold_patches_18_22f76cfb-0da6-47b1-8eec-c6bbd2684771.jpg?v=1678637849"
+        >
+          <b class="weight">432 mg</b>
+          <span class="patch_size">18 PATCHES</span>
+          <span class="red_save">$4.66/patch</span>
+        </button>
+        <button
+          class="product__info--button"
+          onclick="changePhoto('button');"
+          data-variant-id=""
+          data-src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/gold_patches_36.png?v=1684530276"
+        >
+          <div class="popular">
+            <h4>Most Popular</h4>
+          </div>
+          <b class="weight">864 mg</b>
+          <span class="patch_size">36 PATCHES</span>
+          <span class="red_save">$4.08/patch</span>
+        </button>
+        <button
+          class="product__info--button"
+          onclick="changePhoto('button');"
+          data-variant-id=""
+          data-src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/2_e0aaf313-cff5-4db9-acbf-6fd3dd20ee4c.png?v=1757029419"
+        >
+          <div class="popular">
+            <h4>Best Value</h4>
+            
+            <!-- <h4 >Sold Out</h4>
+             -->
+          </div>
+          <b class="weight">1,728 mg</b>
+          <span class="patch_size">72 PATCHES</span>
+          <span class="red_save">$3.79/patch</span>
+        </button>
+        <select class="product__info__changer--select" style="display: none;">
+          <option value="18 ct. (432mg)">18 ct. (432mg)</option>
+          <option value="36 ct. (864mg)">36 ct. (864mg)</option>
+          <option value="72 ct. (1,728mg)">72 ct. (1,728mg)</option>
+        </select>
+      </div>
+      <div class="product__info--sub_box" id="product__info--sub_box">
+        <h3>Sign Up For Autoship Today And Save Even More!</h3>
+        <label class="product__info--input-area" for="one" style="display: none;">
+          <input type="radio" name="subsc" value="false" id="one">
+          One-time purchase
+        </label>
+        <label class="product__info--input-area selected" for="two">
+          <input
+            type="checkbox"
+            class="custom-checkbox"
+            name="subsc"
+            value="true"
+            id="two"
+            onclick="checkboxClick(this)"
+          >
+          <label for="two"></label>
+          <span id="subPrice" style="display: none;">25.61</span>
+          <span id="subText" class="subText">Yes, Subscribe & Save!</span>
+        </label>
+      </div>
+      <div class="product__info__qty">
+        <input
+          type="number"
+          class="product__info__qty__input"
+          step="1"
+          min="1"
+          value="1"
+          inputmode="numeric"
+          maxlength="2"
+        >
+        <input type="button" value="+" class="product__info__qty__plus">
+        <input type="button" value="-" class="product__info__qty__minus">
+      </div>
+      <div class="product__info__addToCart">
+        <button class="product__info__addToCart--button">Add To Cart</button>
+      </div>
+      <div class="product__info__seals">
+        <img
+          class="product__info__seals--image"
+          src="//cdn.shopify.com/s/files/1/0555/4300/5364/files/trustBadges.png?v=1616801677"
+        >
+      </div>
+      <div class="product__info__wrapper">
+        <div class="product__info__wrapper__viewType">
+          <button class="product__info__wrapper--active " data-name="Description">Description</button>
+          <button class="product__info__wrapper--active active" data-name="Reviews">
+            Reviews
+          </button>
+          <button class="product__info__wrapper--active" data-name="Ingredients">Ingredients</button>
+          <button class="product__info__wrapper--active" data-name="Directions">Directions</button>
+          <button class="product__info__wrapper--active" data-name="Analysis">Analysis Certificate</button>
+        </div>
+        <div class="product__info__wrapper__viewArea">
+          <div id="descr" style="display: none;">
+            {{ product.description }}
+          </div>
+          <div id="revie" style="display: block;">
+            <div class="commentlist">
+              <div class="yotpo yotpo-main-widget"
+                  data-product-id="{{ product.id }}"
+                  data-name="{{ product.title | escape }}"
+                  data-url="{{ shop.url }}{{ product.url }}"
+                  data-image-url="{{ product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&','%26'}}"
+                  data-price="{{ variant.price | money_without_currency }}"
+                  data-currency="{{ shop.currency }}"
+                  data-description="{{ product.description | escape }}">
+                </div>
+                {% comment %} <script type="text/javascript">
+                  !function(){"use strict";!function(){if(void 0===window.OMNISEND_REVIEWS_SHOPIFY_LOADED){var e=(new Date).toISOString().slice(0,13);window.OMNISEND_REVIEWS_SHOPIFY_LOADED=!0;var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="".concat("https://omnisnippet1.com/","reviews/reviews.js?v=").concat(e);var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n)}}()}();
+                  //# sourceMappingURL=shopify-product-reviews.js.map
+                </script>
+                <div id="omnisend-reviews-block"></div> {% endcomment %}
+              </div>
+          </div>
+          <div id="video" style="display: none;text-align: center;"></div>
+          <div id="ingre" style="display: none;">
+            {{ product.metafields.product.ingredients| metafield_tag }}
+          </div>
+          <div id="direc" style="display: none;">
+            {{ product.metafields.product.direction| metafield_tag }}
+          </div>
+          <div id="analy" style="display: none;">
+            <a
+              href="{{ product.metafields.custom.certificate_of_analysis.value.url }}"
+              style="text-decoration:underline;color:#a758be;"
+              target="_blank"
+            >
+              Certificate available on this link
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- end of product selection -->
+
+<div class="section-3-1">
+  <div class="underbg">
+    <div class="secwrapper">
+      <h3>Get 3X More Hemp With GOLD</h3>
+      <h2>A 24mg Formula For Advanced Relief</h2>
+      <div class="mainrow">
+        <div class="left">
+          <div class="rowdesc">
+            <img
+              class="abssticker"
+              src="//cdn.shopify.com/s/files/1/0555/4300/5364/files/row_sticker1_a3a98f54-4c6c-42f6-b9c4-e85ef11b8396.png?v=1655250391"
+            >
+            <h2>Muscles, Joints & Inflammation</h2>
+            <p>Apply patch directly on areas of pain or discomfort for targeted relief.</p>
+          </div>
+          <div class="rowdesc midmarg">
+            <img
+              class="abssticker"
+              src="//cdn.shopify.com/s/files/1/0555/4300/5364/files/row_sticker2_33404882-4a02-407e-a9eb-5f6573eabf8e.png?v=1655250391"
+            >
+            <h2>Transdermal Delivery System</h2>
+            <p>Get Hemp Oil Extract all day without messy oils, pills or gummies.</p>
+          </div>
+          <div class="rowdesc">
+            <img
+              class="abssticker"
+              src="//cdn.shopify.com/s/files/1/0555/4300/5364/files/row_sticker3_88721137-768b-4bb2-8e7a-17143c5f80ff.png?v=1655250392"
+            >
+            <h2>12 to 24 Hours Of Relief</h2>
+            <p>Continuous absorption for up to 24 hours of relief.</p>
+          </div>
+          <div class="rowdesc">
+            <img
+              class="abssticker"
+              src="//cdn.shopify.com/s/files/1/0555/4300/5364/files/row_sticker4_cb5a2475-c3c0-4091-abd8-c5c0d6f2c7f4.png?v=1655250391"
+            >
+            <h2>High Bioavailability</h2>
+            <p>Higher bio availability than traditional delivery methods.</p>
+          </div>
+        </div>
+        <div class="right">
+          <div class="stickers">
+            <div class="absstickers">
+              <img src="//cdn.shopify.com/s/files/1/0555/4300/5364/files/left_sticker.png">
+              <img src="//cdn.shopify.com/s/files/1/0555/4300/5364/files/right_sticker_663ea117-2915-42a2-8cd4-0584f082993e.png">
+            </div>
+          </div>
+          <div class="absprod">
+            <img
+              class="ondesk"
+              src="//cdn.shopify.com/s/files/1/0555/4300/5364/files/patches_prod_6508c22a-f1f9-40a4-8f89-bfa8ac105f7f.png?v=1671549948"
+            >
+            <img
+              class="onmob"
+              src="//cdn.shopify.com/s/files/1/0555/4300/5364/files/patches_prod_6508c22a-f1f9-40a4-8f89-bfa8ac105f7f.png?v=1671549948"
+            >
+          </div>
+        </div>
+      </div>
+      <button class="shopbutton" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Shop Now</button>
+    </div>
+  </div>
+</div>
+<!--
+  <div class="inner_secman">
+      <img src="//cdn.shopify.com/s/files/1/0555/4300/5364/files/mobman.jpg">
+  </div>
+-->
+<div class="section_3_2">
+  <div class="secwrapper">
+    <div class="headrow">
+      <img class="ondesk" src="//cdn.shopify.com/s/files/1/0555/4300/5364/files/bestseller.png">
+      <div class="headline">
+        <h3>Now, 24mg Hemp In Each Patch!</h3>
+        <div class="formob">
+          <h2>The Same Great Patch Just Got Better</h2>
+          <img class="onmob" src="//cdn.shopify.com/s/files/1/0555/4300/5364/files/bestseller.png">
+        </div>
+      </div>
+    </div>
+    <div class="mainpart">
+      <div class="abscirc">
+        <img src="//cdn.shopify.com/s/files/1/0555/4300/5364/files/circprod_gold.png?v=1657933222">
+      </div>
+      <div class="arrowsul">
+        <div class="first">
+          <h2>Time Released Relief</h2>
+          <p>Maximum results with up to 24 hours of relief.</p>
+        </div>
+        <div class="second">
+          <h2>Sweat Resistant</h2>
+          <p>Designed to stay on during extreme activity and perspiration.</p>
+        </div>
+        <div class="third">
+          <h2>Convenient & Discreet</h2>
+          <p>3 cm x 3 cm Patches allow for discreet application anywhere on the body.</p>
+        </div>
+        <div class="last">
+          <h2>Instant Action</h2>
+          <p>Rapid transdermal absorption for immediate effects.</p>
+        </div>
+      </div>
+      <button class="shopbutton" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Shop Now</button>
+    </div>
+  </div>
+</div>
+
+{% for product in collections['patches-collection'].products %}
+  {% assign prodjson = product.variants[0].compare_at_price | money %}
+{% endfor %}
+<!-- qwer -->
+<span>
+  <script>
+    let _prodtemplate= {};
+    let _prodpercent= {};
+    let _prod_array_base=[];
+    let _prod_price_setup= {};
+    let _prodbase_object_collect={}
+    let _prodbase_object_collect_set={}
+    {% assign prod = ''%}
+    {% for product in collections["hemp-relief-patches"].products %}
+          type='{{product.metafields.product.subscription_prod.value.variants[0].selling_plan_allocations.first.selling_plan.price_adjustments[0].value_type}}'
+          metafields={{ product.metafields.product.description }}
+          arr_collect=[]
+          metafields.map(test_in=>{
+            test_arr=test_in.split(':')
+            arr_collect[test_arr[0]]=test_arr[1]
+          })
+          _prodbase_object_collect
+          if(type.toString()=='percentage'){
+            _prodbase_object_collect={id:'{{product.variants[0].id}}',
+                                      name:'{{product.title}}',
+                                      handle:'{{product.handle}}',
+                                      sub_id:'{{product.metafields.product.subscription_prod.value.variants[0].id}}',
+                                      price:'{{product.price|money}}'.replace('$',''),
+                                      compare:'{{product.compare_at_price|money}}'.replace('$',''),
+                                      selling_plan:'{{product.metafields.product.subscription_prod.value.variants[0].selling_plan_allocations.first.selling_plan.id}}'
+                                    }
+        		_prodpercent[{{product.variants[0].id}}]={..._prodbase_object_collect, ...arr_collect}
+          }else{
+            _prodbase_object_collect={id:'{{product.variants[0].id}}',
+                                 name:'{{product.title}}',
+                                 handle:'{{product.handle}}',
+                                 price:'{{product.price|money}}'.replace('$',''),
+                                 compare:'{{product.compare_at_price|money}}'.replace('$',''),
+                                 selling_plan:''}
+
+          }
+          _prodbase_object_collect_set[{{product.variants[0].id}}]={..._prodbase_object_collect, ...arr_collect}
+          _prod_array_base.push({..._prodbase_object_collect, ...arr_collect})
+    	  _prodtemplate[{{product.variants[0].id}}]={{product.variants[0].selling_plan_allocations.first.selling_plan.id}}
+          _prod_price_setup[{{product.variants[0].id}}]={price:'{{product.price|money}}'.replace('$',''),compare:'{{product.compare_at_price|money}}'.replace('$','')}
+      {% assign prodjson = product.variants[0].price | json %}
+      {% assign prod_price = prod_price | append: prodjson | append: ',' %}
+      {% assign prod = prod | append: prodjson | append: ',' %}
+    {% endfor %}
+    console.log('[PROD_BASE]',_prod_array_base)
+    console.log('[PROD_PERCENT]',_prodpercent)
+  </script>
+</span>
+<script>
+  
+  
+const percentDiscount = {{product.metafields.discount.discount}}
+var qty = 1;  
+  document.querySelectorAll('.product__info--button').forEach((el,index)=> {
+    el.dataset.variantId = _prod_array_base[index].id
+  })
+  var id = $('.product__info--button:first-child').data('variantId');  
+  
+  $(document).on('click','.product__info__addToCart--button',function(){
+    console.log('this', $(this))
+    data_set={id:id,quantity:qty}
+    is_checked = $('#two').is(':checked');
+    if(is_checked && _prodpercent[id]){
+      data_set.id=_prodpercent[id].sub_id
+      data_set['form_type']='product'
+      data_set['selling_plan']=_prodpercent[id].selling_plan
+    } 
+    $('.up-name').text(_prodbase_object_collect_set[id].name)
+    $.ajax({
+          type: 'POST', 
+          url: '/cart/add.js',
+          dataType: 'json', 
+          data: data_set,
+          success: function(){
+  			cartUpdate()
+              open_upsell(upsell_array)
+            	changeTotalOnPage()
+  
+          }
+       })
+    
+  })
+  $('.product__info--button').click(function(){
+      $('.product__info--button').removeClass('active')
+      $(this).addClass('active')
+      id = $(this).data('variantId');
+  })
+  $('.product__info__qty input[type=button]').click(function(){
+      var num = $('.product__info__qty__input').val()
+      var symbol = $(this).val()
+      symbol == '+'?num++:(num>1?num--:null)
+      $('.product__info__qty__input').val(num)
+      qty = num
+  })
+$('.product__info__wrapper--active,.product__info__review--active').click(function(){
+      let item=$(this)
+      var name = $(this).data('name').toLowerCase().slice(0,5)
+      $('.product__info__wrapper--active').removeClass('active')
+      $(this).addClass('active') 
+      $('.product__info__wrapper__viewArea>div').hide()
+      $('#'+name).show()
+      if (typeof $(this).attr('aria-describedby') !== 'undefined' && $(this).attr('aria-describedby') !== false) {
+		document.querySelector('#revie').scrollIntoView({behavior: 'smooth'});
+      }
+  })
+  $('body *').click(function(e){
+    if(e.target.dataset.link){
+        window.location.href = e.target.dataset.link
+    }
+  })
+  
+  var elPrice = (_prod_array_base[0].price)
+  var notDiscount = (_prod_array_base[0].compare)
+  var saveCount = notDiscount - elPrice
+  saveCount = saveCount.toFixed(2) 
+  
+  $('.current_price').html('$'+elPrice)
+  $('.not-discount').html('$'+ notDiscount +'')
+  $('#save-count').html('($'+saveCount+')')  
+  $('#precent').html(percentDiscount[0]+'%')  
+  document.querySelectorAll('.product__info--button').forEach((el,index)=> {
+            el.addEventListener('click', function () {
+              var count_patches=$(el).find('.patch_size').text().split(' ')[0];
+              var elPrice = _prod_array_base[index].price
+              var notDiscount = _prod_array_base[index].compare                    
+              var saveCount = notDiscount - elPrice
+              saveCount = saveCount.toFixed(2)
+              var perPatch=((elPrice)/count_patches).toFixed(2);
+              $('.current_price').html('$'+elPrice)
+              $('.not-discount').html('$'+ notDiscount +'')
+              $('#save-count').html('($'+saveCount+')')
+              $('#precent').html(percentDiscount[index]+'%') 
+              // if(count_patches==72){
+              //   $('.product__info__addToCart--button').text('SOLD OUT').css('background-color','grey').prop('disabled', true)
+              // }else{
+              //   $('.product__info__addToCart--button').text('ADD TO CART').css('background-color','#b752b7').prop('disabled', false)
+              // }
+              if(_prodpercent[id]){
+          	  	$('#product__info--sub_box').show()
+              }else{
+                $('#product__info--sub_box').hide()
+              }
+              if($('#two').is(':checked')){
+              		setSubs(el,index) 
+              }
+  
+            });
+        })
+  var currentMainPhoto = $('.product__info--button')[0].dataset.src
+  function changePhoto(button){
+    if (button){
+        var src = event.currentTarget.dataset.src
+        currentMainPhoto = src
+        $('.product__galery__bigImage_image')[0].srcset = src
+        $('.product__galery__smallImages_image').removeClass('active')
+        $('.product__galery__smallImages_image')[0].classList.add('active')
+    }else{
+        if($('.product__galery__smallImages_image')[0] == event.target){
+            $('.product__galery__bigImage_image')[0].srcset = currentMainPhoto
+        }else{
+          $('.product__galery__smallImages_image').removeClass('active')
+          event.target.classList.add('active')
+          var src = event.target.dataset.src
+          $('.product__galery__bigImage_image')[0].srcset = src
+        }
+    }
+  }
+  
+  function setSubs(el,index){
+    
+	const size=$(el).find('.patch_size').text().split(' ')[0]
+    const textField = document.querySelector('#subText')
+    price_off=(_prodpercent[id].compare-_prodpercent[id].a_price)
+    price_subs=parseFloat(_prodpercent[id].a_price)
+    switch (size) {
+      case '18':
+          monthlySave = _prodpercent[id].a_percent+'% ($'+(price_off).toFixed(2)+')';
+      break;
+      case '36':
+          monthlySave = _prodpercent[id].a_percent+'% ($'+(price_off).toFixed(2)+')';
+      break;
+      default:
+          price = 0;
+      break;
+  }
+    
+    if($('#two').is(':checked')){
+        textField.innerHTML = `Yes, Subscribe & Save! Automatically Receive<br><b>${size} Patches, for $${price_subs.toFixed(2)} + Free Shipping. Every 30 Days.</b> <br><span class="save_green">Total Monthly Savings: ${monthlySave}</span><br>Cancel Anytime. No Contracts!`
+    }else{
+      textField.innerHTML = 'Yes, Subscribe & Save!'
+    }
+    
+  }
+  function checkboxClick(e){
+    
+	setSubs($('*[data-variant-id="'+id+'"]'),0)
+  }  
+
+</script>

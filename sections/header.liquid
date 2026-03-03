@@ -1,0 +1,155 @@
+<section class="header">
+  <div class='banner_top'>
+    <div class="header__banner">
+      <a href="/" class="banner_bg"></a>
+    </div>
+    
+  </div>
+  <div class='site_nav_sticky sticky'>
+    <div class='item_menu'>
+      {% render 'site-nav', linklist: section.settings.main_linklist, linklistmobile: section.settings.main_linklist_mob, wrapper_class: 'site-nav--centered' %}
+    </div>
+    <div class='item_menu'>
+      <div class="header__container">
+        <div class="header__logo">
+          <a href="/" class="header__link header__link--active">
+            <img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/logos_6d52dbae-48ca-4352-a543-089d768a7ca4.png?v=1689550352" class="header__link_img">
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class='item_menu'>
+      <div class="header__cart">
+        <div class="header_info__text">
+          Need Help? Call or Text (970) 718-2801
+        </div>
+        <div class="header__menu">
+          <a href="/cart" class="cart_link">
+            <img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/bag_black.svg?v=1688878524" class="header__svg header__svg--active">
+            <div class="header__menu_count" data-cart-count-bubble data-cart-count ></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+<style>
+  .header .banner_bg {
+    background-image:url({{section.settings.header_desktop | img_url: '1000x70'}});
+    width:1000px;
+    height:70px;
+    background-size:contain;
+    display:flex;
+  }
+  .site_nav_sticky .item_menu{
+    padding:0px 10px;
+  }
+  .header__cart .header__menu{
+    padding:0px 20px 0px 10px;
+  }
+@media(max-width:1240px) {
+  .header .banner_bg {
+    background-image:url({{section.settings.header_tablet | img_url: '600x70'}});
+    width:600px;
+    height:70px;
+    background-size:cover;
+  }      
+}
+  @media(max-width:830px) {
+    .header .banner_bg {
+      background-image:url({{section.settings.header_mobile | img_url: '500x140'}});
+      width: 258px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position-y: 50%;
+      margin-left: 10px;
+    }
+  }
+
+  </style>
+
+
+  <script>
+  //   // js/helper/dimensions.js
+  // function getStickyHeaderOffset() {
+  //   const documentStyles = getComputedStyle(document.documentElement);
+  //   return parseInt(documentStyles.getPropertyValue("--header-height") || 0) * parseInt(documentStyles.getPropertyValue("--enable-sticky-header") || 0) + parseInt(documentStyles.getPropertyValue("--announcement-bar-height") || 0) * parseInt(documentStyles.getPropertyValue("--enable-sticky-announcement-bar") || 0);
+  // }
+
+  // // js/custom-element/behavior/safe-sticky.js
+  // var SafeSticky = class extends HTMLElement {
+  //   connectedCallback() {
+  //     this.lastKnownY = window.scrollY;
+  //     this.currentTop = 0;
+  //     this.hasPendingRaf = false;
+  //     window.addEventListener("scroll", this._checkPosition.bind(this));
+  //   }
+  //   get initialTopOffset() {
+  //     return getStickyHeaderOffset() + (parseInt(this.getAttribute("offset")) || 0);
+  //   }
+  //   _checkPosition() {
+  //     if (this.hasPendingRaf) {
+  //       return;
+  //     }
+  //     this.hasPendingRaf = true;
+  //     requestAnimationFrame(() => {
+  //       let bounds = this.getBoundingClientRect(), maxTop = bounds.top + window.scrollY - this.offsetTop + this.initialTopOffset, minTop = this.clientHeight - window.innerHeight;
+  //       if (window.scrollY < this.lastKnownY) {
+  //         this.currentTop -= window.scrollY - this.lastKnownY;
+  //       } else {
+  //         this.currentTop += this.lastKnownY - window.scrollY;
+  //       }
+  //       this.currentTop = Math.min(Math.max(this.currentTop, -minTop), maxTop, this.initialTopOffset);
+  //       this.lastKnownY = window.scrollY;
+  //       this.style.top = `${this.currentTop}px`;
+  //       this.hasPendingRaf = false;
+  //     });
+  //   }
+  // };
+  // window.customElements.define("safe-sticky", SafeSticky);
+  </script>
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Images for Header",
+      "info":"Header Images for both mobile and desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "header_desktop",
+      "label": "Header Desktop Image "
+    },
+    {
+      "type": "image_picker",
+      "id": "header_tablet",
+      "label": "Header Tablet Image "
+    },
+    {
+      "type": "image_picker",
+      "id": "header_mobile",
+      "label": "Header Mobile Image "
+    },
+    {
+      "type": "header",
+      "content": "Menu Settings"
+    },
+    {
+      "type": "link_list",
+      "id": "main_linklist",
+      "label": "Menu",
+      "default": "main-menu"
+    }
+    ,    
+    {
+      "type": "link_list",
+      "id": "main_linklist_mob",
+      "label": "Menu Mobile",
+      "default": "main-menu"
+    }
+  ]
+}
+{% endschema %}

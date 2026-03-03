@@ -1,0 +1,163 @@
+<section class="recentBox" id="recentBox">
+  <img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/cbd_path-new_2.jpg?v=1616529963" class="recentBox__img"/>
+  <p class="recentBox__text">
+      <span id="randFirst">Olivia</span> from <span id="randLocation">Guam</span>
+      purchased <strong>Pain Relief Patches </strong>
+      <br><span class="time" style="color: #d6d6d6; font-size: 12px; padding-top: 15px;"> about <span id="randTime">35</span> minutes ago</span>
+  </p>            
+</section>
+<script>
+  const createScroller = () =>{
+    let scroller = document.createElement("div");
+    scroller.innerHTML = `<i class="fa fa-angle-up"></i>`;
+    scroller.classList.add('scrollerToTop')
+    let my_div = document.getElementById("recentBox");
+    console.log('BODY',document.body)
+    console.log('INS',my_div)
+    document.body.insertBefore(scroller, my_div);
+
+    scroller.addEventListener('click',()=>window.scrollTo({top: 0, behavior: 'smooth'}))
+    
+}
+document.addEventListener("DOMContentLoaded", createScroller);
+
+      var firstArray = [
+      'Liam',
+      'Noah',
+      'William',
+      'James',
+      'Logan',
+      'Benjamin',
+      'Mason',
+      'Elijah',
+      'Emma',
+      'Olivia',
+      'Ava',
+      'Isabella',
+      'Sophia',
+      'Mia',
+      'Charlotte',
+      'Amelia'
+      ];
+      var lastArray = [
+      'SMITH',
+      'JOHNSON',
+      'WILLIAMS',
+      'BROWN',
+      'JONES',
+      'MILLER',
+      'DAVIS',
+      'GARCIA',
+      'RODRIGUEZ',
+      'WILSON',
+      'MARTINEZ',
+      'ANDERSON',
+      'TAYLOR',
+      'THOMAS',
+      'HERNANDEZ',
+      'MOORE',
+      'MARTIN',
+      'JACKSON',
+      'THOMPSON',
+      'WHITE',
+      ];
+      var locationArray = [
+      'Arizona',
+      'Arkansas',
+      'Guam',
+      'Hawaii',
+      'Idaho',
+      'Illinois',
+      'Indiana',
+      'Louisiana',
+      'Maine',
+      'Massachusetts',
+      'Michigan',
+      'Minnesota',
+      'Mississippi',
+      'Missouri',
+      'Nevada',
+      'New York',
+      'North Carolina',
+      'Ohio',
+      'Pennsylvania',
+      'Republic of Marshall Islands'
+      
+      ]
+
+        setInterval(function() {  
+            var randTime = Math.floor((Math.random() * 40) + 5);
+            $('#randTime').html(randTime);
+
+            var firstRand = Math.floor(Math.random() * firstArray.length);
+            var randFirst = firstArray[firstRand];
+            $('#randFirst').html(randFirst);
+
+            var lastRand = Math.floor(Math.random() * lastArray.length);
+            var randLast = lastArray[lastRand];
+            $('#randLast').html(randLast);
+
+            var locationRand = Math.floor(Math.random() * locationArray.length);
+            var randLocation = locationArray[locationRand];
+            $('#randLocation').html(randLocation);
+
+            $('#recentBox').css("display", "grid");
+            $('#recentBox').animate({
+                'bottom': '15'
+            }, {
+                duration: 800
+            });
+
+            setTimeout(function() {
+                $('#recentBox').animate({
+                    'bottom': '-115'
+                }, {
+                    duration: 800
+                });
+            }, 4500);
+
+            setTimeout(function() {
+                $('#recentBox').css("display", "none");
+            }, 5400);
+
+        }, 120000); //2 min
+</script>
+<style>
+  .recentBox {
+  -ms-grid-columns: 2fr 5fr;
+      grid-template-columns: 2fr 5fr;
+  bottom: 15px;
+  max-width: 320px;
+  border-radius: 5px;
+  padding: 10px;
+  height: auto;
+  position: fixed;
+  z-index: 500;
+  left: 15px;
+  bottom: -115px;
+  background: #fff;
+  display: none;
+  -webkit-box-shadow: 1px 1px 3px #000;
+          box-shadow: 1px 1px 3px #000;
+}
+
+.recentBox__img {
+  width: 80px;
+  height: auto;
+}
+
+.recentBox__text {
+  height: auto;
+  float: left;
+  font-size: 13px;
+  margin-left: 15px;
+  line-height: 18px;
+  padding-top: 10px;
+}
+  @media screen and (max-width: 360px) {
+  .recentBox {
+    max-width: 280px;
+  }
+}
+
+  </style>

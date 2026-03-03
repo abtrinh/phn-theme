@@ -1,0 +1,48 @@
+<div class="main__slider" id="slider_top">
+    <button class="main__prev main__prev--active" onclick="nextSlide(true)"></button>
+      <button class="main__next main__next--active" onclick="nextSlide(true)"></button>
+        <div>
+            {%- for block in section.blocks -%}
+                  <a
+                          href="{{ block.settings.url_text }}"
+                                  class="{%- if forloop.first == true -%}curry img{%- else -%}img{%- endif -%}"
+                                        >
+                                                <img
+                                                          id="slider_image"
+                                                                    src="{{ block.settings.image | image_url: width: 1460 }}"
+                                                                              srcset="{{ block.settings.image | image_url: width: 600 }} 600w, {{ block.settings.image | image_url: width: 900 }} 900w, {{ block.settings.image | image_url: width: 1200 }} 1200w, {{ block.settings.image | image_url: width: 1460 }} 1460w"
+                                                                                        sizes="100vw"
+                                                                                                  loading="eager"
+                                                                                                            alt="{{ block.settings.image.alt | default: 'Purity Hemp Naturals hemp CBD products' | escape }}"
+                                                                                                                      class="opacityShow"
+                                                                                                                              >
+                                                                                                                                    </a>
+                                                                                                                                        {%- endfor -%}
+                                                                                                                                          </div>
+                                                                                                                                          </div>
+                                                                                                                                          {% schema %}
+                                                                                                                                          {
+                                                                                                                                            "name": "Hero Slideshow",
+                                                                                                                                              "tag": "section",
+                                                                                                                                                "class": "slideshow",
+                                                                                                                                                  "settings": [],
+                                                                                                                                                    "blocks": [
+                                                                                                                                                        {
+                                                                                                                                                              "name": "Slide",
+                                                                                                                                                                    "type": "slide",
+                                                                                                                                                                          "settings": [
+                                                                                                                                                                                  {
+                                                                                                                                                                                            "type": "image_picker",
+                                                                                                                                                                                                      "id": "image",
+                                                                                                                                                                                                                "label": "Image"
+                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                          "type": "url",
+                                                                                                                                                                                                                                                    "id": "url_text",
+                                                                                                                                                                                                                                                              "label": "URL"
+                                                                                                                                                                                                                                                                      }
+                                                                                                                                                                                                                                                                            ]
+                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                  ]
+                                                                                                                                                                                                                                                                                  }
+                                                                                                                                                                                                                                                                                  {% endschema %}

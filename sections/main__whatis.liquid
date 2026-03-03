@@ -1,0 +1,167 @@
+<div class="section-prew section_{{ section.id }}">
+  <div class="section-prew__img">
+    <div class="img_whatis_set">
+      <img src='https://cdn.shopify.com/s/files/1/0555/4300/5364/files/1000mg.jpg?v=1689808417'>
+    </div>
+    <div class="section-prew__content">
+      <h3>Designed by nature. Perfected by science.</h3>
+      <p>Our promise to you is to make the highest quality plant-based products accessible to anyone. We domestically source from non-GMO farms, and only use crops with the highest quality possible. Our patch formula is filtered to remove all psychoactive compounds, ensuring safe and effective delivery of ingredients to support overall health & wellness.</p>
+      <div class="wrapper-product__buttonsBlock">
+        <a {% if section.settings.button_link != blank %}href="{{ section.settings.button_link }}" {% endif %} class="section-prew-button">
+          <img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/shop_now_btn.png?v=1689897714" />
+          </a>
+        <div class="wrapper-product__shooter">
+          <div class="wrapper-product__shooter-right"></div>
+          <div class="wrapper-product__shooter-body">Get Started Here</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .section-prew {
+    background-color: #000;
+    width: 100%;
+}
+  .section-prew-button {
+    font-size: 0;
+    max-width: 154px;
+    flex-shrink: 0;
+}
+.section-prew__img {
+  display:flex;
+  align-items: center;
+}
+.img_whatis_set {
+  width: 100%;
+  font-size: 0;
+}
+.img_whatis_set img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.section-prew__content {
+    width: 100%;
+    margin: 0 auto;
+/*     padding: 53px 0 57px 24%; */
+    padding: 60px 60px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+}
+
+.section-prew__content .wrapper-product__shooter-right {
+    border-right: 20px solid #FFFFFF;
+  border-top: 15px solid transparent;
+      border-bottom: 15px solid transparent;
+}
+
+.section-prew__content .wrapper-product__shooter-body {
+    background: linear-gradient(to right, #FFFFFF 55%, transparent 100%);
+    color: black;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    max-width: 300px;
+    padding: 6px 22px 6px 3px;
+}
+
+.section-prew__content h3 {
+    margin-bottom: 30px;
+    font-size: 31px;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    font-weight: 400;
+  font-family: unset;
+}
+  .wrapper-product__buttonsBlock{
+    gap: 15px;
+  }
+
+.section-prew__content p {
+    margin-bottom: 60px;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 36px;
+}
+  @media screen and (max-width: 1440px) {
+    .section-prew__content{
+      padding: 30px;
+    }
+    .section-prew__content p{
+      font-size: 14px;
+      margin-bottom: 30px;
+    }
+    .section-prew__content h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+  }
+@media screen and (max-width: 1023px) {
+  .section-prew__img{
+    flex-direction:column;
+  }
+  .section-prew__content h3 {
+    text-align: center;
+  }
+   .section-prew__img .wrapper-product__buttonsBlock {
+        max-width: 500px;
+       justify-content: center;
+           margin: 0 auto;
+     padding: 0;
+    }
+
+  .section_{{ section.id }} .section-prew__img .section-prew__content{
+    margin: 0 auto;
+    max-width: 500px;
+    padding: 50px 0;
+    text-align: center;
+  }
+   .section_{{ section.id }} .button_active{
+     margin: initial;
+   }
+  .section_{{ section.id }} .wrapper-product__shooter{
+    position: initial;
+    margin-left: 10px;
+  }
+  .wrapper-product__shooter{
+    display: flex;
+  }
+}
+
+  @media(min-width: 1700px){
+    .section-prew__content{
+      zoom: 1.15;
+    }
+  }
+  @media(min-width: 2000px){
+    .section-prew__content{
+      zoom: 1.3;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .section_{{ section.id }} .section-prew__img .section-prew__content{
+       padding: 20px;
+    }
+    .section-prew__content h3{
+      font-size: 18px;
+    }
+  }
+   @media screen and (max-width: 480px) {
+     .section-prew__img .wrapper-product__buttonsBlock{
+       zoom: 0.9;
+     }
+   }
+</style>
+{% schema %}
+  {
+    "name": "What Is",
+    "settings": [
+      {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+    ]
+  }
+{% endschema %}

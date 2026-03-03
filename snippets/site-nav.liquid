@@ -1,0 +1,255 @@
+{% comment %}
+    Renders a list of menu items
+    Accepts:
+    - linklist: {Object} Linklist Liquid object (required)
+    - wrapper_class: {String} CSS wrapper class for the navigation (optional)
+
+    Usage:
+    {% include 'site-nav', linklist: section.settings.main_linklist, wrapper_class: 'site-nav--centered' %}
+{% endcomment %}
+<ul class="site-nav list--inline{% if wrapper_class != blank %} {{ wrapper_class }}{% endif %}" id="SiteNav">
+  {% for link in linklists[linklist].links %}
+    {%- assign child_list_handle = link.title | handleize -%}
+
+    {% comment %}
+      Check if third-level nav exists on each parent link.
+    {% endcomment %}
+    {%- assign three_level_nav = false -%}
+    {% if link.links != blank %}
+      {% if link.levels == 2 %}
+        {%- assign three_level_nav = true -%}
+      {% endif %}
+    {% endif %}
+
+    {% if link.links != blank %}
+      <li class="site-nav--has-dropdown{% if three_level_nav %} site-nav--has-centered-dropdown{% endif %}{% if link.active %} site-nav--active{% endif %}" data-has-dropdowns>
+        <button class="site-nav__link site-nav__link--main site-nav__link--button{% if link.child_active %} site-nav__link--active{% endif %}" type="button" aria-expanded="false" aria-controls="SiteNavLabel-{{ child_list_handle }}">
+          <span class="site-nav__label">{{ link.title | escape }}</span>{% include 'icon-chevron-down' %}
+        </button>
+
+        <div class="site-nav__dropdown{% if three_level_nav %} site-nav__dropdown--centered{% endif %} critical-hidden" id="SiteNavLabel-{{ child_list_handle }}">
+          {% if three_level_nav %}
+            <div class="site-nav__childlist">
+              <ul class="site-nav__childlist-grid">
+                {% if link.links != blank %}
+                  {% for childlink in link.links %}
+                    <li class="site-nav__childlist-item">
+                      <a href="{{ childlink.url }}"
+                        class="site-nav__link site-nav__child-link site-nav__child-link--parent"
+                        {% if childlink.current %} aria-current="page"{% endif %}
+                      >
+                        <span class="site-nav__label">{{ childlink.title | escape }}</span>
+                      </a>
+
+                      {% if childlink.links != blank %}
+                        <ul>
+                        {% for grandchildlink in childlink.links %}
+                          <li>
+                            <a href="{{ grandchildlink.url }}"
+                            class="site-nav__link site-nav__child-link"
+                            {% if grandchildlink.current %} aria-current="page"{% endif %}
+                          >
+                              <span class="site-nav__label">{{ grandchildlink.title | escape }}</span>
+                            </a>
+                          </li>
+                        {% endfor %}
+                        </ul>
+                      {% endif %}
+
+                    </li>
+                  {% endfor %}
+                {% endif %}
+              </ul>
+            </div>
+
+          {% else %}
+            <ul>
+              {% for childlink in link.links %}
+                <li>
+                  <a href="{{ childlink.url }}"
+                  class="site-nav__link site-nav__child-link{% if forloop.last %} site-nav__link--last{% endif %}"
+                  {% if childlink.current %} aria-current="page"{% endif %}
+                >
+                    <span class="site-nav__label">{{ childlink.title | escape }}</span>
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
+      </li>
+    {% else %}
+      <li {% if link.active %} class="site-nav--active"{% endif %}>
+        <a href="{{ link.url }}"
+          class="site-nav__link site-nav__link--main{% if link.active %} site-nav__link--active{% endif %}"
+          {% if link.current %} aria-current="page"{% endif %}
+        >
+          <span class="site-nav__label">{{ link.title | escape }}</span>
+        </a>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
+<div class="wrapper-menu">
+   <ul class="menu">
+{% for link in linklists[linklistmobile].links %}
+    {%- assign child_list_handle = link.title | handleize -%}
+
+      <li class="site-nav--has-dropdown {% if link.active %} site-nav--active{% endif %}" data-has-dropdowns>
+        <button class="site-nav__link site-nav__link--main site-nav__link--button{% if link.child_active %} site-nav__link--active{% endif %}" type="button" aria-expanded="false" aria-controls="SiteNavLabel-{{ child_list_handle }}">
+          <a href="{{ link.url }}" class="site-nav__label">{{ link.title | escape }}</a>
+        </button>
+      </li>
+     
+ {% endfor %}
+     
+   </ul>
+    <div class='descr_menu_mob'>
+      Need Help? Call or Text (970) 718-2801
+    </div>
+    <div class="close-menu-btn"><i></i><i></i></div>
+    <div class="header__menu">
+      <a href="/cart" class="cart_link">
+        <img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/bag_white.svg?v=1689948612" class="header__svg header__svg--active">
+        <div class="header__menu_count" data-cart-count-bubble data-cart-count ></div>
+      </a>
+    </div>
+</div>
+
+<div class="menu-mobile-btn"><i></i><i></i><i></i></div>
+<style>
+  .menu-mobile-btn {
+    display: none;
+    cursor: pointer;
+  }
+  .menu-mobile-btn i {
+    width: 30px;
+    height: 4px;
+    margin-bottom: 5px;
+    display: block;
+    background-color: #1f4658;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+
+
+.wrapper-menu{
+  display:none;
+}
+
+
+@media (max-width: 991px){
+  .site-nav{
+    display: none;
+  }
+  .menu-mobile-btn {
+      display: block;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+  }
+
+.wrapper-menu {
+    padding: 30px;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    justify-content: center;
+    flex-direction: column;
+    opacity: 1;
+    z-index: 50;
+    overflow-y: scroll;
+    background-color: #15004a;
+  color:white;
+}
+
+.close-menu-btn {
+    width: 38px;
+    height: 38px;
+    display: block;
+    position: absolute;
+/*     right: 30px; */
+    top: 24px;
+    cursor: pointer;
+    z-index: 2;
+}
+.close-menu-btn i {
+    width: 33px;
+    height: 4px;
+    border-radius: 5px;
+    margin-bottom: 6px;
+    display: block;
+    background-color: white;
+    position: absolute;
+    left: 4px;
+    top: 48%;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+.close-menu-btn i:last-child {
+    margin-bottom: 0;
+   -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.wrapper-menu .menu{
+  margin-top:50px;
+}
+  
+  .wrapper-menu .header__menu_count {
+    width: 17px;
+    height: 17px;
+    font: bold 11px/17px Arial;
+    left: 14px;
+    top: -2px;
+  }
+  
+ .wrapper-menu .header__menu { width: 38px;
+    height: 38px;
+    display: block;
+    position: absolute;
+    right: 30px;
+    top: 75px;
+    cursor: pointer;
+    z-index: 2;
+  }
+  .descr_menu_mob{
+    
+    margin: 20px 10px;
+    padding-top: 20px;
+    border-top: 1px solid white;
+    font-size:17px;
+
+  }
+  .site-nav__label{
+    font-size:17px;
+  }
+}
+
+
+  
+  </style>
+<script>
+  $('.menu-mobile-btn').click(function (){
+    $('.wrapper-menu').css('display','block')
+  })
+  $('.close-menu-btn').click(function (){
+     $('.wrapper-menu').css('display','none')
+  })
+</script>
+
+
+
+

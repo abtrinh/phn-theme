@@ -1,0 +1,270 @@
+<style>
+  .section2__content{
+    display: flex;
+    border-top: 1px solid #d3d3d3;
+    border-bottom: 1px solid #d3d3d3;
+    overflow: hidden;
+  }
+  .section2__banner-image{
+    width: 50%;
+    font-size: 0;
+  }
+  .section2__banner-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .section2__banner-info{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-self: center;
+    padding: 30px;
+  }
+  .section2__banner-subtitle{
+    font-size: 24px;
+  }
+  .section2__banner-title{
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .section2__banner-text{
+    padding-top: 20px;
+    line-height: 2;
+  }
+  .section2__money-badge-bullets{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 30px;
+    margin-top: 20px;
+    align-items: center;
+  }
+  .section2__banner-bullets{
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 20px 0px;
+    gap: 10px;
+    color: #3eab36;
+  }
+  .section2__banner-bullets .item{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section2__banner-bullets .item-image{
+    width: 22px;
+    height: 33px;
+    flex-shrink: 0;
+  }
+  .section2__banner-bullets .item-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .section2__banner-bullets .item-name{
+    border-bottom: 1px solid;
+    line-height: 1.1;
+  }
+  .section2__banner-bullets a{
+    color:#3eab36;
+  }
+  .section2__product-btn-block{
+    display: flex;
+    margin-top: 20px;
+    gap: 15px
+  }
+  .section2__product-btn-block-arrow{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+  }
+   .section2__product-btn-block-arrow-body {
+    padding: 6px 22px 6px 3px;
+    background: linear-gradient(to right,#b752b7 55%,#FFFFFF 100%);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    font-weight: bold;
+    box-sizing: border-box;
+  }
+  .section2__product-btn-block-arrow-left {
+    border-top: 15px solid transparent;
+    border-right: 20px solid #b752b7;
+    border-bottom: 15px solid transparent;
+}
+  .section2__product-btn-block-button{
+    font-size: 0;
+    max-width: 154px;
+    flex-shrink: 0;
+  }
+   @media(min-width: 1700px){
+    .section2__banner-info{
+      zoom: 1.15;
+    }
+  }
+  @media(min-width: 2000px){
+    .section2__banner-info{
+      zoom: 1.3;
+    }
+  }
+  @media(max-width: 1400px){
+    .section2__banner-info{
+      zoom: 0.85;
+    }
+  }
+  @media(max-width: 1199px){
+    .section2__banner-info {
+      zoom: 1;
+    }
+    
+    .section2__banner-bullets{
+      width: 100%;
+      zoom: 0.9;
+    }
+    .section2__money-badge-bullets{
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 0;
+    }
+    .section2__money-badge{
+      max-width: 150px;
+      align-self: flex-end;
+      margin-bottom: -100px;
+      margin-right: -16px;
+    }
+    .section2__money-badge img{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .section2__banner-text{
+      padding-top: 10px;
+    }
+    .section2__banner-info{
+      padding: 30px 20px;
+    }
+    .section2__banner-subtitle {
+        font-size: 18px;
+    }
+    .section2__banner-title {
+        font-size: 18px;
+    }
+  }
+  @media(max-width: 1023px){
+    .section2__content{
+      flex-direction: column;
+    }
+    .section2__banner-image {
+      width: 100%;
+    }
+    .section2__banner-info{
+       width: 100%;
+       max-width: 500px;
+    }
+  }
+   @media(max-width: 580px){
+     .section2__banner-bullets{
+       font-size: 15px;
+        zoom: 0.8;
+     }
+     .section2__money-badge {
+        max-width: 125px;
+        align-self: flex-end;
+        margin-bottom: -70px;
+        margin-right: -5px;
+    }
+     
+   }
+  @media(max-width: 480px){
+    .section2__product-btn-block{
+      zoom: 0.9;
+    }
+  }
+</style>
+<div class="section2">
+  <div class="section2__content">
+    <div class="section2__banner-image">
+      <img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/purity_products_1.jpg?v=1689929005" />
+    </div>
+    <div class="section2__banner-info">
+      <div class="section2__banner-subtitle">Join Thousands Of Satisfied Customers Who Are Using</div>
+      <div class="section2__banner-title">Plant-Based Alternatives For Health & Wellness!</div>
+      <div class="section2__banner-text">Your satisfaction is our commitment to you! All purchases come with our standard 30-Day Money Back Guarantee. Simply return for a refund if our products do not meet your expectations.</div>
+      <div class="section2__money-badge-bullets">
+        <div class="section2__money-badge">
+          <img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/money_back_badge.png?v=1689929005" />
+        </div>
+        <div class="section2__banner-bullets">
+            {%- for block in section.blocks -%} 
+            <div class="item">
+            <div class="item-image">
+              <img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/s2_bullet_icon_f09bbced-b33a-417d-8695-ddf11f0df8a5.png?v=1689929005" />
+            </div>
+              <div class="item-name">
+                <a href="{{ block.settings.product.url }}">
+                  {{ block.settings.custom_title }}
+                </a>
+                </div>
+          </div>
+            {%- endfor -%}
+          
+        </div>
+      </div>
+      <div class="section2__product-btn-block">
+        <a href="{{ section.settings.button_link }}" class="section2__product-btn-block-button">
+          <img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/shop_now_btn.png?v=1689897714" />
+        </a>
+        <div class="section2__product-btn-block-arrow">
+          <div class="section2__product-btn-block-arrow-left"></div>
+          <div class="section2__product-btn-block-arrow-body">Get Started Here</div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+{% schema %}
+  {
+  "name": "Section product linker",
+  "settings": [
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "blocks": [
+     {
+       "name": "Product",
+       "type": "slide",
+       "settings": [
+         {
+           "type": "text",
+           "id": "custom_title",
+           "label": "Product Title"
+         },
+         {
+           "type": "product",
+           "id": "product",
+           "label": "Product"
+         }
+       ]
+     }
+   ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

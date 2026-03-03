@@ -1,0 +1,111 @@
+<div class="newsletter-section">
+  <div class="">
+    {%- assign formId = 'Contact_' | append: section.id -%}
+    {% form 'customer', id: formId, novalidate: 'novalidate', class: 'contact-form form-single-field' %}
+      {%- if form.posted_successfully? -%}
+        <p class="form-message form-message--success" tabindex="-1" data-form-status>
+          {{ 'general.newsletter_form.confirmation' | t }}
+        </p>
+      {%- endif -%}
+        <p class="form-message form-message--success" id="{{ formId }}-success-before" tabindex="-1" data-form-status style="display:none;">
+          Customer is already assigned
+        </p>
+      <input type="hidden" name="contact[tags]" value="newsletter">
+      <div class="input-group {% if form.errors %} input-group--error{% endif %}">
+        <input type="email"
+          name="contact[email]"
+          id="{{ formId }}-email"
+          class="input-group__field{% if form.errors %} input--error{% endif %}"
+          value="{{ form.email }}"
+          placeholder="Enter your email address"
+          aria-required="true"
+          autocorrect="off"
+          autocapitalize="off"
+          {% if form.errors %}
+            aria-invalid="true"
+            aria-describedby="{{ formId }}-email-error"
+            data-form-status
+          {% endif %}
+          >
+        {%- if form.errors contains 'email' -%}
+          <span id="{{ formId }}-email-error" class="input-error-message">
+            <span class="visually-hidden">{{ 'general.accessibility.error' | t }} </span>
+              {% render 'icon-error' %}
+            <span>{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.</span>
+          </span>
+        {%- endif -%}
+        <div class="input-group__btn">
+          <button type="submit" class="btn" name="commit">
+            <span>{{ 'general.newsletter_form.submit' | t }}</span>
+          </button>
+        </div>
+      </div>
+      
+    {% endform %}
+  </div>
+</div>
+<script>
+
+  function parseURLParams(url) {
+      var queryStart = url.indexOf('?') + 1,
+        queryEnd = url.indexOf('#') + 1 || url.length + 1,
+        query = url.slice(queryStart, queryEnd - 1),
+        pairs = query.replace(/\+/g, ' ').split('&'),
+        parms = {},
+        i,
+        n,
+        v,
+        nv;
+
+      if (query === url || query === '') return;
+      for (i = 0; i < pairs.length; i++) {
+        nv = pairs[i].split('=', 2);
+        n = decodeURIComponent(nv[0]);
+        v = decodeURIComponent(nv[1]);
+
+        if (!parms.hasOwnProperty(n)) parms[n] = [];
+        parms[n].push(nv.length === 2 ? v : null);
+      }
+      return parms;
+    }
+  
+  
+  const queryString = window.location.search;
+  var url=parseURLParams(queryString);
+if(url?.form_type){
+  document.getElementById('{{ formId }}-success-before').style.display = "block";
+}
+  
+//   $("#{{ formId }}").submit(function(e) {
+
+//     e.preventDefault(); // avoid to execute the actual submit of the form.
+
+//     var form = $(this);
+//     console.log('TEST', form)
+//     var actionUrl = form.attr('action');
+    
+//     $.ajax({
+//         type: "POST",
+//         url: actionUrl,
+//         data: form.serialize(), // serializes the form's elements.
+//         success: function(data)
+//         {
+//           console.log(data); // show response from the php script.
+//         }
+//     });
+    
+// });
+</script>
+<style>
+  .newsletter-section {
+  padding-top: 20px; }
+  .newsletter-section .input-group input{
+    border: 1px #565a5d solid;
+  }
+  .input-group__btn{
+    margin-top:20px;
+  }
+  .form-single-field{
+    margin: 0 auto 10px;
+  }
+</style>

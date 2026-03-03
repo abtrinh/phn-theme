@@ -1,0 +1,162 @@
+<div class="main__swipe__slider ">
+  <br><br>
+  <h2 class="main__banner__with__bold">Customer Reviews<br><b>Real People. Real Results.</b></h2>
+  <div class="review_bg_class">
+    <div class="slider_class swiper-container">
+      <div class="swiper-wrapper">
+
+         {% for block in section.blocks %}
+          <div class="swiper-slide">
+          <div class="main__swipe__slider__content container">
+            <div class="slider_conteiner_box hr_bottom">
+              <p>
+              {{ block.settings.review }}
+           </p>
+              <img class="circle_img" src="{{ block.settings.image | img_url: 'master' }}">
+            </div>
+            <div class="slider_conteiner_box_bottom">
+              <span class="name">{{ block.settings.reviewer_name }}
+              </span>
+              <p>{{ block.settings.review_title }}
+              </p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        
+      </div>
+      {% comment %}<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>{% endcomment %}
+    </div>
+    <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"></div>
+    <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide"></div>
+<!--     
+
+    <div class="wrapper-product__buttonsBlock desktop_show " style="padding-bottom:40px">
+    	<a href="/collections/product-catalog" class="button_active">SHOP ALL PRODUCTS</a>
+    </div> 
+    <div class="wrapper-product__buttonsBlock mobile_show nomargin_mobile">
+        <a href="/collections/product-catalog" class="button_active">SHOP ALL PRODUCTS</a>
+    </div>
+    
+    <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets">
+      <span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 1"></span>
+      <span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span>
+      <span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span>
+      <span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 4"></span>
+      <span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 5"></span>
+      <span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 6"></span>
+      <span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 7"></span>
+      <span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 8"></span>
+      <span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 9"></span>
+      <span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 10"></span>
+      <span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 11"></span>
+    </div> -->
+  </div>
+</div>
+
+
+<script>
+  
+  
+$(document).ready(function(){
+  
+  setTimeout(tester, 1000);
+  
+  function tester(){
+    if ($(".slider_class").length > 0){
+	
+   var swiper = new Swiper('.slider_class', {
+      loop: true,
+      navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable:true
+      },
+      slidesPerView:3,
+      slidesPerGroup:3,
+
+      breakpoints: {
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            slidesPerGroup:1,
+          },
+          // when window width is >= 480px
+          991: {
+            slidesPerView: 2,
+            slidesPerGroup:2,
+          },
+          // when window width is >= 640px
+          1280: {
+            slidesPerView: 3,
+            slidesPerGroup:1,
+
+          }
+        },
+      on: {
+           transitionStart: function () {
+             console.log('this', this)
+           }
+         }
+    });
+      
+    }else{
+    
+  		setTimeout(tester, 1000);
+
+    }
+  }
+});
+</script>
+
+{% schema %}
+  {
+    "name": "CUSTOMER SLIDER",
+    "max_blocks": 20,
+      "settings": [],
+      "blocks": [
+        {
+          "type": "image",
+          "name": "Slide",
+          "settings": [
+            {
+              "type": "textarea",
+              "id": "review",
+              "label": "Review",
+              "default": "<p>Write your review here...</p>"
+            },
+            {
+              "type": "text",
+              "id": "reviewer_name",
+              "label": "Reviewer Name",
+              "default": "John Doe"
+            },
+            {
+              "type": "text",
+              "id": "review_title",
+              "label": "Review Title",
+              "default": "Great Product!"
+            },
+            {
+              "type": "image_picker",
+              "id": "image",
+              "label": "Slide Image"
+            }
+          ]
+        }
+      ],
+      "presets": [
+        {
+          "name": "Image Slider with Reviews",
+          "blocks": [
+            {
+              "type": "image"
+            }
+          ]
+        }
+      ]
+    }
+    {% endschema %}

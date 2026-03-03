@@ -1,0 +1,98 @@
+<div class="main__secondSlider">
+  <div class="main__secondSlider-container slick-initialized slick-slider" id="main__secondSlider-container">
+  	<div class="slider variable-width">
+   {% for block in section.blocks %}
+
+        <div><img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.alt_text }}"></div>
+  
+{% endfor %}
+        <!-- <div><img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/1.jpg?v=1689980734" alt=""></div>
+        <div><img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/1_1.jpg?v=1689980734" alt=""></div>
+        <div><img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/1_2.jpg?v=1689980734" alt=""></div>
+        <div><img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/1_3.jpg?v=1689980734" alt=""></div>
+        <div><img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/2.jpg?v=1689980746" ></div>
+        <div><img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/2_1.jpg?v=1689980746" ></div>
+        <div><img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/2_2.jpg?v=1689980746" ></div>
+        <div><img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/2_3.jpg?v=1689980746" ></div>
+        <div><img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/3.jpg?v=1689980757" ></div>
+        <div><img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/3_1.jpg?v=1689980757" ></div>
+        <div><img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/3_2.jpg?v=1689980757" ></div>
+        <div><img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/3_3.jpg?v=1689980757" ></div>
+        <div><img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/4.jpg?v=1689980765" ></div>
+        <div><img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/4_1.jpg?v=1689980765" ></div>
+        <div><img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/4_2.jpg?v=1689980765" ></div>
+        <div><img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/4_3.jpg?v=1689980765" ></div> -->
+        
+{% comment %}         <div><img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/what_to_do_01_n.jpg?v=1616621183" alt=""></div>
+        <div><img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/what_to_do_02.jpg?v=1616621183" alt=""></div>
+        <div><img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/what_to_do_03_n.jpg?v=1616621183" alt=""></div>
+        <div><img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/what_to_do_04_n.jpg?v=1616621183" alt=""></div>
+        <div><img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/what_to_do_05_n.jpg?v=1616621183" alt=""></div>
+        <div><img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/what_to_do_06_n.jpg?v=1616621183" alt=""></div>
+        <div><img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/what_to_do_07_n_7daeca0c-d08c-4599-8d6a-6a5d55cce4e1.jpg?v=1616621183" alt=""></div>
+        <div><img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/what_to_do_08.jpg?v=1616621183" alt=""></div>
+        <div><img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/what_to_do_09.jpg?v=1616621183" alt=""></div>
+        <div><img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/what_to_do_10.jpg?v=1616621183" alt=""></div>
+        <div><img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/what_to_do_18.jpg?v=1616621183" alt=""></div>
+        <div><img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/what_to_do_19.jpg?v=1616621183" alt=""></div>
+        <div><img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/what_to_do_20.jpg?v=1616621183" alt=""></div>{% endcomment %}
+    </div> 
+  </div>
+</div>
+{% comment %} <!-- <div class="box-name-above-gallery">
+  <h2>JOIN THE <b><a href="https://www.instagram.com/purity_hemp_naturals/">#PURITYHEMPNATURALS</a></b> COMMUNITY!</h2>
+  <h3>Satisfied Customers</h3>
+</div> -->
+<!-- <div class="big-slider-img" > -->
+<!--     <img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/slider-big-img.png?v=1629407065" alt="Purity Hemp Naturals" class="scroll_image"> -->
+<!--     <img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/slider-big-img-mobile.png?v=1629471024" alt="Purity Hemp Naturals" class="mobile"> -->
+<!-- </div>
+ --> {% endcomment %}
+
+
+ {% schema %}
+{
+  "name": "Slider Image",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Slide Image"
+        },
+      ]
+    }
+  ],
+  "max_blocks": 40,
+  "presets": [
+    {
+      "name": "Slider Image",
+      "category": "Image",
+      "blocks": [
+        { "type": "image" },
+        { "type": "image" }
+      ]
+    }
+  ]
+}
+{% endschema %}
+{% javascript %}
+$('.single-item').slick();
+$('.variable-width').slick({
+  dots: true,
+  infinite: true,
+  speed: 800,
+  swipeToSlide: true,
+  touchMove: true,
+  slidesToShow: 1,
+  autoplay: true,
+  autoplaySpeed: 7000,
+  variableWidth: true,
+
+});
+
+{% endjavascript %}

@@ -1,0 +1,995 @@
+@import 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap';
+
+@media screen and (min-width: 1000px){
+	.product__info {
+        grid-template-rows: 80px .1fr .1fr .1fr 230px .1fr .1fr .1fr 2fr;
+    }
+}
+
+.inner_secman { 
+    display: none;
+    width: 100%
+}
+
+.inner_secman img { 
+    width: 100%
+}
+
+.section-3-1 .onmob {
+    display: none
+}
+
+.section_3_2 .onmob {
+    display: none
+}
+.product__galery__smallImages_image{
+	width: 99%;
+    max-width: 100%;
+    max-height: 140px;
+    object-fit: cover;
+}
+.section-3-1 {
+    background: url(//cdn.shopify.com/s/files/1/0555/4300/5364/files/section3_1_bg.png)no-repeat;
+    background-size: contain;
+    width: 100%;
+    font-family: roboto, sans-serif;
+    overflow: hidden
+}
+
+.section-3-1 .underbg {
+    background: url(//cdn.shopify.com/s/files/1/0555/4300/5364/files/section3_main_bg.png)no-repeat;
+    background-size: cover
+}
+
+.section-3-1 .secwrapper {
+    max-width: 1270px;
+    margin: 70px auto 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative
+}
+
+.section-3-1 .secwrapper>h3 {
+    text-align:center;
+    color: #a758be;
+    font-size: 36px;
+    line-height: 28px;
+    display: flex;
+    flex-direction: column;
+    width: 730px;
+    font-weight: 500;
+    margin-bottom: 10px
+}
+
+.section-3-1 .secwrapper>h3:after {
+    content: "";
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(167, 88, 190, 1) 30%, rgba(174, 101, 195, 1) 70%, rgba(255, 255, 255, 0) 100%);
+    padding-top: 4px;
+    margin-top: 20px
+}
+
+.section-3-1 .secwrapper>h2 {
+    font-size: 52px;
+    font-weight: 700;
+    color: #1b5192
+}
+
+.section-3-1 .secwrapper .mainrow {
+    display: flex;
+    justify-content: center;
+    margin-top: 90px
+}
+
+.section-3-1 .secwrapper .mainrow>.left {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left
+}
+
+.section-3-1 .secwrapper .mainrow>.right {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+}
+
+.section-3-1 .secwrapper .mainrow>.right .stickers {
+    position: relative;
+    height: 300px;
+    width: 100%
+}
+
+.section-3-1 .secwrapper .mainrow>.right .stickers .absstickers {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.section-3-1 .secwrapper .mainrow>.right .stickers img {
+    max-width: 100%
+}
+
+.section-3-1 .secwrapper .mainrow>.left .rowdesc {
+    display: flex;
+    flex-direction: column;
+    padding-left: 150px;
+    margin-bottom: 40px;
+    position: relative
+}
+
+.section-3-1 .secwrapper .mainrow>.left .rowdesc .abssticker {
+    position: absolute;
+    left: -25px;
+    top: -25px;
+    width: 170px;
+    z-index: 1
+}
+
+.section-3-1 .secwrapper .mainrow>.left .rowdesc.midmarg {
+    margin-bottom: 80px
+}
+
+.section-3-1 .secwrapper .mainrow>.left .rowdesc h2:after {
+    content: "";
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(167, 88, 190, 1) 30%, rgba(174, 101, 195, 1) 70%, rgba(255, 255, 255, 0) 100%);
+    padding-top: 4px;
+    position: absolute;
+    bottom: 0;
+    width: 660px;
+    left: -90px
+}
+
+.section-3-1 .shopbutton {
+    position: absolute;
+    bottom: 70px;
+    left: 0;
+    border: unset;
+    background: url(//cdn.shopify.com/s/files/1/0555/4300/5364/files/purp_button.png) no-repeat;
+    width: 427px;
+    height: 104px;
+    padding: unset;
+    margin: unset;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer
+}
+
+.section-3-1 .secwrapper .mainrow>.left .rowdesc h2 {
+    font-size: 36px;
+    line-height: 27px;
+    color: #1b5192;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-bottom: 15px
+}
+
+.section-3-1 .secwrapper .mainrow>.left .rowdesc p {
+    font-size: 27px;
+    line-height: 34px;
+    margin-top: 10px;
+    max-width: 470px
+}
+
+.section-3-1 .secwrapper .mainrow>.right .absprod {
+    position: relative;
+    width: 750px;
+    height: 600px;
+    margin-top: 60px
+}
+
+.section-3-1 .secwrapper .mainrow>.right .absprod img {
+    position: absolute;
+    left: 0
+}
+
+.section_3_2 {
+    background: url(//cdn.shopify.com/s/files/1/0555/4300/5364/files/section3_2_bg.png) left top no-repeat, url(//cdn.shopify.com/s/files/1/0555/4300/5364/files/section3_2_main_bg.jpg) right top no-repeat;
+    width: 100%;
+    font-family: roboto, sans-serif;
+    overflow: hidden
+}
+
+.section_3_2 .secwrapper {
+    max-width: 1270px;
+    margin: 20px auto 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative
+}
+
+.section_3_2 .secwrapper .headrow {
+    display: flex;
+    align-items: center;
+    margin-left: -160px
+}
+
+.section_3_2 .secwrapper .headrow .headline {
+    margin-left: 20px
+}
+
+.section_3_2 .secwrapper .headrow .headline h3 {
+    color: #a758be;
+    font-size: 36px;
+    line-height: 28px;
+    display: flex;
+    flex-direction: column;
+    max-width: 90%;
+    margin: 0 auto;
+    font-weight: 500;
+    margin-bottom: 10px;
+  text-align:center;
+}
+
+.section_3_2 .secwrapper .headrow .headline h3:after {
+    content: "";
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(167, 88, 190, 1) 30%, rgba(174, 101, 195, 1) 70%, rgba(255, 255, 255, 0) 100%);
+    padding-top: 4px;
+    margin-top: 20px
+}
+
+.section_3_2 .secwrapper .headrow .headline h2 {
+    font-size: 52px;
+    font-weight: 700;
+    color: #1b5192
+}
+
+.section_3_2 .secwrapper .mainpart {
+    display: flex;
+    align-items: flex-start;
+    margin: 10px 0 20px -160px
+}
+
+.section_3_2 .secwrapper .mainpart .abscirc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%
+}
+
+.section_3_2 .secwrapper .mainpart .abscirc img {
+    z-index: 1
+}
+
+.section_3_2 .secwrapper .mainpart .arrowsul {
+    display: flex;
+    flex-direction: column;
+    text-align: left
+}
+
+.section_3_2 .secwrapper .mainpart .arrowsul h2 {
+    font-size: 36px;
+    line-height: 27px;
+    color: #1b5192;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-bottom: 15px;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(to left, #ffffff00, #ad63c2, #ad63c2) 47% 0%
+}
+
+.section_3_2 .secwrapper .mainpart .arrowsul p {
+    font-size: 27px;
+    line-height: 34px;
+    margin-top: 10px
+}
+
+.section_3_2 .secwrapper .mainpart .arrowsul>div {
+    position: relative
+}
+
+.section_3_2 .secwrapper .mainpart .arrowsul .first {
+    margin-bottom: 60px
+}
+
+.section_3_2 .secwrapper .mainpart .arrowsul .first p {
+    max-width: 70%
+}
+
+.section_3_2 .secwrapper .mainpart .arrowsul .second {
+    margin-bottom: 90px
+}
+
+.section_3_2 .secwrapper .mainpart .arrowsul .third {
+    margin-bottom: 50px
+}
+
+.section_3_2 .secwrapper .mainpart .arrowsul .first h2:after {
+    content: '';
+    border-left: 5px solid #ad63c2;
+    transform: skewX(-47deg);
+    position: absolute;
+    padding: 70px;
+    border-top: 3px solid #ad63c2;
+    bottom: -143px;
+    left: -189px;
+    width: 200px;
+    z-index: 0
+}
+
+.section_3_2 .secwrapper .mainpart .arrowsul .second h2:after {
+    content: '';
+    border-left: 5px solid #ad63c2;
+    transform: skewX(-47deg);
+    position: absolute;
+    padding: 70px;
+    border-top: 3px solid #ad63c2;
+    bottom: -143px;
+    left: -189px;
+    width: 200px;
+    z-index: 0
+}
+
+.section_3_2 .secwrapper .mainpart .arrowsul .third h2:after {
+    content: '';
+    border-left: 5px solid #ad63c2;
+    transform: skewX(50deg);
+    position: absolute;
+    padding: 30px;
+    border-bottom: 3px solid #ad63c2;
+    bottom: -3px;
+    left: -150px;
+    width: 120px
+}
+
+.section_3_2 .secwrapper .mainpart .arrowsul .last h2:after {
+    content: '';
+    border-left: 5px solid #ad63c2;
+    transform: skewX(50deg);
+    position: absolute;
+    padding: 50px;
+    border-bottom: 3px solid #ad63c2;
+    bottom: -3px;
+    left: -140px;
+    width: 120px
+}
+
+.section_3_2 .shopbutton {
+    position: absolute;
+    bottom: 20px;
+    right: 130px;
+    border: unset;
+    background: url(//cdn.shopify.com/s/files/1/0555/4300/5364/files/purp_button.png) no-repeat;
+    width: 427px;
+    height: 104px;
+    padding: unset;
+    margin: unset;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer
+}
+
+@media(max-width:1770px) {
+    .section-3-1 {
+        background: unset
+    }
+}
+
+@media(max-width:1600px) {
+    .section_3_2 {
+        background: url(//cdn.shopify.com/s/files/1/0555/4300/5364/files/section3_2_main_bg.jpg) right top no-repeat
+    }
+}
+
+@media(max-width:1400px) {
+    .section_3_2 {
+        background: url(//cdn.shopify.com/s/files/1/0555/4300/5364/files/section3_2_bg.png) left top no-repeat, url(//cdn.shopify.com/s/files/1/0555/4300/5364/files/section3_2_main_bg.jpg) right top no-repeat
+    }
+    .section_3_2 .secwrapper .headrow .headline h3 {
+        font-size: 25px
+    }
+    .section_3_2 .secwrapper .headrow .headline h3:after {
+        margin-top: 10px
+    }
+    .section_3_2 .secwrapper .headrow .headline h2 {
+        font-size: 38px
+    }
+    .section_3_2 .secwrapper .headrow img {
+        width: 130px
+    }
+    .section_3_2 .secwrapper .headrow {
+        margin-left: 0
+    }
+    .section_3_2 .secwrapper .mainpart {
+        margin: 10px 0 20px
+    }
+    .section_3_2 .secwrapper .mainpart .abscirc img {
+        max-width: 480px
+    }
+    .section_3_2 .secwrapper .mainpart .abscirc {
+        justify-content: center;
+        width: unset
+    }
+    .section_3_2 .secwrapper .mainpart {
+        align-items: center;
+        justify-content: center
+    }
+    .section_3_2 .secwrapper .mainpart .arrowsul .first {
+        margin-bottom: 15px
+    }
+    .section_3_2 .secwrapper .mainpart .arrowsul .second {
+        margin-bottom: 15px
+    }
+    .section_3_2 .secwrapper .mainpart .arrowsul .third {
+        margin-bottom: 15px
+    }
+    .section_3_2 .secwrapper .mainpart .arrowsul h2 {
+        font-size: 28px;
+        padding-bottom: 5px
+    }
+    .section_3_2 .secwrapper .mainpart .arrowsul p {
+        font-size: 19px;
+        line-height: 24px
+    }
+    .section_3_2 .secwrapper .mainpart .arrowsul {
+        max-width: 35%
+    }
+    .section_3_2 .secwrapper .mainpart .arrowsul .first h2:after {
+        bottom: -103px;
+        left: -89px;
+        width: 50px;
+        padding: 50px
+    }
+    .section_3_2 .secwrapper .mainpart .arrowsul .second h2:after {
+        bottom: -103px;
+        left: -89px;
+        width: 50px;
+        padding: 50px
+    }
+    .section_3_2 .secwrapper .mainpart .arrowsul .third h2:after {
+        top: -103px;
+        left: -117px;
+        width: 50px;
+        padding: 50px
+    }
+    .section_3_2 .secwrapper .mainpart .arrowsul .last h2:after {
+        left: -80px
+    }
+    .section_3_2 .secwrapper .mainpart {
+        margin-bottom: 80px
+    }
+    .section_3_2 .shopbutton {
+        font-size: 26px;
+        background-size: 100%;
+        width: 285px;
+        height: 70px;
+        bottom: 20px;
+        left: 40%
+    }
+}
+
+@media(max-width:1300px) {
+    .section_3_2 {
+        background: url(//cdn.shopify.com/s/files/1/0555/4300/5364/files/section3_2_main_bg.jpg) right top no-repeat
+    }
+    .section-3-1 .secwrapper>h3 {
+        font-size: 26px;
+        width: 480px
+    }
+    .section-3-1 .secwrapper>h2 {
+        font-size: 35px
+    }
+    .section-3-1 .secwrapper {
+        margin: 20px auto 0;
+        padding: 0 5px
+    }
+    .section-3-1 .secwrapper .mainrow {
+        margin-top: 60px
+    }
+    .section-3-1 .secwrapper .mainrow>.left .rowdesc h2 {
+        font-size: 26px
+    }
+    .section-3-1 .secwrapper .mainrow>.left .rowdesc p {
+        font-size: 20px;
+        line-height: 23px
+    }
+    .section-3-1 .secwrapper .mainrow>.right {
+        width: 50%
+    }
+    .section-3-1 .secwrapper .mainrow>.left {
+        width: 50%
+    }
+    .section-3-1 .secwrapper .mainrow>.left .rowdesc .abssticker {
+        left: 0;
+        top: -5px;
+        width: 120px
+    }
+    .section-3-1 .secwrapper .mainrow>.left .rowdesc {
+        padding-left: 125px;
+        margin-bottom: 30px
+    }
+    .section-3-1 .secwrapper .mainrow>.left .rowdesc.midmarg {
+        margin-bottom: 30px
+    }
+    .section-3-1 .secwrapper .mainrow>.right .stickers img {
+        max-width: 180px
+    }
+    .section-3-1 .secwrapper .mainrow>.right .stickers {
+        display: flex;
+        justify-content: center;
+        height: 170px
+    }
+    .section-3-1 .secwrapper .mainrow>.right .absprod img {
+        max-width: 450px
+    }
+    .section-3-1 .secwrapper .mainrow>.right .absprod {
+        width: 450px;
+        height: 360px
+    }
+    .section-3-1 .shopbutton {
+        font-size: 26px;
+        background-size: 100%;
+        width: 285px;
+        height: 70px;
+        bottom: 20px;
+        left: 200px
+    }
+    .section-3-1 .secwrapper .mainrow>.left .rowdesc h2:after {
+        width: 540px
+    }
+    .section-3-1 .secwrapper>h3:after {
+        margin-top: 10px
+    }
+}
+
+@media(max-width:1100px) {
+    .section-3-1 .secwrapper {
+        max-width: 768px
+    }
+    .section-3-1 .secwrapper>h2 {
+        font-size: 30px
+    }
+    .section-3-1 .secwrapper .mainrow>.left .rowdesc h2 {
+        font-size: 20px;
+        padding-bottom: 5px;
+        line-height: 23px
+    }
+    .section-3-1 .secwrapper .mainrow>.left .rowdesc p {
+        font-size: 15px;
+        line-height: 20px;
+        margin-top: 5px
+    }
+    .section-3-1 .secwrapper .mainrow>.left .rowdesc h2:after {
+        width: 350px
+    }
+    .mainrow>.right .stickers img {
+        max-width: 160px
+    }
+    .section-3-1 .secwrapper .mainrow>.right .absprod {
+        margin-top: 0;
+        width: 490px;
+        height: 400px
+    }
+    .section-3-1 .secwrapper .mainrow>.right .absprod img {
+        max-width: 500px
+    }
+    .section-3-1 .shopbutton {
+        left: 30px
+    }
+    .section_3_2 .secwrapper .headrow .headline h2 {
+        font-size: 30px
+    }
+    .section_3_2 .secwrapper {
+        width: 768px
+    }
+    .section_3_2 .secwrapper .mainpart .abscirc img {
+        margin-left: -50px;
+        margin-bottom: -70px
+    }
+    .section_3_2 .secwrapper .mainpart .arrowsul h2 {
+        font-size: 20px;
+        padding-bottom: 0
+    }
+    .section_3_2 .secwrapper .mainpart .arrowsul p {
+        font-size: 15px;
+        line-height: 19px;
+        margin-top: 5px
+    }
+    .section_3_2 .shopbutton {
+        left: 54%
+    }
+}
+
+@media(max-width:767px) {
+    .section-3-1 .secwrapper>h3 {
+        font-size: 21px
+    }
+    .section-3-1 .secwrapper>h2 {
+        font-size: 25px
+    }
+    .section-3-1 .secwrapper>h3:after {
+        padding-top: 2px
+    }
+    .section-3-1 .secwrapper {
+        max-width: 640px
+    }
+    .section-3-1 .secwrapper .mainrow {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px
+    }
+    .section-3-1 .secwrapper .mainrow>.left {
+        width: unset
+    }
+    .section-3-1 .secwrapper .mainrow>.right {
+        width: unset
+    }
+    .section-3-1 .secwrapper .mainrow>.left .rowdesc p {
+        max-width: 260px
+    }
+    .section-3-1 .secwrapper .mainrow>.left .rowdesc {
+        padding-left: 85px;
+        margin-bottom: 20px
+    }
+    .section-3-1 .secwrapper .mainrow>.left .rowdesc.midmarg {
+        margin-bottom: 20px
+    }
+    .section-3-1 .secwrapper .mainrow>.left .rowdesc .abssticker {
+        width: 80px
+    }
+    .section-3-1 .underbg {
+        background-size: 2000px;
+        background-position: 100% 0%
+    }
+    .section-3-1 .secwrapper .mainrow>.right .absprod .ondesk {
+        display: none
+    }
+    .section-3-1 .secwrapper .mainrow>.right .absprod .onmob {
+        display: block;
+        width: 470px
+    }
+    .section-3-1 .secwrapper .mainrow>.right .absprod {
+        height: 470px
+    }
+    .section-3-1 .shopbutton {
+        left: 180px
+    }
+    .section-3-1 .secwrapper .mainrow>.right .absprod {
+        width: 470px
+    }
+    .section-3-1 .secwrapper .mainrow>.left .rowdesc h2:after {
+        left: -40px;
+        padding-top: 3px
+    }
+    .section_3_2 .secwrapper {
+        width: 640px
+    }
+    .section_3_2 .secwrapper .mainpart {
+        flex-direction: column;
+        align-items: center
+    }
+    .section_3_2 .ondesk {
+        display: none
+    }
+    .section_3_2 .onmob {
+        display: block
+    }
+    .section_3_2 .secwrapper .headrow .headline h2 {
+        font-size: 24px;
+        max-width: 230px
+    }
+    .section_3_2 .secwrapper .headrow .headline h3:after {
+        padding-top: 2px
+    }
+    .section_3_2 .secwrapper .headrow .headline h3 {
+        font-size: 19px;
+        max-width: unset
+    }
+    .section_3_2 .secwrapper .headrow .headline .formob {
+        display: flex;
+        align-items: center;
+        justify-content: center
+    }
+    .section_3_2 .secwrapper .headrow img {
+        width: 75px
+    }
+    .section_3_2 .secwrapper .headrow .headline {
+        margin-left: 0
+    }
+    .section_3_2 .secwrapper .mainpart .abscirc img {
+        width: 400px
+    }
+    .section_3_2 .secwrapper .mainpart .abscirc {
+        width: 320px
+    }
+    .section_3_2 .secwrapper .mainpart .arrowsul .first h2:after {
+        content: unset
+    }
+    .section_3_2 .secwrapper .mainpart .arrowsul .second h2:after {
+        content: unset
+    }
+    .section_3_2 .secwrapper .mainpart .arrowsul .third h2:after {
+        content: unset
+    }
+    .section_3_2 .secwrapper .mainpart .arrowsul .last h2:after {
+        content: unset
+    }
+    .section_3_2 .secwrapper .mainpart .arrowsul {
+        max-width: 320px;
+        margin-top: 50px;
+        margin-bottom: 10px
+    }
+    .section_3_2 .secwrapper .mainpart .arrowsul p {
+        max-width: 70%;
+        margin: 5px 20px
+    }
+    .section_3_2 .secwrapper .mainpart .arrowsul h2 {
+        padding: 0 20px
+    }
+    .section_3_2 .shopbutton {
+        width: 270px;
+        left: 27%;
+        bottom: 10px
+    }
+}
+
+@media(max-width:639px) {
+    .section-3-1 .shopbutton {
+        position: unset;
+        margin-top: -60px;
+        margin-bottom: 20px
+    }
+    .section_3_2 .secwrapper {
+        width: 320px
+    }
+    .section_3_2 .secwrapper .mainpart .abscirc img {
+        width: 320px
+    }
+    .section_3_2 .shopbutton {
+        left: 30px
+    }
+    .section-3-1 .secwrapper .mainrow>.left .rowdesc h2 {
+        font-size: 15px
+    }
+    .section-3-1 .secwrapper .mainrow>.left .rowdesc p {
+        font-size: 13.5px
+    }
+    .inner_secman {
+        display: flex
+    }
+}
+
+@media(max-width:490px) {
+    .section-3-1 .secwrapper>h3 {
+        width: 100%
+    }
+}
+
+@media(max-width:424px) {
+    .section_3_2 .secwrapper .mainpart .arrowsul p {
+        max-width: unset
+    }
+    .section_3_2 .secwrapper .mainpart .arrowsul .first h2 {
+        margin-right: 50px
+    }
+    .section_3_2 .secwrapper .mainpart .arrowsul .second h2 {
+        margin-right: 40px
+    }
+    .section_3_2 .secwrapper .mainpart .arrowsul .third h2 {
+        margin-right: 10px
+    }
+    .section_3_2 .secwrapper .mainpart .arrowsul .last h2 {
+        margin-right: 40px
+    }
+    .section_3_2 .secwrapper .mainpart .abscirc img {
+        margin-left: 0
+    }
+    .section-3-1 .secwrapper .mainrow {
+        max-width: 100%
+    }
+    .section-3-1 .secwrapper {
+        max-width: 320px
+    }
+    .section_3_2 .secwrapper .mainpart .arrowsul h2 {
+        border-bottom: 2px solid;
+        padding: 0 15px
+    }
+    .section_3_2 .secwrapper .mainpart .arrowsul p {
+        margin: 5px 17px
+    }
+}
+
+.section-5 {
+    width: 100%;
+    background: #fff;
+    padding: 20px 0
+}
+
+.pad-3 {
+    padding: 32px 110px 20px
+}
+
+.s5-img {
+    max-width: 100%;
+    vertical-align: top;
+    position: relative;
+    z-index: 1
+}
+
+.strp-2-ul {
+    max-width: 1040px;
+    width: 100%;
+    vertical-align: top;
+    margin-top: -64px;
+    display: flex;
+    list-style-type: none;
+    margin: -63px auto 0
+}
+
+.strp-2-ul li {
+    width: 23%;
+    margin: 0 1%;
+    position: relative;
+    padding: 40px 10px;
+    border: 1px solid #c6e1d6
+}
+
+.strp-2-ul li p {
+    width: 100%;
+    color: #535353;
+    font-size: 25px;
+    line-height: 32px;
+    font-weight: 700;
+    text-align: center;
+    font-family: 'Open Sans',sans-serif;
+}
+
+.strp-2-ul li p span {
+    color: #3a3a3c
+}
+
+.strp2-ic-1 {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 10px
+}
+
+.strp-2-ul li h4 {
+    width: 100%;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 28px;
+    padding-top: 25px;
+    position: relative;
+    text-align: center;
+    font-family: calibre;
+}
+
+.strp-2-ul li h4:before {
+    position: absolute;
+    content: '';
+    width: 50%;
+    left: 25%;
+    top: 16px;
+    height: 1px;
+    background: #ccc
+}
+
+.sprite-s5-img {
+    width: 191px;
+    height: 191px;
+    background-position: -698px -225px;
+    max-width: 100%;
+    position: relative;
+    margin: 0 auto;
+    display: block
+}
+
+.sprite {
+/*     background-image: url(//cdn.shopify.com/s/files/1/0555/4300/5364/files/download-1.png); */
+    background-image: url(//cdn.shopify.com/s/files/1/0555/4300/5364/files/download-1_032c5c3d-1859-4a3f-9772-db2639ab8408.png);
+    background-repeat: no-repeat
+}
+
+.sprite-strp2-ic-1 {
+    width: 49px;
+    height: 49px;
+    background-position: -899px -225px;
+    display: block;
+    margin: 0 auto 10px
+}
+
+.sprite-strp2-ic-2 {
+    width: 55px;
+    height: 49px;
+    background-position: -5px -284px;
+    display: block;
+    margin: 0 auto 10px
+}
+
+.sprite-strp2-ic-3 {
+    width: 49px;
+    height: 49px;
+    background-position: -70px -284px;
+    display: block;
+    margin: 0 auto 10px
+}
+
+.sprite-strp2-ic-4 {
+    width: 44px;
+    height: 49px;
+    background-position: -899px -284px;
+    display: block;
+    margin: 0 auto 10px
+}
+
+@media(max-width:1180px) {
+    .strp-2-ul {
+        max-width: 1000px
+    }
+}
+
+@media only screen and (max-width:1185px) {
+    .strp-2-ul {
+        padding: 0
+    }
+}
+
+@media only screen and (max-width:1023px) {
+    .strp-2-ul li p {
+        font-size: 24px;
+        line-height: 27px
+    }
+    .strp-2-ul li {
+        width: 24%;
+        margin: 0 .5%;
+        padding: 40px 5px 30px
+    }
+    .strp-2-ul li h4 {
+        font-size: 20px;
+        line-height: 24px
+    }
+}
+
+@media(max-width:991px) {
+    .strp-2-ul {
+        max-width: 750px
+    }
+}
+
+@media(max-width:767px) {
+    .strp-2-ul {
+        margin-top: 10px;
+        max-width: 580px;
+        flex-direction: column
+    }
+    .strp-2-ul li {
+        width: 100%;
+        margin: 15px auto 0;
+        padding: 20px 0
+    }
+
+
+
+}
+
+@media(max-width:580px) {
+    .strp-2-ul {
+        max-width: 400px
+    }
+}
+
+@media(max-width:400px) {
+    .strp-2-ul {
+        max-width: 320px
+    }
+}
+
+

@@ -1,0 +1,31 @@
+<style>
+  .featured-on img{
+    width: 100%;
+    max-width:1200px;
+  }
+  .featured-on .mob{
+    display: none;
+  }
+  @media(max-width: 767px){
+    .featured-on .desk{
+    display: none;
+  }
+    .featured-on img{
+      margin-top: 15px;
+    }
+    .featured-on{
+      padding:10px 20px;
+    }
+     .featured-on .mob{
+        display: block;
+      }
+  }
+</style>
+<div class="featured-on">
+  <h3>Featured On</h3>
+<!--   <div>
+    <img src="">
+  </div> -->
+  <img class="desk" src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/logos_desk.png?v=1689808787" alt="">
+  <img class="mob" src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/logo_line_mob.png?v=1689975267" alt="">
+</div>

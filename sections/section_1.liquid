@@ -1,0 +1,357 @@
+<style>
+  .section1__content{
+    display: flex;
+    overflow: hidden;
+  }
+  .section1__product-content{
+    display: flex;
+    flex: 1;
+    flex-shrink: 0;
+    max-width: 50%;
+  }
+  .section1__product-image{
+    width: 42%;
+    flex-shrink: 0;
+    font-size: 0;
+    max-height: 500px;
+  }
+  .section1__product-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .section1__product-info{
+    display: flex;
+    flex-direction: column;
+  }
+  .section1__product-name{
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: flex;
+    color: #ffffff;
+    position: relative;
+    width: 100%;
+  }
+  .section1__product-name.mobile{
+    display: none;
+  }
+
+  .section1__product-title{
+    background-color: #1678ff;
+    padding-left: 20px;
+    position: relative;
+    flex: 1;
+    text-align: right;
+  }
+  .product--2 .section1__product-title{
+    background-color: #8f4485;
+  }
+  .section1__product-subtitle{
+    background-color: #000000;
+    padding-right: 25px;
+  }
+  .section1__product-notitle{
+    width: 23px;
+    flex-shrink: 0;
+    background: linear-gradient(to top left,#000000 0 50%,#1578ff 50% 100%);
+  }
+  .product--2 .section1__product-notitle{
+    background: linear-gradient(to top left,#000000 0 50%,#8f4485 50% 100%);
+  }
+  .section1__product-descr{
+    padding: 20px;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  .section1__product-bullets{
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 0px 20px 20px;
+    gap: 5px;
+  }
+  .section1__product-bullets .item{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .section1__product-bullets .item-image{
+    width: 22px;
+    height: 22px;
+  }
+  
+  .section1__product-btn-block{
+    display: flex;
+    margin-top: auto;
+    margin-bottom: 20px;
+    gap: 15px;
+  }
+  .section1__product-btn-block-arrow{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 240px;
+  }
+   .section1__product-btn-block-arrow-body {
+    padding: 6px 22px 6px 3px;
+    background: linear-gradient(to left,#b752b7 55%,#FFFFFF 100%);
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    font-weight: bold;
+    box-sizing: border-box;
+  }
+  .section1__product-btn-block-arrow-right {
+    border-top: 15px solid transparent;
+    border-left: 20px solid #b752b7;
+    border-bottom: 15px solid transparent;
+}
+  .section1__product-btn-block-button{
+    font-size: 0;
+    max-width: 154px;
+    flex-shrink: 0;
+  }
+  @media(min-width: 1700px){
+    .section1__product-info{
+      zoom: 1.15;
+    }
+  }
+  @media(min-width: 2000px){
+    .section1__product-info{
+      zoom: 1.3;
+    }
+  }
+  @media(max-width: 1440px){
+    .section1__product-subtitle {
+      padding-right: 15px;
+    }
+  }
+    @media(max-width: 1400px){
+    .section1__product-subtitle {
+      padding-right: 15px;
+    }
+    .section1__product-info{
+      zoom: 0.85;
+    }
+  }
+  @media(max-width: 1199px){
+    .section1__product-name.mobile{
+      display: flex;
+    }
+    .section1__product-name.desktop{
+      display: none;
+    }
+    .section1__product-content{
+      flex-direction: column;
+      align-items: center;
+    }
+    .section1__product-info{
+      zoom: 1;
+      height: 100%;
+    }
+    .section1__product-image{
+      padding-top: 20px;
+      width: 75%;
+    }
+    .product--1 .section1__product-subtitle{
+      flex: 0.5;
+    }
+    .product--2 .section1__product-subtitle{
+      flex: 1;
+    }
+    
+  }
+  @media(max-width: 1023px){
+    .section1__product-image{
+      max-height: 410px;
+    }
+    .section1__product-name.mobile{
+      zoom: 0.9;
+    }
+    .section1__product-info{
+      max-width: 500px;
+    }
+     .product--1 .section1__product-subtitle{
+      flex: 0.4;
+    }
+    .product--2 .section1__product-subtitle{
+      flex: 1.2;
+    }
+  }
+  @media(max-width: 768px){
+    .section1__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .section1__product-content{
+      max-width: 100%;
+    }
+    .section1__product-image{
+      max-height: 100%;
+    }
+    .product--1 .section1__product-subtitle{
+      flex: 0.4;
+    }
+  }
+  @media(max-width: 480px){
+  .section1__product-btn-block{
+    zoom: 0.9;
+  }
+  }
+  
+  
+</style>
+<div class="section1">
+  <div class="section1__content">
+    <div class="section1__product-content product--1">
+      <div class="section1__product-name mobile">
+        <span class="section1__product-title">Pain & Inflammation</span>
+        <span class="section1__product-notitle"></span>
+        <span class="section1__product-subtitle">chews</span>
+      </div>
+      <div class="section1__product-image">
+        <a {% if section.settings.button_link_1 != blank %}href="{{ section.settings.button_link_1 }}" {% endif %} >
+          <img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/chews.jpg?v=1689892849" alt="Pain & Inflammation" />
+        </a>
+      </div>
+      <div class="section1__product-info">
+        <div class="section1__product-name desktop">
+          <span class="section1__product-title">Pain & Inflammation</span>
+          <span class="section1__product-notitle"></span>
+          <span class="section1__product-subtitle">chews</span>
+        </div>
+        <div class="section1__product-descr">
+          <p>Our Hemp-infused Mobility Chews are a convenient way to give your adult dog a tasty treat to relieve inflammation, pain in the hips, muscles, and joints.</p>
+          <p>Formulated to relieve joint stiffness and reduced mobility.</p>
+        </div>
+        <div class="section1__product-bullets">
+          <div class="item">
+            <div class="item-image">
+              <img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/s1_bullet_icon_6588518f-7be4-480d-9c47-63399f48936e.png?v=1689896896" />
+            </div>
+            <div class="item-name">Glucosamine – Improves Cartilage Health</div>
+          </div>
+          <div class="item">
+            <div class="item-image">
+              <img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/s1_bullet_icon_6588518f-7be4-480d-9c47-63399f48936e.png?v=1689896896" />
+            </div>
+            <div class="item-name">Arnica Montana – Relieves Swelling & Bruising</div>
+          </div>
+          <div class="item">
+            <div class="item-image">
+              <img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/s1_bullet_icon_6588518f-7be4-480d-9c47-63399f48936e.png?v=1689896896" />
+            </div>
+            <div class="item-name">Turmeric Curcumin – Anti-Inflammatory & Antioxidant</div>
+          </div>
+          <div class="item">
+            <div class="item-image">
+              <img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/s1_bullet_icon_6588518f-7be4-480d-9c47-63399f48936e.png?v=1689896896" />
+            </div>
+            <div class="item-name">Probiotic Support – Improves Gut Health</div>
+          </div>
+          
+        </div>
+        <div class="section1__product-btn-block">
+          <div class="section1__product-btn-block-arrow">
+            <div class="section1__product-btn-block-arrow-body">Get Started Here</div>
+            <div class="section1__product-btn-block-arrow-right"></div>
+          </div>
+          <a {% if section.settings.button_link_1 != blank %}href="{{ section.settings.button_link_1 }}" {% endif %} class="section1__product-btn-block-button">
+            <img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/shop_now_btn.png?v=1689897714" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="section1__product-content product--2">
+      <div class="section1__product-name mobile">
+        <span class="section1__product-title">Calm & Relax</span>
+        <span class="section1__product-notitle"></span>
+        <span class="section1__product-subtitle">Beef Jerky Sticks</span>
+      </div>
+      <div class="section1__product-image">
+         <a {% if section.settings.button_link_2 != blank %}href="{{ section.settings.button_link_2 }}" {% endif %} >
+            <img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/sticks.jpg?v=1689892849" alt="Calm & Relax" />
+          </a>
+      </div>
+      <div class="section1__product-info">
+        <div class="section1__product-name desktop">
+          <span class="section1__product-title">Calm & Relax</span>
+          <span class="section1__product-notitle"></span>
+          <span class="section1__product-subtitle">Beef Jerky Sticks</span>
+        </div>
+        <div class="section1__product-descr">
+          <p>Our Hemp-infused Zoomies Sticks are a convenient way to give your dog a tasty treat to reducing stress and nervousness. Great for travelling, new visitors, loud noises or anxiousness.</p>
+          <p>Formulated to promote overall calmness and relaxation.</p>
+        </div>
+        <div class="section1__product-bullets">
+          <div class="item">
+            <div class="item-image">
+              <img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/s1_bullet_icon_6588518f-7be4-480d-9c47-63399f48936e.png?v=1689896896" />
+            </div>
+            <div class="item-name">Made With Real Beef – From Single Ingredients</div>
+          </div>
+          <div class="item">
+            <div class="item-image">
+              <img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/s1_bullet_icon_6588518f-7be4-480d-9c47-63399f48936e.png?v=1689896896" />
+            </div>
+            <div class="item-name">Gluten Free – No Wheat, No Soy, No Corn</div>
+          </div>
+          <div class="item">
+            <div class="item-image">
+              <img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/s1_bullet_icon_6588518f-7be4-480d-9c47-63399f48936e.png?v=1689896896" />
+            </div>
+            <div class="item-name">Easy Dosing – Easily Break Into 5 mg Bites</div>
+          </div>
+          <div class="item">
+            <div class="item-image">
+              <img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/s1_bullet_icon_6588518f-7be4-480d-9c47-63399f48936e.png?v=1689896896" />
+            </div>
+            <div class="item-name">Made In USA – In A FDA & GMP Licensed Facility</div>
+          </div>
+          
+        </div>
+        <div class="section1__product-btn-block">
+          <div class="section1__product-btn-block-arrow">
+            <div class="section1__product-btn-block-arrow-body">Get Started Here</div>
+            <div class="section1__product-btn-block-arrow-right"></div>
+          </div>
+          <a {% if section.settings.button_link_2 != blank %}href="{{ section.settings.button_link_2 }}" {% endif %} class="section1__product-btn-block-button">
+            <img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/shop_now_btn.png?v=1689897714" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Doubled Section",
+    "settings": [
+      {
+      "type": "url",
+      "id": "button_link_1",
+      "label": "Button 1 link"
+    },
+      {
+      "type": "url",
+      "id": "button_link_2",
+      "label": "Button 2 link"
+    }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

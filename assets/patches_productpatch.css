@@ -1,0 +1,40 @@
+@media (min-width: 691px) and (max-width: 1244px){
+  .product__info.cream_prod{
+		grid-template-rows:80px .1fr .1fr .1fr 390px .1fr .1fr .1fr 2fr;
+  }
+}
+@media (max-width: 635px){
+    .product__info.cream_prod{
+		grid-template-rows:80px .1fr .1fr .1fr 390px .1fr .1fr .1fr 2fr;
+  	}
+}
+h2{
+
+/*   margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+ */
+  
+}
+.product__info{
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 44% 10% 27%;
+  grid-template-columns: 44% 10% 27%;
+  -ms-grid-rows: 40px .1fr .1fr .1fr 200px .1fr .1fr .1fr 3fr;
+  grid-template-rows: 40px .1fr .1fr .1fr 200px .1fr .1fr .1fr 2fr;
+  -webkit-column-gap: calc(10px);
+  column-gap: calc(10px);
+  padding-left: 30px;
+}
+@media (max-width: 768px){
+	
+  .product__info{
+    
+  	padding-left: 0px;
+
+  }
+
+}
+

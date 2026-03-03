@@ -1,0 +1,66 @@
+{{ 'custom-upsells.css' | asset_url | stylesheet_tag }}
+{{ 'custom-upsells.js' | asset_url | script_tag }}
+
+<div class="upsell_overlay">
+  <div class="upsell_block">
+    <div class="upsell_close"><i class="fa fa-times-circle-o" aria-hidden="true"></i></div>
+    <div class="up-top-block">
+      <div class="just_added"><i class="fa fa-check-circle" aria-hidden="true"></i> You just added</div>
+      <div class="up-top-line">
+        <a class="main_product_href" href="">
+          <div class="up-img-name">
+            <div class="up-img">
+              <img src="" />
+            </div>
+            <div class="up-name"></div>
+          </div>
+        </a>
+        <div class="up-items-subtotal">
+          <div class="up-items-count">
+            <span>Cart items:</span>
+            <span class="up-cart-count">1</span>
+          </div>
+          <div class="up-items-total ">
+            <span>Cart Subtotal:</span>
+            <span class="up-cart-subtotal sub_price">$320</span>
+          </div>
+        </div>
+        <div class="up-viewcart">
+          <a class="viewCart--button" href="/cart">View Cart</a>
+        </div>
+      </div>
+    </div>
+    <div class="up-mid-block">
+      <div class="up-title title-insert">Just Arrived!</div>
+      <div class="up-reccuring-block">
+        <div class="up-title">You may be also interested in!</div>
+        <div class="up-rec-img-desc">
+          <div class="up-rec-img">
+            <img src="https://cdn.shopify.com/s/files/1/0003/2463/2639/products/Onyx_full_kit_grande_b38b8a60-5452-4f66-a366-a09d756f91c5.jpg?v=1568239210">
+          </div>
+          <div class="up-rec-desc">
+            <div class="up-rec-name-price">
+              <div class="up-rec-name">Replenishment Kit Auto-Delivery Program</div>
+              <div class="up-rec-price">$39.99 monthly</div>
+            </div>
+            <div class="up-rec-contains">
+              Onyx Youth Magnet Mask Replenishment Kit Contains:<br>
+              <span class="first"> - 1 - Onyx Youth Magnet Mask 2 oz/59 ml</span>
+              <span> - 1 Month Supply - Magnet Head Covers (20 sheets)</span>
+              <span class="not-included"><i>Magnetic Wand and Mask Applicator NOT included.</i></span>
+            </div>
+            <div class="up-proditem-button"><button class="up-rec-add-btn" type="button">Add to cart</button></div>
+            <div class="up-rec-no-btn"><a>No! I'm not intrested</a></div>
+
+            <div class="up-rec-desc-text">
+              Our Replenishment Program saves you time and money. Conveniently receive a single Replenishment Kit every month starting in 30 days from the date of your original order. Customize your order, change your shipping interval, skip or easily cancel shipments at any time.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="up-products-block">
+      </div>
+    </div>
+
+  </div>
+</div>

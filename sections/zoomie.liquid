@@ -1,0 +1,504 @@
+{% assign discount_percentage = product.compare_at_price
+| minus: product.price
+| times: 100.0
+| divided_by: product.compare_at_price
+| round: 0 
+%}
+{% assign discount_change = product.compare_at_price
+| minus: product.price
+| money
+%}
+<!--  -->
+<section class="product">
+  <div class="product__container container">
+    <div class="product__galery">
+      <div class="notDescTop">
+        <h2 class="product__info__head">{{ product.metafields.product.basic_title }}</h2>
+        <div class="product__info__review review">
+          <span></span
+          ><a href="javascript:void(0)" class="product__info__review--active"
+            ><span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span
+          ></a>
+        </div>
+      </div>
+      <div class="product__galery__bigImage" id="full_image">
+        <img
+          class="product__galery__bigImage_image"
+          src="{{ product.featured_image| img_url: 'grande'  }}"
+        >
+      </div>
+      <div class="product__galery__smallImages">
+        <img
+          class="product__galery__smallImages_image active"
+          onclick="changePhoto();"
+          src="{{ product.featured_image| img_url: 'small'  }}"
+          data-src="{{ product.featured_image| img_url: 'grande'  }}"
+        >
+
+        {% assign images_set = product.metafields.product.images_set.value %}
+        {% for file in images_set %}
+          
+          <img
+          class="product__galery__smallImages_image"
+          onclick="changePhoto();"
+          src="{{ file.preview_image |img_url  }}"
+          data-src="{{ file | img_url: 'grande'  }}"
+        >
+        {% endfor %}
+        
+        
+      </div>
+    </div>
+    <div class="product__info cream_prod">
+      <h2 class="product__info__head onlyDescTop">{{ product.metafields.product.basic_title }}</h2>
+      <div class="product__info__review review onlyDescTop">
+        <span></span>
+        <a href="javascript:void(0)" class="product__info__review--active" data-name="Reviews">
+          <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+        </a>
+      </div>
+      <div class="product__info-prices">
+        <span class="current_price">{{ product.price|money }}</span><span class="not-discount">{{ product.compare_at_price|money }}</span>
+        <p class="save_text">You Save:<span id="precent">{{ discount_percentage }}%</span><span id="save-count">({{ discount_change }})</span></p>
+        <span><div class="yotpo-widget-instance" data-yotpo-instance-id="1267418" data-yotpo-product-id="{{product.id}}" data-yotpo-cart-product-id="{{item.product.id}}" data-yotpo-section-id="{{template.name}}"></div></span>
+      </div>
+      <p class="product__info__text">Buy More and Save</p>
+      <div class="product__info__changer">
+        
+        <button
+          class="product__info--button  active"
+          onclick="changePhoto('button');"
+          data-variant-id=""
+          data-src="{{ product.featured_image| img_url: 'grande'  }}"
+        >
+          
+          <b class="weight">400 MG</b>
+          <span class="patch_size">1 Pack</span>
+          <span class="red_save">$24.98 EACH</span>
+        </button>
+        <button
+          class="product__info--button "
+          onclick="changePhoto('button');"
+          data-variant-id=""
+          data-src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/30ct-40mg.jpg?v=1727898648"
+        >
+          <div class="popular">
+            <h4>Most Popular</h4>
+          </div>
+          <b class="weight">1,200 MG</b>
+          <span class="patch_size">3 Pack</span>
+          <span class="red_save">$23.32 EACH</span>
+        </button>
+        <button
+          class="product__info--button "
+          onclick="changePhoto('button');"
+          data-variant-id=""
+          data-src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/50ct-40mg.jpg?v=1727898648"
+        >
+          <div class="popular">
+            <h4>Best Value</h4>
+          </div>
+          <b class="weight">2,000 MG</b>
+          <span class="patch_size">5 Pack</span>
+          <span class="red_save">$19.99 EACH</span>
+        </button>
+        <select class="product__info__changer--select" style="display: none;">
+          <option value="Pain Relief Cream 1 Pack (1,000 mg)">Pain Relief Cream 1 Pack (1,000 mg)</option>
+          <option value="Pain Relief Cream 3 Pack (3,000 mg)">Pain Relief Cream 3 Pack (3,000 mg)</option>
+          <option value="Pain Relief Cream 5 Pack (5,000 mg)">Pain Relief Cream 5 Pack (5,000 mg)</option>
+        </select>
+      </div>
+      <div class="product__info--sub_box" id="product__info--sub_box">
+        <h3>Sign Up For Autoship Today And Save Even More!</h3>
+        <label class="product__info--input-area" for="one" style="display: none;">
+          <input type="radio" name="subsc" value="false" id="one">
+          One-time purchase
+        </label>
+        <label class="product__info--input-area selected" for="two">
+          <input
+            type="checkbox"
+            class="custom-checkbox"
+            name="subsc"
+            value="true"
+            id="two"
+            onclick="checkboxClick(this)"
+          >
+          <label for="two"></label>
+          <span id="subPrice" style="display: none;">25.61</span>
+          <span id="subText" class="subText">Yes, Subscribe & Save!</span>
+        </label>
+      </div>
+      <div class="product__info__qty">
+        <input
+          type="number"
+          class="product__info__qty__input"
+          step="1"
+          min="1"
+          value="1"
+          inputmode="numeric"
+          maxlength="2"
+        >
+        <input type="button" value="+" class="product__info__qty__plus">
+        <input type="button" value="-" class="product__info__qty__minus">
+      </div>
+      <div class="product__info__addToCart">
+        <!-- <button class="product__info__addToCart--disabled-btn">SOLD OUT</button> -->
+        <button class="product__info__addToCart--button">Add To Cart</button>
+        
+      </div>
+      <div class="product__info__seals">
+        <img
+          class="product__info__seals--image"
+          src="//cdn.shopify.com/s/files/1/0555/4300/5364/files/trustBadges.png?v=1616801677"
+        >
+      </div>
+      <div class="product__info__wrapper">
+        <div class="product__info__wrapper__viewType">
+          <button class="product__info__wrapper--active " data-name="Description">Description</button>
+          <button class="product__info__wrapper--active active" data-name="Reviews">
+            Reviews
+          </button>
+          <button class="product__info__wrapper--active" data-name="Ingredients">Ingredients</button>
+          <button class="product__info__wrapper--active" data-name="Directions">Directions</button>
+          <!--
+            <button class="product__info__wrapper--active"data-name="Analysis">Analysis Certificate</button>
+            </div>
+          -->
+          <div class="product__info__wrapper__viewArea">
+            <div id="descr" style="display: none;">
+              {{ product.description }}
+            </div>
+            <div id="revie" style="display: block;">
+              <div class="commentlist">
+                <div class="yotpo yotpo-main-widget"
+                  data-product-id="{{ product.id }}"
+                  data-name="{{ product.title | escape }}"
+                  data-url="{{ shop.url }}{{ product.url }}"
+                  data-image-url="{{ product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&','%26'}}"
+                  data-price="{{ variant.price | money_without_currency }}"
+                  data-currency="{{ shop.currency }}"
+                  data-description="{{ product.description | escape }}">
+                </div>
+                {% comment %} <script type="text/javascript">
+                  !function(){"use strict";!function(){if(void 0===window.OMNISEND_REVIEWS_SHOPIFY_LOADED){var e=(new Date).toISOString().slice(0,13);window.OMNISEND_REVIEWS_SHOPIFY_LOADED=!0;var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="".concat("https://omnisnippet1.com/","reviews/reviews.js?v=").concat(e);var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n)}}()}();
+                  //# sourceMappingURL=shopify-product-reviews.js.map
+                </script>
+                <div id="omnisend-reviews-block"></div> {% endcomment %}
+              </div>
+            </div>
+            <div id="video" style="display: none;text-align: center;"></div>
+            <div id="ingre" style="display: none;">
+              {{ product.metafields.product.ingredients| metafield_tag }}
+            </div>
+            <div id="direc" style="display: none;">
+              {{ product.metafields.product.direction| metafield_tag }}
+            </div>
+            <div id="analy" style="display: none;">
+              <img src="//cdn.shopify.com/s/files/1/0555/4300/5364/files/analysis_cream.jpg?v=1616801778">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- end of product selection -->
+
+<div class="cream">
+  <div class="pill__top">
+    <div class="container">
+      <div class="pill__top__box">
+        <h4 class="pill__top__box--h4">Why Choose Hemp Zoomies Sticks?</h4>
+        <h2 class="pill__top__box--h2">A Delicious Calming Treat For Your Dog</h2>
+        <div class="pill__top__box__contant">
+          <div class="pill__top__box--left">
+            <div>
+<!--               <img src="//cdn.shopify.com/s/files/1/0555/4300/5364/files/pill_center.png?v=1671567901"> -->
+            </div>
+          </div>
+          <div class="pill__top__box--rigth">
+            <div class="pill__top__box--li">
+              <h3 class="pill__top__box--title">Fear or Anxiousness</h3>
+              <p class="pill__top__box--text">Separation, Loud Noises, Fireworks, Thunderstorms</p>
+            </div>
+            <div class="pill__top__box--li">
+              <h3 class="pill__top__box--title">Stressful Situations</h3>
+              <p class="pill__top__box--text">New environments, Vet Visits, Grooming, Boarding</p>
+            </div>
+            <div class="pill__top__box--li">
+              <h3 class="pill__top__box--title">Over-Excitement</h3>
+              <p class="pill__top__box--text">New Guests, Car Rides, Walks, Dog Parks, Trails</p>
+            </div>
+            <div class="pill__top__box--li">
+              <h3 class="pill__top__box--title">Behavior or Nervousness</h3>
+              <p class="pill__top__box--text">Barking, Itching, Chewing, Digging</p>
+            </div>
+          </div>
+        </div>
+        <div class="pill__top__box--active">
+          <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})">SHOP NOW</button>
+        </div>
+      </div>
+    </div>
+    <div class="pill__top--man">
+      <img src="//cdn.shopify.com/s/files/1/0555/4300/5364/files/finn_mob.jpg?v=1685328854">
+    </div>
+  </div>
+  <div class="pill__bottom">
+    <div class="container">
+      <div class="pill__bottom__box">
+        <h4 class="pill__bottom__box--h4">Promotes Calm & Relaxation</h4>
+        <h2 class="pill__bottom__box--h2">Made In USA With Real Beef</h2>
+        <div class="pill__bottom--left">
+          <div class="pill__bottom__box--li">
+            <h3>Safe and Effective</h3>
+            <p>No Side Effects</p>
+          </div>
+          <div class="pill__bottom__box--li">
+            <h3>100% Organic Hemp Oil Extract</h3>
+            <p>From USA Farms</p>
+          </div>
+          <div class="pill__bottom__box--li">
+            <h3>GMP & FDA Licensed Facility</h3>
+            <p>Meets All Safety Requirements</p>
+          </div>
+        </div>
+        <div class="pill__bottom--center">
+          <img src="//cdn.shopify.com/s/files/1/0555/4300/5364/files/pack_group_dd406231-2cb9-4c7f-bcfc-52a1eb17d702.png">
+        </div>
+        <div class="pill__bottom--rigth">
+          <div class="pill__bottom__box--li">
+            <h3>Easy To Dose Bites</h3>
+            <p>Breaks into 5 mg Preces</p>
+          </div>
+          <div class="pill__bottom__box--li">
+            <h3>Gluten Free</h3>
+            <p>No Corn, No Soy, No Wheat.</p>
+          </div>
+          <div class="pill__bottom__box--li">
+            <h3>Human Grade Food Ingredients</h3>
+            <p>Irresistible Real Beef Flavor</p>
+          </div>
+        </div>
+        <div class="pill__bottom__box--active">
+          <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})">SHOP NOW</button>
+        </div>
+      </div>
+    </div>
+    <div class="pill__bottom--bottle" style="display: none;">
+      <img src="//cdn.shopify.com/s/files/1/0555/4300/5364/files/bottle_right_3021a4d5-14d2-4296-843c-08539feee8c6.png?v=1671567942">
+    </div>
+    <div class="pill__bottom--bottle_mobile">
+      <img src="//cdn.shopify.com/s/files/1/0555/4300/5364/files/second_dog_mob.jpg?v=1685328854">
+    </div>
+  </div>
+</div>
+
+<!-- qwer -->
+<span>
+  <script>
+    let _prodtemplate= {};
+    let _prodpercent= {};
+    let _prod_array_base=[];
+    let _prod_price_setup= {};
+    let _prodbase_object_collect={}
+    let _prodbase_object_collect_set={}
+    {% assign prod = ''%}
+    {% for product in collections["zoomie-collection"].products %}
+          type='{{product.metafields.product.subscription_prod.value.variants[0].selling_plan_allocations.first.selling_plan.price_adjustments[0].value_type}}'
+          metafields={{ product.metafields.product.description }}
+          arr_collect=[]
+          metafields.map(test_in=>{
+            test_arr=test_in.split(':')
+            arr_collect[test_arr[0]]=test_arr[1]
+          })
+          _prodbase_object_collect
+    
+          if(type.toString()=='percentage'){
+            _prodbase_object_collect={id:'{{product.variants[0].id}}',
+                                      name:'{{product.title}}',
+                                      handle:'{{product.handle}}',
+                                      sub_id:'{{product.metafields.product.subscription_prod.value.variants[0].id}}',
+                                      price:'{{product.price|money}}'.replace('$',''),
+                                      compare:'{{product.compare_at_price|money}}'.replace('$',''),
+                                      selling_plan:'{{product.metafields.product.subscription_prod.value.variants[0].selling_plan_allocations.first.selling_plan.id}}'
+                                    }
+        		_prodpercent[{{product.variants[0].id}}]={..._prodbase_object_collect, ...arr_collect}
+          }else{
+            _prodbase_object_collect={id:'{{product.variants[0].id}}',
+                                 name:'{{product.title}}',
+                                 handle:'{{product.handle}}',
+                                 price:'{{product.price|money}}'.replace('$',''),
+                                 compare:'{{product.compare_at_price|money}}'.replace('$',''),
+                                 selling_plan:''}
+
+          }
+
+          _prodbase_object_collect_set[{{product.variants[0].id}}]={..._prodbase_object_collect, ...arr_collect}
+          _prod_array_base.push({..._prodbase_object_collect, ...arr_collect})
+    	  _prodtemplate[{{product.variants[0].id}}]={{product.variants[0].selling_plan_allocations.first.selling_plan.id}}
+          _prod_price_setup[{{product.variants[0].id}}]={price:'{{product.price|money}}'.replace('$',''),compare:'{{product.compare_at_price|money}}'.replace('$','')}
+      {% assign prodjson = product.variants[0].price | json %}
+      {% assign prod_price = prod_price | append: prodjson | append: ',' %}
+      {% assign prod = prod | append: prodjson | append: ',' %}
+    {% endfor %}
+    console.log('[_prod_array_base]',_prod_price_setup);
+    console.log('[_prodpercent]',_prodpercent);
+  </script>
+</span>
+<script>
+  
+  const percentDiscount = {{product.metafields.discount.discount}}
+
+   var qty = 1;  
+    document.querySelectorAll('.product__info--button').forEach((el,index)=> {
+      el.dataset.variantId = _prod_array_base[index].id
+    })
+  var id = $('.product__info--button:first-child').data('variantId');  
+  
+  $(document).on('click','.product__info__addToCart--button',function(){
+    data_set={id:id,quantity:qty}
+    is_checked = $('#two').is(':checked');
+    if(is_checked && _prodpercent[id]){
+      data_set.id=_prodpercent[id].sub_id
+      data_set['form_type']='product'
+      data_set['selling_plan']=_prodpercent[id].selling_plan
+    }
+    
+    $('.up-name').text(_prodbase_object_collect_set[id].name)
+    console.log('DATA_set', data_set)
+    $.ajax({
+        type: 'POST', 
+        url: '/cart/add.js',
+        dataType: 'json', 
+        data: data_set,
+        success: function(){
+			cartUpdate()
+            open_upsell(upsell_array)
+          	changeTotalOnPage()
+
+        }
+     })
+    
+  })
+  $('.product__info--button').click(function(){
+      $('.product__info--button').removeClass('active')
+      $(this).addClass('active')
+      id = $(this).data('variantId');
+  })
+  $('.product__info__qty input[type=button]').click(function(){
+      var num = $('.product__info__qty__input').val()
+      var symbol = $(this).val()
+      symbol == '+'?num++:(num>1?num--:null)
+      $('.product__info__qty__input').val(num)
+      qty = num
+  })
+$('.product__info__wrapper--active,.product__info__review--active').click(function(){
+      let item=$(this)
+      var name = $(this).data('name').toLowerCase().slice(0,5)
+      $('.product__info__wrapper--active').removeClass('active')
+      $(this).addClass('active') 
+      $('.product__info__wrapper__viewArea>div').hide()
+      $('#'+name).show()
+      if (typeof $(this).attr('aria-describedby') !== 'undefined' && $(this).attr('aria-describedby') !== false) {
+		document.querySelector('#revie').scrollIntoView({behavior: 'smooth'});
+      }
+  })
+  $('body *').click(function(e){
+    if(e.target.dataset.link){
+        window.location.href = e.target.dataset.link
+    }
+  })
+  
+  var elPrice = (_prod_array_base[0].price)
+  var notDiscount = (_prod_array_base[0].compare)
+  var saveCount = notDiscount - elPrice
+  saveCount = saveCount.toFixed(2) 
+  
+  $('.current_price').html('$'+elPrice)
+  $('.not-discount').html('$'+ notDiscount +'')
+  $('#save-count').html('($'+saveCount+')')  
+  $('#precent').html(percentDiscount[0]+'%')  
+  document.querySelectorAll('.product__info--button').forEach((el,index)=> {
+      el.addEventListener('click', function () {
+        console.log(_prod_array_base[index]);
+        var count_patches=$(el).find('.patch_size').text().split(' ')[0];
+        var elPrice = _prod_array_base[index].price
+        var notDiscount = _prod_array_base[index].compare                    
+        var saveCount = notDiscount - elPrice
+        saveCount = saveCount.toFixed(2)
+        var perPatch=((elPrice)/count_patches).toFixed(2);
+        $('.current_price').html('$'+elPrice)
+        $('.not-discount').html('$'+ notDiscount +'')
+        $('#save-count').html('($'+saveCount+')')
+        $('#precent').html(percentDiscount[index]+'%') 
+        console.log('SIZE', count_patches)
+        console.log('_prodpercent', _prodpercent)
+        if(_prodpercent[id]){
+          $('#product__info--sub_box').show()
+        }else{
+          $('#product__info--sub_box').hide()
+        }
+        if($('#two').is(':checked')){
+              setSubs(el,index) 
+        }
+  
+      });
+  })
+  
+  var currentMainPhoto = $('.product__info--button')[0].dataset.src
+  function changePhoto(button){
+    if (button){
+        var src = event.currentTarget.dataset.src
+        currentMainPhoto = src
+        $('.product__galery__bigImage_image')[0].srcset = src
+        $('.product__galery__smallImages_image').removeClass('active')
+        $('.product__galery__smallImages_image')[0].classList.add('active')
+    }else{
+        if($('.product__galery__smallImages_image')[0] == event.target){
+            $('.product__galery__bigImage_image')[0].srcset = currentMainPhoto
+        }else{
+          $('.product__galery__smallImages_image').removeClass('active')
+          event.target.classList.add('active')
+          var src = event.target.dataset.src
+          $('.product__galery__bigImage_image')[0].srcset = src
+        }
+    }
+  }
+  
+  function setSubs(el,index){
+    
+	const size=$(el).find('.patch_size').text().split(' ')[0]
+    const textField = document.querySelector('#subText')
+    price_off=(_prodpercent[id].compare-_prodpercent[id].a_price)
+    price_subs=parseFloat(_prodpercent[id].a_price)
+    switch (size) {
+      case '1':
+          monthlySave = _prodpercent[id].a_percent+'% ($'+(price_off).toFixed(2)+')';
+          size_set=90
+      break;
+      case '3':
+          monthlySave = _prodpercent[id].a_percent+'% ($'+(price_off).toFixed(2)+')';
+      break;
+
+      default:
+          price = 0;
+      break;
+  }
+    
+    if($('#two').is(':checked')){
+        textField.innerHTML = `Yes, Subscribe & Save! Automatically Receive<br><b>${size} Pack of Zoomies Sticks for $${price_subs.toFixed(2)}  + Free Shipping. Every 30 Days.</b> <br><span class="save_green">Total Monthly Savings: ${monthlySave}</span><br>Cancel Anytime. No Contracts!`
+    }else{
+      textField.innerHTML = 'Yes, Subscribe & Save!'
+    }
+    
+  }
+  
+  function checkboxClick(e){
+    
+	setSubs($('*[data-variant-id="'+id+'"]'),0)
+
+  }  
+
+</script>

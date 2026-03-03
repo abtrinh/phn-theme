@@ -1,0 +1,602 @@
+<!-- product  -->
+  <section class="product">
+      <div class="product__container container">
+          <div class="product__galery">
+              <div class="notDescTop">
+                  <h2 class="product__info__head">{{product.title}} Patches</h2>
+              </div>
+              <div class="product__galery__bigImage" id='full_image'>
+                  <img class="product__galery__bigImage_image" src="//cdn.shopify.com/s/files/1/0555/4300/5364/files/1_month_img_5d5f8a24-1279-452b-9ac1-cca3d574eb6e.png" />
+              </div>
+          </div>
+          <div class="product__info cream_prod">
+              <h2 class="product__info__head onlyDescTop">{{product.title}}</h2>
+              <div class="product__info__review review onlyDescTop"><span></span><a href='javascript:void(0)' class="product__info__review--active">(customer reviews)</a></div>
+              <div class="product__info-prices">
+                  <span class="current_price">$24.99</span><span class="not-discount" >$30.00</span>  <span class="price_details">($0.83/Patch)</span>
+                  <p class="save_text" >You Save:<span id="precent">16%</span><span id="save-count">($5.01)</span></p>
+                  <span><div class="yotpo-widget-instance" data-yotpo-instance-id="1267418" data-yotpo-product-id="{{product.id}}" data-yotpo-cart-product-id="{{item.product.id}}" data-yotpo-section-id="{{template.name}}"></div></span>
+              </div>
+              <p class="product__info__text" id="scollAnchor">Buy More and Save</p>
+              <div class="product__info__changer">
+                  <button class="product__info--button active" onclick="changePhoto('button');" data-src="//cdn.shopify.com/s/files/1/0555/4300/5364/files/1_month_img_5d5f8a24-1279-452b-9ac1-cca3d574eb6e.png">
+                      <b class="weight">1 MONTH</b>
+                      <!-- <span class="price_details">($46.74 per Jar)</span> -->
+                      <span class="patch_size">30 PATCHES</span>
+                      <span class="red_save"></span>
+                  </button>
+                  <button class="product__info--button" onclick="changePhoto('button');" data-src="//cdn.shopify.com/s/files/1/0555/4300/5364/files/3_month_img_012b12bb-71c7-43f1-8450-29a55e9ed388.png?v=1641930622">
+
+                      <div class="popular">
+                          <h4>Most Popular</h4>
+                      </div>
+                      <b class="weight">3 MONTHS</b>
+                      <!-- <span class="price_details">($31.16 per Jar)</span> -->
+                      <span class="patch_size">90 PATCHES</span>
+                      <span class="red_save">SAVE 44%</span>
+                  </button>
+                  <button class="product__info--button" onclick="changePhoto('button');" data-src="//cdn.shopify.com/s/files/1/0555/4300/5364/files/5_month_img_adddf7d5-a0ac-4f96-89e3-099fbf12c4fa.png?v=1641930622">
+
+                      <div class="popular">
+                          <h4>Best Value</h4>
+                      </div>
+                      <b class="weight">5 MONTHS</b>
+                      <!-- <span class="price_details">($28.04 per Jar)</span> -->
+                      <span class="patch_size">150 PATCHES</span>
+                      <span class="red_save">SAVE 50%</span>
+                  </button>
+<!--                   <select class="product__info__changer--select" style="display: none;">
+                    <option value="Pain Relief Cream 1 Pack (250 mg)">Pain Relief Cream 1 Pack (250 mg)</option>
+                    <option value="Pain Relief Cream 3 Pack (750 mg)">Pain Relief Cream 3 Pack (750 mg)</option>
+                    <option value="Pain Relief Cream 5 Pack (1,250 mg)">Pain Relief Cream 5 Pack (1,250 mg)</option>
+                  </select> -->
+              </div>
+              <div class="product__info--sub_box" style="display: none">
+                  <h3>Sign Up For Autoship Today And Save Even More!</h3>
+                  <label class="product__info--input-area" for="one" style="display: none;">
+                      <input type="radio" name="subsc" value="false" id="one"/>
+                      One-time purchase
+
+                  </label>
+                  <label class="product__info--input-area selected" for="two">
+                      <input type="checkbox" class="custom-checkbox" name="subsc" value="true" id="two" onclick="checkboxClick(this)"/>
+                      <label for="two"></label>
+                      <span id='subPrice' style="display: none;">25.61</span>
+                      <span id="subText" class="subText">Yes, Subscribe & Save!</span>
+                  </label>
+              </div>
+<!--
+              <div class="product__info__qty">
+                  <input type="number" class="product__info__qty__input" step='1' min="1" value="1" inputmode="numeric" maxlength="2"/>
+                  <input type="button" value="+" class="product__info__qty__plus"/>
+                  <input type="button" value="-" class="product__info__qty__minus"/>
+              </div>
+-->
+<!-- 					<div class="button_cart"> -->
+              <div class="buttonouter product__info__addToCart">
+                  <input class="item1" id="radio3" type="radio" name="item" value="24.99" data-set="1" data-konnective="1626" data-free-qty="0" data-item-id="19849" style="display:none;">
+                  <a href="javascript:void(0)" class="btn-default text-uppercase select-btn product__info__addToCart--button" btn-id="3"  data-price="24.99" data-qtypatches="30" data-months="1" >ADD TO CART</a>
+              </div>
+<!--
+              <div class="product__info__addToCart">
+                  <button class="product__info__addToCart--button">Add To Cart</button>
+              </div>
+-->
+              <div class="product__info__seals">
+                  <img class="product__info__seals--image" src="//cdn.shopify.com/s/files/1/0555/4300/5364/files/trustBadges.png?v=1616801677">
+              </div>		
+            
+            
+            
+            
+              <div class="product__info__wrapper">
+                <div class="product__info__wrapper__viewType">
+                    <button class="product__info__wrapper--active active" data-name="Description">Description</button>
+<!--                     <button class="product__info__wrapper--active"data-name="Reviews"><span class="shopify-product-reviews-badge" data-id="{{ product.id }}">Reviews</span></button> -->
+                    <button class="product__info__wrapper--active"data-name="Ingredients">Ingredients</button>
+                    <button class="product__info__wrapper--active"data-name="Directions">Directions</button>
+<!--                     <button class="product__info__wrapper--active"data-name="Analysis">Analysis Certificate</button> -->
+                </div>
+                <div class="product__info__wrapper__viewArea">
+                    <div id="descr" style='display: block;'>
+                          {{ product.description }}
+                    </div>
+                    <div id="revie" style="display: none;">
+
+                      <div class="yotpo yotpo-main-widget"
+                      data-product-id="{{ product.id }}"
+                      data-name="{{ product.title | escape }}"
+                      data-url="{{ shop.url }}{{ product.url }}"
+                      data-image-url="{{ product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&','%26'}}"
+                      data-price="{{ variant.price | money_without_currency }}"
+                      data-currency="{{ shop.currency }}"
+                      data-description="{{ product.description | escape }}">
+                    </div>
+                      {% comment %} <ol class="commentlist">
+                        <div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div>
+                      </ol> {% endcomment %}
+                    </div>
+                    <div id="video" style="display: none;text-align: center;">
+
+                    </div>
+                    <div id="ingre" style="display: none;">
+                      {{ product.metafields.product.ingredients| metafield_tag }}
+                    </div>
+                    <div id="direc" style="display: none;">
+                      {{ product.metafields.product.direction| metafield_tag }}
+
+                    </div>
+                    <div id="analy" style="display: none;">
+                        <img src="//cdn.shopify.com/s/files/1/0555/4300/5364/files/analysis_cream.jpg?v=1616801778">
+
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+            
+          </div>
+      </div>
+  </section>
+
+        <!-- end product  -->
+	<img class="mobile_img" src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/mobile_img_addsec.jpg" >
+<!-- new sections -->        
+       <div class="new_sec_second_page">
+         <div class="wrapper">
+            <h2>What is Inside the Immuni-Z Patch?</h2>
+            <div class="list">
+               <div class="forshad">
+                  <div class="item">
+                     <img class="check" src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/checked.png">
+                     <div class="text">
+                        <h2>Zinc</h2>
+                        <p>A popular treatment for the common cold, studies have found that if taken early enough, zinc reduces the duration of the common cold or flu.</p>
+                     </div>
+                     <img class="absolute_img" src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/1st_seal.png">
+                  </div>
+               </div>
+               <div class="forshad">
+                  <div class="item">
+                     <img class="check" src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/checked.png">
+                     <div class="text">
+                        <h2>Vitamin C</h2>
+                        <p>This ultimate defender assists white blood cells in identifying and killing viruses and bacteria, promoting a healthy body free of illness and disease.</p>
+                     </div>
+                     <img class="absolute_img" src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/2d_seal.png">
+                  </div>
+               </div>
+               <div class="forshad">
+                  <div class="item">
+                     <img class="check" src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/checked.png">
+                     <div class="text">
+                        <h2>Ginkgo Biloba</h2>
+                        <p>A powerful antioxidant that increases your body's blood flow and circulation. Attacks free radicals which improves immune response.</p>
+                     </div>
+                     <img class="absolute_img" src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/3d_seal.png">
+                  </div>
+               </div>
+               <div class="forshad">
+                  <div class="item">
+                     <img class="check" src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/checked.png">
+                     <div class="text">
+                        <h2>Echinacea</h2>
+                        <p>Positively stimulates the immune system by increasing the number of white blood cells which have direct antibacterial and antiviral effects.</p>
+                     </div>
+                     <img class="absolute_img" src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/4th_seal.png">
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+    <!-- end of new sections -->
+
+	<style type="text/css">
+      .reviewbox p{
+        margin-top: unset;
+      }
+      .reviewbox h2{
+        margin-top: 20px;
+        letter-spacing: unset;
+        font-weight: bold;
+        font-family: 'Open Sans';
+        font-size: 18px;
+        color: #a7a7a7;
+        text-transform:uppercase;
+      }
+    </style>
+    <div class="reviewsec section" id="sec4">
+      <div class="container">
+        <h3 class="text-center">Here’s what our customers have to say...</h3>
+        <div class="row">
+                                                                                                          <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="reviewbox">
+                      <div class="authortext">
+                        <div class="authorimg"><img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/6uwc0E_reviewimg1.png?v=1640299443" width="60" height="60" alt=""></div>
+                        <div class="authorcontent">
+                          <div class="authorname">Sherlynn G.<br>May 11, 2020</div>
+                          <div class="star"><img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/star.png?v=1638840018" width="123" height="20" alt=""></div>
+                        </div>
+                      </div>
+                      <p>"Hate taking vitamins by mouth, they have always tasted horrible to me, now after my gastric sleeve they make me nauseated. The vitamin patches are the best thing going. Thank you!"</p>
+                    </div>
+                  </div>
+                                              <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="reviewbox">
+                      <div class="authortext">
+                        <div class="authorimg"><img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/qFyf0u_reviewimg3.png?v=1640299443" width="60" height="60" alt=""></div>
+                        <div class="authorcontent">
+                          <div class="authorname">Michael B.<br>January 19, 2020</div>
+                          <div class="star"><img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/star.png?v=1638840018" width="123" height="20" alt=""></div>
+                        </div>
+                      </div>
+                      <p>"Thanks to these patches I don’t have to take anymore vitamin pills. I never did well with pills and it only got worse after my gastric bypass surgery! Thanks to these I am getting my daily protection without pills!"</p>
+                    </div>
+                  </div>
+                                              <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="reviewbox">
+                      <div class="authortext">
+                        <div class="authorimg"><img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/2TF68h_reviewimg2.png?v=1640299443" width="60" height="60" alt=""></div>
+                        <div class="authorcontent">
+                          <div class="authorname">Bryan D.<br>April 27, 2020</div>
+                          <div class="star"><img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/star.png?v=1638840018" width="123" height="20" alt=""></div>
+                        </div>
+                      </div>
+                      <p>"I love how easy it is every morning. After Covid 19 earlier this year I was very weakened. I’m trying to build up my immunity so I don’t get it again. So far, so good. Thanks so much Immuni-Z Patch for making these patches!"</p>
+                    </div>
+                  </div>
+                                        </div>
+      </div>
+    </div>
+
+	<div class="faqsec section" id="sec5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-xl-5 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="faqcontent">
+              <h3 class="text-center">Got Questions?</h3>
+              <h6 class="text-center">We’ve got you covered!</h6>            
+            </div>
+          </div>
+          <div class="col-xl-7 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="accordion">
+              
+                  <div class="accordion__item">
+                          <div class="accordion__title">
+                              <div class="accordion__arrow"><span class="accordion__arrow-item ">+</span></div> 
+                              <span class="accordion__title-text">Where should I apply the patch?</span>
+                          </div>
+                          <div class="accordion__content">
+              					<div><p>We recommend placing 1 patch on any part of your body. Ideally, you want to place it on a venous area that is free of hair, skin irritation, burns or open wounds.</p></div>
+
+                          </div>
+                  </div>
+                  <div class="accordion__item">
+                          <div class="accordion__title">
+                              <div class="accordion__arrow"><span class="accordion__arrow-item ">+</span></div> 
+                              <span class="accordion__title-text">How often do I need to wear a patch?</span>
+                          </div>
+                          <div class="accordion__content">
+              					<div><p>Only 1 patch a day is all you need! Our 24 Hour patches release cold fighting ingredients over time and help to supplement nutrient deficient lifestyles.</p></div>
+
+                          </div>
+                  </div>
+              
+                  <div class="accordion__item">
+                      <div class="accordion__title">
+                          <div class="accordion__arrow"><span class="accordion__arrow-item ">+</span></div> 
+                          <span class="accordion__title-text">How long does it last?</span>
+                      </div>
+                      <div class="accordion__content">
+                            <div><p>Immuniz Patches are designed to be worn for 24 hours at a time.</p></div>
+                      </div>
+                  </div>
+              
+              
+              	<div class="accordion__item">
+                      <div class="accordion__title">
+                          <div class="accordion__arrow"><span class="accordion__arrow-item ">+</span></div> 
+                          <span class="accordion__title-text">Can I get the patch wet?</span>
+                      </div>
+                      <div class="accordion__content">
+                            <div><p>Our tough patches are sweat and water resistant and designed to stay on for 24 hours. Created for those how have active lifestyles or naturally perspire.</p></div>
+                      </div>
+                  </div>
+              
+              <div class="accordion__item">
+                      <div class="accordion__title">
+                          <div class="accordion__arrow"><span class="accordion__arrow-item ">+</span></div> 
+                          <span class="accordion__title-text">When should I wear a patch?</span>
+                      </div>
+                      <div class="accordion__content">
+                            <div><p>You can wear them anytime, although we recommend applying a patch in the morning or evening before or after daily activities.</p></div>
+                      </div>
+                  </div>
+               	<div class="accordion__item">
+                      <div class="accordion__title">
+                          <div class="accordion__arrow"><span class="accordion__arrow-item ">+</span></div> 
+                          <span class="accordion__title-text">Why should I use vitamin patches instead of taking pills or other delivery methods?</span>
+                      </div>
+                      <div class="accordion__content">
+                            <div><p>Transdermal patches offer the highest bioavailability of nutrients over swallowing pills. This is because your digestive system eliminates 70% of all nutrients that pass through it.</p></div>
+                      </div>
+                  </div>
+              
+              	 <div class="accordion__item">
+                    <div class="accordion__title">
+                        <div class="accordion__arrow"><span class="accordion__arrow-item ">+</span></div> 
+                        <span class="accordion__title-text">How does the transdermal delivery of vitamins work?</span>
+                    </div>
+                    <div class="accordion__content">
+                          <div><p>When vitamins are absorbed through your skin they go directly into your bloodstream which provides your higher bioavailability. This is why Immuniz patches are more effective than other immunity boosting supplements.</p></div>
+                    </div>
+                </div>
+              
+                <div class="accordion__item">
+                    <div class="accordion__title">
+                        <div class="accordion__arrow"><span class="accordion__arrow-item ">+</span></div> 
+                        <span class="accordion__title-text">Is it safe to absorb vitamins through my skin into the bloodstream?</span>
+                    </div>
+                    <div class="accordion__content">
+                          <div><p>Yes! Absorbing nutrients through the skin is a “transdermal” delivery method of vitamins, and is a more effective way to receive your nutrients.</p></div>
+                    </div>
+                </div>
+              
+              <div class="accordion__item">
+                    <div class="accordion__title">
+                        <div class="accordion__arrow"><span class="accordion__arrow-item ">+</span></div> 
+                        <span class="accordion__title-text">Are the patches Hypoallergenic?</span>
+                    </div>
+                    <div class="accordion__content">
+                          <div><p>Yes! Our patches are made with hypo allergenic adhesive.</p></div>
+                    </div>
+                </div>
+              
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center section pb-0">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12"> 
+            <img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/eGuLGI_logos.png?v=1638840018" alt=""> 
+          </div>
+        </div>
+      </div>
+    </div>
+
+<span>
+    <script>
+  
+  let _prodtemplate= {};
+  let _prodpercent= {};
+
+{% assign prod = ''%}
+  {% for product in collections["immuni-z-patches"].products %}
+    {% assign prodjson = product.variants[0].id | json %}
+    {% assign prod = prod | append: prodjson | append: ',' %}
+    type='{{product.variants[0].selling_plan_allocations.first.selling_plan.price_adjustments[0].value_type}}'
+    if(type.toString()=='percentage'){
+  		_prodpercent[{{product.variants[0].id}}]='{{product.variants[0].selling_plan_allocations.first.selling_plan.price_adjustments[0].value}}'
+    }   
+  	_prodtemplate[{{product.variants[0].id}}]={{product.variants[0].selling_plan_allocations.first.selling_plan.id}}
+  {% endfor %}
+
+  {% assign prod_price = ''%}
+  {% for product in collections["immuni-z-patches"].products %}
+    {% assign prodjson = product.variants[0].price | json %}
+    {% assign prod_price = prod_price | append: prodjson | append: ',' %}
+  {% endfor %}
+  
+ </script>
+</span>
+<script>
+// clean prices
+  var dirtyProdPriceArr = `{{prod_price}}`
+  dirtyProdPriceArr = '['+(dirtyProdPriceArr.slice(0,-1))+']'
+  dirtyProdPriceArr = JSON.parse(dirtyProdPriceArr)
+  var  prodPriceArr = dirtyProdPriceArr.map(el=> { 
+    var arr = el.toString()
+    arr = Array.from(arr)
+    arr.splice(-2,0,'.')
+    arr = arr.join('')
+    return arr    
+  })
+  prodPriceArr = prodPriceArr.reverse()
+  console.log(prodPriceArr)
+
+
+  const percentDiscount = [15,39,45]
+    
+// clean id's
+  var dirtyProdArr = `{{ prod }}`;
+  var prodArr = '['+(dirtyProdArr.slice(0,-1))+']'
+  prodArr = JSON.parse(prodArr)
+  prodArr = prodArr.reverse()
+  var qty = 1;
+  document.querySelectorAll('.product__info--button').forEach((el,index)=> el.dataset.variantId = prodArr[index])
+  var id = $('.product__info--button:first-child').data('variantId');  
+  
+  $(document).on('click','.product__info__addToCart--button',function(){
+    
+    data_set={id:id,quantity:qty}
+    is_checked = $('#two').is(':checked');
+    
+    if(is_checked && _prodpercent[id]){
+      
+      data_set['form_type']='product'
+      data_set['selling_plan']=_prodtemplate[id]
+      
+    }
+
+    $.ajax({
+        type: 'POST', 
+        url: '/cart/add.js',
+        dataType: 'json', 
+        data: data_set,
+        success: function(data){ 
+          console.log(data)
+          cartUpdate()
+          open_upsell(upsell_array)
+          changeTotalOnPage()
+      }
+   });
+})
+$('.product__info--button').click(function(){
+    $('.product__info--button').removeClass('active')
+    $(this).addClass('active')
+    id = $(this).data('variantId');
+})
+$('.product__info__qty input[type=button]').click(function(){
+    var num = $('.product__info__qty__input').val()
+  var symbol = $(this).val()
+    symbol == '+'?num++:(num>1?num--:null)
+    $('.product__info__qty__input').val(num)
+    qty = num
+})
+$('.product__info__wrapper--active,.product__info__review--active').click(function(){
+  var name = $(this).data('name').toLowerCase().slice(0,5)
+    $('.product__info__wrapper--active').removeClass('active')
+    $(this).addClass('active') 
+    $('.product__info__wrapper__viewArea>div').hide()
+    $('#'+name).show()
+	if(typeof $(this).attr('aria-describedby') !== 'undefined' && $(this).attr('aria-describedby') !== false) {
+  		document.querySelector('#revie').scrollIntoView({behavior: 'smooth'});
+    }    
+})
+  $('body *').click(function(e){
+    if(e.target.dataset.link){
+      window.location.href = e.target.dataset.link
+    }
+  })
+  
+  
+  
+  var elPrice = prodPriceArr[0]*1 
+  elPrice = elPrice.toFixed(2)
+  var notDiscount = elPrice/(1-(percentDiscount[0]/100))
+  notDiscount = notDiscount.toFixed(2)
+  var saveCount = notDiscount - elPrice
+  saveCount = saveCount.toFixed(2) 
+  
+  $('.current_price').html('$'+elPrice)
+  $('.not-discount').html('($'+ notDiscount +')')
+  $('#save-count').html('$'+saveCount)  
+  $('#precent').html(percentDiscount[0]+'%') 
+  
+  document.querySelectorAll('.product__info--button').forEach((el,index)=> {
+        el.addEventListener('click', function () {
+                  
+            var elPrice = prodPriceArr[index]*1
+            elPrice = elPrice.toFixed(2)
+            var notDiscount = elPrice/(1-(percentDiscount[index]/100))                    
+            notDiscount = notDiscount.toFixed(2)
+            var saveCount = notDiscount - elPrice
+            saveCount = saveCount.toFixed(2)
+            $('.current_price').html('$'+elPrice)
+            $('.not-discount').html('($'+ notDiscount +')')
+            $('#save-count').html('$'+saveCount)
+            $('#precent').html(percentDiscount[index]+'%')
+                              
+ 			if(_prodpercent[id]){
+          	  	$('#product__info--sub_box').show()
+            }else{
+              $('#product__info--sub_box').hide()
+            }
+          
+            if($('#two').is(':checked')){
+                  setSubs(el,index) 
+            }
+                  
+        });
+      })
+  
+  var currentMainPhoto = $('.product__info--button')[0].dataset.src
+  function changePhoto(button){
+    if (button){
+      var src = event.currentTarget.dataset.src
+        currentMainPhoto = src
+        console.log(currentMainPhoto)
+        $('.product__galery__bigImage_image')[0].srcset = src
+//         $('.product__galery__smallImages_image').removeClass('active')
+//         $('.product__galery__smallImages_image')[0].classList.add('active')
+    }else{
+        if($('.product__galery__smallImages_image')[0] == event.target){
+      $('.product__galery__bigImage_image')[0].srcset = currentMainPhoto
+        }else{
+//           $('.product__galery__smallImages_image').removeClass('active')
+          event.target.classList.add('active')
+          var src = event.target.dataset.src
+          $('.product__galery__bigImage_image')[0].srcset = src
+        }
+    }
+  }
+
+ function setSubs(el,index){
+	const size=$(el).find('.patch_size').text().split(' ')[0]
+    const textField = document.querySelector('#subText')
+    price_off=(prodPriceArr[index]/100)*(100-_prodpercent[id])
+    
+    switch (size) {
+      case '1':
+          monthlySave = _prodpercent[id]+'% ($'+((prodPriceArr[index])-price_off).toFixed(2)+')';
+      break;
+      case '3':
+          monthlySave = _prodpercent[id]+'% ($'+((prodPriceArr[index])-price_off).toFixed(2)+')';
+
+      break;
+      case '5':
+          monthlySave = _prodpercent[id]+'% ($'+((prodPriceArr[index])-price_off).toFixed(2)+')';
+
+      break;
+      case 'Pa':
+          monthlySave = _prodpercent[id]+'% ($'+((prodPriceArr[index])-price_off).toFixed(2)+')';
+
+      break;
+
+      default:
+          price = 0;
+      break;
+  }
+    
+    if($('#two').is(':checked')){
+        textField.innerHTML = `Yes, Subscribe & Save! Automatically Receive<br><b>${size} Jar, for $${price_off.toFixed(2)} + Free Shipping. Every 30 Days.</b> <br><span class="save_green">Total Monthly Savings: ${monthlySave}</span><br>Cancel Anytime. No Contracts!`
+    }else{
+      textField.innerHTML = 'Yes, Subscribe & Save!'
+    }
+  }
+  
+  function checkboxClick(e){
+    
+	setSubs($('*[data-variant-id="'+id+'"]'),0)
+
+  }     
+  
+  
+  $(function() {
+	
+	//BEGIN
+	$(".accordion__title").on("click", function(e) {
+
+		e.preventDefault();
+		var $this = $(this);
+		if (!$this.hasClass("accordion-active")) {
+          
+			$(".accordion__content").slideUp(400);
+			$(".accordion__title").removeClass("accordion-active");
+			$('.accordion__arrow').removeClass('accordion__rotate');
+		}
+
+		$this.toggleClass("accordion-active");
+		$this.next().slideToggle();
+		$('.accordion__arrow',this).toggleClass('accordion__rotate');
+	});
+	//END
+	
+});
+  
+  
+</script>

@@ -149,16 +149,6 @@
     </div>
   </div>
 </div>
-
-{% unless product == empty %}
-  <script type="application/json" id="ProductJson-{{ section.id }}">
-    {{ product | json }}
-  </script>
-  <script type="application/json" id="ModelJson-{{ section.id }}">
-    {{ product.media | where: 'media_type', 'model' | json }}
-  </script>
-{% endunless %}
-
 <div id="upsell-data-container" style="display:none;">
   {% assign upsell_products = product.metafields.product.upsells.value %}
   {% if upsell_products %}

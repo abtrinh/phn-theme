@@ -10,8 +10,7 @@
   var upsell = 'yes';
   var page_product = 'pain-relief-patches';
   var title_text = 'You might also like';
-  var upsell_array = ['pain-relief-cream-sample','pain-relief-cream','calm-relax'];
-
+  var upsell_array = [{% for p in product.metafields.product.upsells.value %}'{{ p.handle }}'{% unless forloop.last %},{% endunless %}{% endfor %}];
   $(document).ready(function(){
     setProductInfo(page_product,title_text,upsell_array);
     $('.upsell_overlay').attr('data-upsell',upsell);

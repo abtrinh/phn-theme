@@ -1,54 +1,50 @@
-@media (min-width: 691px) and (max-width: 1244px){
-  .product__info.cream_prod{
-		grid-template-rows:80px .1fr .1fr .1fr 390px .1fr .1fr .1fr 2fr;
+/* --- Product Grid Section --- */
+
+/* Unified Tablet & Small Desktop Logic */
+@media (min-width: 636px) and (max-width: 1244px) {
+  .product__info.cream_prod {
+    /* Standardized to ensure the 390px main area doesn't collapse */
+    grid-template-rows: 80px auto auto auto 390px auto auto auto minmax(100px, 2fr);
   }
 }
-@media (max-width: 635px){
-    .product__info.cream_prod{
-		grid-template-rows:80px .1fr .1fr .1fr 390px .1fr .1fr .1fr 2fr;
-  	}
-}
-h2{
 
-/*   margin-block-start: 0.83em;
-  margin-block-end: 0.83em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
- */
-  
+/* Unified Mobile Logic */
+@media (max-width: 635px) {
+  .product__info.cream_prod {
+    grid-template-rows: 80px auto auto auto 390px auto auto auto minmax(100px, 2fr);
+  }
 }
-.product__info{
-  display: -ms-grid;
+
+.product__info {
   display: grid;
-  -ms-grid-columns: 44% 10% 27%;
   grid-template-columns: 44% 10% 27%;
-  -ms-grid-rows: 40px .1fr .1fr .1fr 200px .1fr .1fr .1fr 3fr;
-  grid-template-rows: 40px .1fr .1fr .1fr 200px .1fr .1fr .1fr 2fr;
-  -webkit-column-gap: calc(10px);
-  column-gap: calc(10px);
+  /* Replaced .1fr with 'auto' for better stability */
+  grid-template-rows: 40px auto auto auto 200px auto auto auto 2fr;
+  column-gap: 10px;
   padding-left: 30px;
 }
-@media (max-width: 768px){
-	
-  .product__info{
-    
-  	padding-left: 0px;
 
+@media (max-width: 768px) {
+  .product__info {
+    padding-left: 0;
+    /* On mobile, usually a 1-column grid is safer */
+    grid-template-columns: 1fr; 
+    grid-template-rows: auto;
   }
-
 }
-/* Container for the 3 items */
+
+/* --- Upsell Section (Optimized) --- */
+
 .upsell_product_list {
   display: flex;
   justify-content: space-between;
   gap: 15px;
   padding: 20px 0;
-  flex-wrap: nowrap; /* Keeps them in one row */
+  flex-wrap: nowrap;
 }
 
-/* Individual Item Styling */
 .upsell_item {
-  flex: 1; /* Gives all 3 items equal width */
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -57,7 +53,9 @@ h2{
   border: 1px solid #eee;
   padding: 10px;
   border-radius: 8px;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  /* Ensures buttons stay at the bottom regardless of text length */
+  justify-content: space-between; 
 }
 
 .upsell_item:hover {
@@ -65,7 +63,6 @@ h2{
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-/* Image sizing */
 .upsell_item_image img {
   max-width: 100%;
   height: auto;
@@ -74,11 +71,10 @@ h2{
   margin-bottom: 10px;
 }
 
-/* Text and Price */
 .upsell_item_info h5 {
   font-size: 14px;
   margin: 5px 0;
-  min-height: 40px; /* Keeps titles aligned even if one is longer */
+  min-height: 40px; 
   line-height: 1.2;
 }
 
@@ -88,13 +84,12 @@ h2{
   margin-bottom: 12px;
 }
 
-/* Button Styling (Matches your purple/green theme) */
 .upsell_add_btn {
   width: 100%;
-  background-color: #5cb85c; /* Matches your green 'Add to cart' */
+  background-color: #5cb85c;
   color: white;
   border: none;
-  padding: 8px 5px;
+  padding: 10px 5px; /* Increased padding for better touch target */
   border-radius: 4px;
   cursor: pointer;
   font-weight: 600;
@@ -106,14 +101,13 @@ h2{
   background-color: #4cae4c;
 }
 
-/* Mobile Responsiveness */
+/* Mobile Responsiveness Improvements */
 @media screen and (max-width: 600px) {
   .upsell_product_list {
-    flex-wrap: wrap; /* Stacks them on small phones for readability */
+    flex-wrap: wrap; 
   }
   .upsell_item {
-    flex: 0 0 48%; /* Shows 2 per row on mobile */
-    margin-bottom: 10px;
+    flex: 0 0 calc(50% - 10px); /* Better calculation for 2-per-row */
+    margin-bottom: 15px;
   }
 }
-

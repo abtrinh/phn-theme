@@ -149,40 +149,6 @@
     </div>
   </div>
 </div>
-<div id="upsell-data-container" style="display:none;">
-  {% assign upsell_products = product.metafields.product.upsells.value %}
-  {% if upsell_products %}
-    {% for p in upsell_products limit: 3 %}
-      <div class="upsell_item">
-        <div class="upsell_item_image">
-          <img src="{{ p.featured_image | img_url: '300x' }}" loading="lazy" alt="{{ p.title }}">
-        </div>
-        <div class="upsell_item_info">
-          <h5>{{ p.title }}</h5>
-          <p>{{ p.price | money }}</p>
-          <button type="button" class="btn upsell_add_btn" data-variant-id="{{ p.first_available_variant.id }}">
-            Add to cart
-          </button>
-        </div>
-      </div>
-    {% endfor %}
-  {% endif %}
-</div>
-
-<script>
-  $(document).ready(function(){
-    var upsell = 'yes';
-    var title_text = 'You might also like';
-    $('.upsell_overlay').attr('data-upsell', upsell);
-    var htmlContent = $('#upsell-data-container').html();
-    if(htmlContent && htmlContent.trim() !== "") {
-       $('.upsell_product_list').empty().html(htmlContent);
-    }
-    if(typeof setProductInfo === "function"){
-        setProductInfo('{{ product.handle }}', title_text, []);
-    }
-  });
-</script>
 
 {% schema %}
 {

@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
   <link rel="preconnect" href="https://monorail-edge.shopifysvc.com">
 
-  {%- comment -%} Redirect Logic: Moved to top of head to reduce "flash" {%- endcomment -%}
+  {%- comment -%} Redirect Logic {%- endcomment -%}
   {%- if template contains 'product' -%}
     <script>
       (function() {
@@ -30,39 +30,21 @@
     </script>
   {%- endif -%}
 
-  {%- comment -%} CSS Libraries {%- endcomment -%}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
 
-  {%- assign header_font = settings.type_header_font -%}
-  {%- assign base_font = settings.type_base_font -%}
-
   <link rel="stylesheet" href="{{ 'main.css' | asset_url }}">
   <link rel="stylesheet" href="{{ 'newstyle.css' | asset_url }}">
   <link rel="stylesheet" href="{{ 'hustle-popup.css' | asset_url }}">
   
+  {%- assign header_font = settings.type_header_font -%}
+  {%- assign base_font = settings.type_base_font -%}
   <link rel="preload" as="font" href="{{ header_font | font_url }}" type="font/woff2" crossorigin>
   <link rel="preload" as="font" href="{{ base_font | font_url }}" type="font/woff2" crossorigin>
-  <link rel="preload" href="{{ 'theme.js' | asset_url }}" as="script">
 
-  {%- if canonical_url != blank -%}<link rel="canonical" href="{{ canonical_url }}">{%- endif -%}
-  {%- if settings.favicon != blank -%}<link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">{%- endif -%}
-
-  {%- capture seo_title -%}
-    {%- if request.page_type == 'search' and search.performed == true -%}
-      {{ 'general.search.heading' | t: count: search.results_count }}: {{ 'general.search.results_with_count' | t: terms: search.terms, count: search.results_count }}
-    {%- else -%}
-      {{ page_title }}
-    {%- endif -%}
-    {%- if current_tags -%}{%- assign meta_tags = current_tags | join: ', ' -%} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags -}}{%- endif -%}
-    {%- if current_page != 1 -%} &ndash; {{ 'general.meta.page' | t: page: current_page }}{%- endif -%}
-    {%- assign escaped_page_title = page_title | escape -%}
-    {%- unless escaped_page_title contains shop.name -%} &ndash; {{ shop.name }}{%- endunless -%}
-  {%- endcapture -%}
-  <title>{{ seo_title | strip }}</title>
-
+  <title>{{ page_title }}</title>
   {%- if page_description -%}<meta name="description" content="{{ page_description | escape }}">{%- endif -%}
 
   {% include 'social-meta-tags' %}
@@ -71,7 +53,7 @@
   <style>
     {{ header_font | font_face: font_display: 'swap' }}
     {{ base_font | font_face: font_display: 'swap' }}
-    *,::after,::before{box-sizing:border-box}body{margin:0;background-color:var(--color-body);font-size:calc(var(--font-size-base) * 1px);font-family:var(--font-stack-body);color:var(--color-text);line-height:1.5;-webkit-font-smoothing:antialiased}.visually-hidden{position:absolute!important;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0}.grid{list-style:none;margin:0;padding:0;margin-left:-30px}.grid__item{float:left;padding-left:30px;width:100%}.site-header{position:relative;background-color:var(--color-body)}.main-content{opacity:0}
+    *,::after,::before{box-sizing:border-box}body{margin:0}body,html{background-color:var(--color-body)}body,button{font-size:calc(var(--font-size-base) * 1px);font-family:var(--font-stack-body);color:var(--color-text);line-height:1.5;-webkit-font-smoothing:antialiased}.border-bottom{border-bottom:1px solid var(--color-border)}.btn--link{background-color:transparent;border:0;margin:0;color:var(--color-text);text-align:left}.icon{display:inline-block;width:20px;height:20px;vertical-align:middle;fill:currentColor}.visually-hidden{position:absolute!important;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0}li{list-style:none}.list--inline{padding:0;margin:0}.list--inline>li{display:inline-block;margin-bottom:0;vertical-align:middle}a{color:var(--color-text);text-decoration:none}.grid{list-style:none;margin:0;padding:0;margin-left:-30px}.grid::after{content:'';display:table;clear:both}@media only screen and (max-width:749px){.grid{margin-left:-22px}}.grid__item{float:left;padding-left:30px;width:100%}@media only screen and (max-width:749px){.grid__item{padding-left:22px}}.site-header{position:relative;background-color:var(--color-body)}@media only screen and (max-width:749px){.site-header{border-bottom:1px solid var(--color-border)}}.site-header__icons-wrapper{position:relative;display:flex;width:100%;align-items:center;justify-content:flex-end}.site-nav{position:relative;padding:0;text-align:center;margin:25px 0}.site-nav__link{display:block;white-space:nowrap}.site-header__mobile-nav{z-index:11;position:relative;background-color:var(--color-body)}@media only screen and (max-width:749px){.site-header__mobile-nav{display:flex;width:100%;align-items:center}}.main-content{opacity:0}
   </style>
 
   <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}" type="text/css" media="print" onload="this.media='all';">
@@ -97,10 +79,10 @@
   {%- endif -%}
 
   <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'my-scripts.js' | asset_url }}" defer></script>
+  <script src="{{ 'my-scripts.js' | asset_url }}"></script>
   <script src="{{ 'lazysizes.js' | asset_url }}" async="async"></script>
 
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TDHQFTL');</script>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TDHQTL');</script>
   
   <script>
     window.dataLayer = window.dataLayer || [];

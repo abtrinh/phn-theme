@@ -53,50 +53,35 @@
     *,::after,::before{box-sizing:border-box}body{margin:0}body,html{background-color:var(--color-body)}body,button{font-size:calc(var(--font-size-base) * 1px);font-family:var(--font-stack-body);color:var(--color-text);line-height:1.5;-webkit-font-smoothing:antialiased}.border-bottom{border-bottom:1px solid var(--color-border)}.btn--link{background-color:transparent;border:0;margin:0;color:var(--color-text);text-align:left}.icon{display:inline-block;width:20px;height:20px;vertical-align:middle;fill:currentColor}.visually-hidden{position:absolute!important;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0}li{list-style:none}.list--inline{padding:0;margin:0}.list--inline>li{display:inline-block;margin-bottom:0;vertical-align:middle}a{color:var(--color-text);text-decoration:none}.grid{list-style:none;margin:0;padding:0;margin-left:-30px}.grid::after{content:'';display:table;clear:both}@media only screen and (max-width:749px){.grid{margin-left:-22px}}.grid__item{float:left;padding-left:30px;width:100%}@media only screen and (max-width:749px){.grid__item{padding-left:22px}}.site-header{position:relative;background-color:var(--color-body)}@media only screen and (max-width:749px){.site-header{border-bottom:1px solid var(--color-border)}}.site-header__icons-wrapper{position:relative;display:flex;width:100%;align-items:center;justify-content:flex-end}.site-nav{position:relative;padding:0;text-align:center;margin:25px 0}.site-nav__link{display:block;white-space:nowrap}.site-header__mobile-nav{z-index:11;position:relative;background-color:var(--color-body)}@media only screen and (max-width:749px){.site-header__mobile-nav{display:flex;width:100%;align-items:center}}.main-content{opacity:0}
   </style>
 
-  <script>
-    window.performance.mark('debut:theme_stylesheet_loaded.start');
-    function onLoadStylesheet() {
-      performance.mark('debut:theme_stylesheet_loaded.end');
-      performance.measure('debut:theme_stylesheet_loaded', 'debut:theme_stylesheet_loaded.start', 'debut:theme_stylesheet_loaded.end');
-      var url = "{{ 'theme.css' | asset_url }}";
-      var link = document.querySelector('link[href="' + url + '"]');
-      if(link) { link.loaded = true; link.dispatchEvent(new Event('load')); }
-    }
-  </script>
-  <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}" type="text/css" media="print" onload="this.media='all';onLoadStylesheet()">
+  <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}" type="text/css" media="print" onload="this.media='all';">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
 
   <script>
     var theme = {
-      moneyFormat: {{ shop.money_format | json }},
+      breakpoints: { medium: 750, large: 990, widescreen: 1400 },
       strings: {
         addToCart: {{ 'products.product.add_to_cart' | t | json }},
         soldOut: {{ 'products.product.sold_out' | t | json }},
-        unavailable: {{ 'products.product.unavailable' | t | json }}
-      }
+        unavailable: {{ 'products.product.unavailable' | t | json }},
+        regularPrice: {{ 'products.product.regular_price' | t | json }},
+        salePrice: {{ 'products.product.sale_price' | t | json }},
+        sale: {{ 'products.product.on_sale' | t | json }},
+        oneCartCount: {{ 'cart.popup.cart_count' | t: count: 1 | json }},
+        otherCartCount: {{ 'cart.popup.cart_count' | t: count: '[count]' | json }}
+      },
+      moneyFormat: {{ shop.money_format | json }}
     };
     document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
   </script>
-
-  {%- if request.page_type contains 'customers/' -%}
-    <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
-  {%- endif -%}
 
   <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'my-scripts.js' | asset_url }}"></script>
   <script src="{{ 'lazysizes.js' | asset_url }}" async="async"></script>
 
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TDHQFTL');</script>
-  
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'AW-722818689');
-  </script>
 
   {{ content_for_header }}
   {% include 'pagefly-header' %}
@@ -112,6 +97,10 @@
     </main>
     {% section 'footer' %}
   </div>
+
+  {%- if template contains 'product' -%}
+    {% section 'custom-upsell' %}
+  {%- endif -%}
 
   {% include 'appstle-subscription-helper' %}
   {% include 'recent-box' %}

@@ -6,12 +6,10 @@
   </div>
 
   <div class='site_nav_sticky sticky'>
-    {% comment %} --- Left: Navigation Menu --- {% endcomment %}
     <div class='item_menu menu-left'>
       {% render 'site-nav', linklist: section.settings.main_linklist, linklistmobile: section.settings.main_linklist_mob, wrapper_class: 'site-nav--centered' %}
     </div>
     
-    {% comment %} --- Center: Logo --- {% endcomment %}
     <div class='item_menu menu-center'>
       <div class="header__container">
         <div class="header__logo">
@@ -26,7 +24,6 @@
       </div>
     </div>
 
-    {% comment %} --- Right: Help Text & Cart --- {% endcomment %}
     <div class='item_menu menu-right'>
       <div class="header__cart">
         <div class="header_info__text">
@@ -48,14 +45,24 @@
 </section>
 
 <style>
-  /* Flexbox Layout for the Sticky Bar */
+  .header .banner_bg {
+    background-image: url({{ section.settings.header_desktop | img_url: '1000x' }});
+    display: block;
+    width: 100%;
+    max-width: 1000px;
+    height: 70px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 auto;
+  }
+
   .site_nav_sticky {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 20px;
-    background-color: #ffffff;
-    border-bottom: 1px solid #f4f4f4;
+    padding: 10px 20px;
+    background: #fff;
   }
 
   .site_nav_sticky .item_menu {
@@ -68,23 +75,16 @@
   .menu-center { justify-content: center; }
   .menu-right { justify-content: flex-end; }
 
-  /* Ensure Logo doesn't shift layout */
   .header__link_img {
     display: block;
+    width: 180px;
     height: auto;
-    max-width: 180px;
   }
 
-  /* Cart & Info Text Alignment */
   .header__cart {
     display: flex;
     align-items: center;
     gap: 15px;
-  }
-
-  .header_info__text {
-    font-size: 13px;
-    white-space: nowrap;
   }
 
   .cart_link {
@@ -93,39 +93,25 @@
     position: relative;
   }
 
-  /* Banner Aspect Ratio Fix for CLS */
-  .header .banner_bg {
-    background-image:url({{ section.settings.header_desktop | img_url: '1000x70' }});
-    width: 100%;
-    max-width: 1000px;
-    aspect-ratio: 1000 / 70;
-    height: auto;
-    background-size: contain;
-    background-repeat: no-repeat;
-    display: flex;
-    margin: 0 auto;
-  }
-
   @media(max-width:1240px) {
     .header .banner_bg {
-      background-image:url({{ section.settings.header_tablet | img_url: '600x70' }});
+      background-image: url({{ section.settings.header_tablet | img_url: '600x' }});
       max-width: 600px;
-      aspect-ratio: 600 / 70;
+      height: 70px;
     }     
   }
 
   @media(max-width:830px) {
     .header .banner_bg {
-      background-image:url({{ section.settings.header_mobile | img_url: '500x140' }});
+      background-image: url({{ section.settings.header_mobile | img_url: '500x' }});
       max-width: 258px;
-      aspect-ratio: 258 / 140;
-      margin-left: 10px;
+      height: 140px;
     }
     .header_info__text {
-      display: none; /* Hide phone text on small mobile to save space */
+      display: none;
     }
     .site_nav_sticky {
-      padding: 5px 10px;
+      padding: 10px;
     }
   }
 </style>

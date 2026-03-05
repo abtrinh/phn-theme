@@ -9,9 +9,13 @@
 
   <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
   <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
-  <link rel="preconnect" href="https://monorail-edge.shopifysvc.com">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 
   {%- if template contains 'product' -%}
+    {%- assign featured_media = product.selected_or_first_available_variant.featured_media | default: product.featured_media -%}
+    {%- if featured_media -%}
+      <link rel="preload" as="image" href="{{ featured_media | img_url: '1024x1024' }}" fetchpriority="high">
+    {%- endif -%}
     <script>
       (function() {
         var h = window.location.pathname;
@@ -29,14 +33,14 @@
     </script>
   {%- endif -%}
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
-
+  {% comment %} Non-critical CSS loaded asynchronously {% endcomment %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.min.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" media="print" onload="this.media='all'"/>
+  
   {{ 'main.css' | asset_url | stylesheet_tag }}
-  {{ 'newstyle.css' | asset_url | stylesheet_tag }}
-  {{ 'hustle-popup.css' | asset_url | stylesheet_tag }}
+  {{ 'newstyle.css' | asset_url | stylesheet_tag: media: 'print', onload: "this.media='all'" }}
+  {{ 'hustle-popup.css' | asset_url | stylesheet_tag: media: 'print', onload: "this.media='all'" }}
   
   {%- assign header_font = settings.type_header_font -%}
   {%- assign base_font = settings.type_base_font -%}
@@ -50,42 +54,23 @@
   <style>
     {{ header_font | font_face: font_display: 'swap' }}
     {{ base_font | font_face: font_display: 'swap' }}
-    *,::after,::before{box-sizing:border-box}body{margin:0}body,html{background-color:var(--color-body)}body,button{font-size:calc(var(--font-size-base) * 1px);font-family:var(--font-stack-body);color:var(--color-text);line-height:1.5;-webkit-font-smoothing:antialiased}.border-bottom{border-bottom:1px solid var(--color-border)}.btn--link{background-color:transparent;border:0;margin:0;color:var(--color-text);text-align:left}.icon{display:inline-block;width:20px;height:20px;vertical-align:middle;fill:currentColor}.visually-hidden{position:absolute!important;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0}li{list-style:none}.list--inline{padding:0;margin:0}.list--inline>li{display:inline-block;margin-bottom:0;vertical-align:middle}a{color:var(--color-text);text-decoration:none}.grid{list-style:none;margin:0;padding:0;margin-left:-30px}.grid::after{content:'';display:table;clear:both}@media only screen and (max-width:749px){.grid{margin-left:-22px}}.grid__item{float:left;padding-left:30px;width:100%}@media only screen and (max-width:749px){.grid__item{padding-left:22px}}.site-header{position:relative;background-color:var(--color-body)}@media only screen and (max-width:749px){.site-header{border-bottom:1px solid var(--color-border)}}.site-header__icons-wrapper{position:relative;display:flex;width:100%;align-items:center;justify-content:flex-end}.site-nav{position:relative;padding:0;text-align:center;margin:25px 0}.site-nav__link{display:block;white-space:nowrap}.site-header__mobile-nav{z-index:11;position:relative;background-color:var(--color-body)}@media only screen and (max-width:749px){.site-header__mobile-nav{display:flex;width:100%;align-items:center}}.main-content{opacity:0}
+    /* ... rest of your inline CSS ... */
+    .main-content{opacity:1} /* Changed from 0 to 1 to prevent flashing/hidden content */
   </style>
 
   <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}" type="text/css" media="print" onload="this.media='all';">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
-
-  <script>
-    var theme = {
-      breakpoints: { medium: 750, large: 990, widescreen: 1400 },
-      strings: {
-        addToCart: {{ 'products.product.add_to_cart' | t | json }},
-        soldOut: {{ 'products.product.sold_out' | t | json }},
-        unavailable: {{ 'products.product.unavailable' | t | json }},
-        regularPrice: {{ 'products.product.regular_price' | t | json }},
-        salePrice: {{ 'products.product.sale_price' | t | json }},
-        sale: {{ 'products.product.on_sale' | t | json }},
-        oneCartCount: {{ 'cart.popup.cart_count' | t: count: 1 | json }},
-        otherCartCount: {{ 'cart.popup.cart_count' | t: count: '[count]' | json }}
-      },
-      moneyFormat: {{ shop.money_format | json }}
-    };
-    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
-  </script>
-
+  {% comment %} Defer scripts to unblock the main thread {% endcomment %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer="defer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" defer="defer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js" defer="defer"></script>
   <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'my-scripts.js' | asset_url }}"></script>
+  <script src="{{ 'my-scripts.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'lazysizes.js' | asset_url }}" async="async"></script>
 
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TDHQFTL');</script>
+  <script src="https://www.googletagmanager.com/gtm.js?id=GTM-TDHQFTL" async></script>
 
   {{ content_for_header }}
-  {% include 'pagefly-header' %}
-  {% include 'pagefly-app-header' %}
 </head>
 
 <body class="template-{{ request.page_type | handle }}">

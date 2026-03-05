@@ -38,8 +38,22 @@
       {%- assign featured_media = current_variant.featured_media | default: product.featured_media -%}
 
       {%- for media in product.media -%}
-        {% include 'media', media: media, featured_media: featured_media, height: height, enable_image_zoom: enable_image_zoom, image_zoom_size: product_image_zoom_size, image_scale: product_image_scale %}
-      {%- endfor -%}
+  {%- comment -%} Add logic to prioritize the first image (LCP) {%- endcomment -%}
+  {%- assign priority = 'auto' -%}
+  {%- if forloop.first -%}
+     {%- assign priority = 'high' -%}
+  {%- endif -%}
+  
+  {% include 'media', 
+     media: media, 
+     featured_media: featured_media, 
+     height: height, 
+     enable_image_zoom: enable_image_zoom, 
+     image_zoom_size: product_image_zoom_size, 
+     image_scale: product_image_scale,
+     fetchpriority: priority 
+  %}
+{%- endfor -%}
 
       <noscript>
         <img src="{{ featured_media | img_url: '600x600', scale: product_image_scale }}" alt="{{ featured_media.alt }}" id="FeaturedMedia-{{ section.id }}" class="product-featured-media" style="max-width: {{ height }}px;">

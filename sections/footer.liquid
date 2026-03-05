@@ -9,7 +9,7 @@
     <div class="footer__logo">
       <a href="/" class="footer-link">
         <img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/logos_6d52dbae-48ca-4352-a543-089d768a7ca4.png?v=1689550352" 
-             class="header__link_img" 
+             class="footer__logo_img" 
              width="180" 
              height="65" 
              alt="{{ shop.name | escape }}"
@@ -21,12 +21,12 @@
         {%- if settings.social_instagram_link != blank -%}<a target="_blank" href="{{ settings.social_instagram_link }}" class="footer__left__social__link"><i class="fa fa-instagram"></i></a>{%- endif -%}
       </div>
       <div class="footer__left__text_desc">
-        <p class="footer__right__text__text">We believe people have a right to high quality, fair priced, plant-based pain relief products. We strive to share our knowledge with the world and to clear up any misconceptions that are out there.</p>
+        <p class="footer__desc_text">We believe people have a right to high quality, fair priced, plant-based pain relief products. We strive to share our knowledge with the world and to clear up any misconceptions that are out there.</p>
       </div>
     </div>
 
     <div class="footer__left__quick">
-      <h3 class="footer__left__quick__head">QUICK LINKS</h3>
+      <h3 class="footer__heading">QUICK LINKS</h3>
       <ul class="footer__left__quick__links">
         {% for link in linklists.footer.links %}
           <li>
@@ -38,20 +38,20 @@
 
     <div class="right_payments">
       <div class="footer__right__payment">
-        <h3 class="footer__right__payment__text">ACCEPTED PAYMENT METHODS</h3>
-        <img class="footer__right__payment__img" 
+        <h3 class="footer__heading">ACCEPTED PAYMENT METHODS</h3>
+        <img class="footer__payment_img payment-methods" 
              src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/cc-logos_4038009d-e397-4bfe-bbe9-81e6dd6d98d9.png?v=1749067687" 
-             width="350" 
-             height="35" 
+             width="280" 
+             height="28" 
              alt="Accepted Payment Methods"
              loading="lazy">
       </div>
       <div class="footer__right__payment top_margin">
-        <h3 class="footer__right__payment__text">SHIPPING SERVICES</h3>
-        <img class="footer__right__payment__img" 
+        <h3 class="footer__heading">SHIPPING SERVICES</h3>
+        <img class="footer__payment_img shipping-logos" 
              src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/shipping_logos.png?v=1689892595" 
-             width="250" 
-             height="40" 
+             width="200" 
+             height="32" 
              alt="Shipping Services"
              loading="lazy">
       </div>
@@ -59,9 +59,9 @@
 
     <div class="newsletter_footer">
       <div class="footer__right__payment">
-        <h3 class="footer__right__payment__text">GET ON THE LIST</h3>
-        <p>Get 10% Off Your First Order! Sign up today to get exclusive promotions and limited-time discounts.</p>
-        <p style="font-size: 10px;">*Offer applies to new customers only.</p>
+        <h3 class="footer__heading">GET ON THE LIST</h3>
+        <p class="newsletter_p">Get 10% Off Your First Order! Sign up today to get exclusive promotions and limited-time discounts.</p>
+        <p class="newsletter_p_small">*Offer applies to new customers only. Limit 1 discount code per customer.</p>
       </div>
       {% render 'newsletter' %}
     </div>
@@ -70,57 +70,65 @@
   <div class="footer__copyright">
     <div class="container">
       <p>All Rights Reserved, purityhempnaturals.com<br>
-      *All products are legal in all 50 states. Representations regarding efficacy have not been evaluated by the FDA.</p>
+      *All products are legal in all 50 states. Representations regarding efficacy and safety have not been evaluated by the FDA. This product is not intended to diagnose, prevent, treat, or cure any disease.</p>
     </div>
   </div>
 </section>
 
 <style>
-  .footer { background-color:#e5e5e5; color:#565a5d; position:relative; z-index:10; width:100%; }
-  .footer p { color: #565a5d; font-size: 14px; line-height: 1.5; }
+  /* Base Footer Styles */
+  .footer { background-color:#e5e5e5; color:#565a5d; position:relative; z-index:10; width:100%; font-family: sans-serif; }
+  .footer p { color: #565a5d; font-size: 14px; line-height: 1.5; margin: 10px 0; }
   
-  /* Grid Layout for Desktop */
+  /* Desktop Grid Layout */
   .footer__link-text-area {
     padding: 45px 0 60px;
     display: grid;
     grid-template-columns: 1.3fr 0.7fr 1fr 1fr;
-    gap: 20px;
+    gap: 30px;
   }
 
-  /* Image Scaling Fixes (Prevents Stretching) */
+  /* Universal Image Fix (Sharp & Proportional) */
   .footer img {
-    height: auto !important; /* Forces aspect ratio preservation */
+    height: auto !important; /* Forces the browser to respect aspect ratio */
     max-width: 100%;
     display: block;
+    image-rendering: -webkit-optimize-contrast; /* Sharpens logos */
   }
-  
-  .footer__logo img { max-width: 180px; }
-  .footer__right__payment__img { width: 100%; max-width: 350px; }
 
-  /* Typography & Hover */
-  .footer__left__quick__head, .footer__right__payment__text {
-    margin-bottom: 18px; font-weight: 900; color: #777; font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+  .footer__logo_img { width: 180px; }
+  .payment-methods { width: 280px; }
+  .shipping-logos { width: 200px; }
+
+  /* Typography */
+  .footer__heading {
+    margin-bottom: 18px; font-weight: 900; color: #777; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase;
   }
   .footer__left__quick__links { list-style: none; padding: 0; margin: 0; }
-  .footer__left__quick__links__link { text-decoration: none; color: #565a5d; font-size: 14px; padding: 7px 0; display: block; transition: color .2s; }
+  .footer__left__quick__links__link { text-decoration: none; color: #565a5d; font-size: 14px; padding: 6px 0; display: block; transition: color .2s; }
   .footer__left__quick__links__link:hover { color: #b752b7; }
+  
+  .newsletter_p { font-style: italic; font-size: 13px !important; }
+  .newsletter_p_small { font-size: 11px !important; opacity: 0.8; }
 
   /* Social Icons */
-  .footer__left__social { display: flex; gap: 15px; margin: 15px 0; }
-  .footer__left__social__link { color: #565a5d; font-size: 20px; }
+  .footer__left__social { display: flex; gap: 12px; margin: 15px 0; }
+  .footer__left__social__link { color: #565a5d; font-size: 18px; transition: color .2s; }
   .footer__left__social__link:hover { color: #b752b7; }
 
-  .footer__copyright { border-top: 1px solid rgba(25,25,25,.1); padding: 20px 0; font-size: 11px; text-align: center; }
+  /* Footer Bottom */
+  .footer__copyright { border-top: 1px solid rgba(25,25,25,.1); padding: 25px 0; font-size: 11px; text-align: center; }
+  .top_margin { margin-top: 25px; }
 
-  /* Mobile Responsive Fix */
-  @media screen and (max-width: 689px) {
+  /* Responsive Mobile Layout (Phones) */
+  @media screen and (max-width: 767px) {
     .footer__link-text-area {
-      grid-template-columns: 1fr 1fr; /* Two columns for links and payments */
+      grid-template-columns: 1fr 1fr; /* 2 Column layout for links/payments */
+      padding: 30px 15px;
+      gap: 20px;
     }
-    .footer__logo { grid-column: span 2; margin-bottom: 20px; }
-    .newsletter_footer { grid-column: span 2; margin-top: 20px; }
-    .footer__logo img { margin: 0 auto; }
-    .footer__left__social { justify-content: center; }
-    .footer__right__text__text { text-align: center; }
-  }
-</style>
+    .footer__logo, .newsletter_footer {
+      grid-column: span 2; /* Full width items */
+      text-align: center;
+    }
+    .footer__left

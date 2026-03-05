@@ -7,18 +7,30 @@
   <div class="footer__link-text-area container">
     
     <div class="footer__logo">
-      <a href="/" class="footer-link">
+      <a href="/" class="footer-link" aria-label="Go to homepage">
         <img src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/logos_6d52dbae-48ca-4352-a543-089d768a7ca4.png?v=1689550352" 
              class="footer__logo_img" 
              width="180" 
              height="65" 
-             alt="{{ shop.name | escape }}"
+             alt="Purity Hemp Naturals Logo"
              loading="lazy">
       </a>
       <div class="footer__left__social">
-        {%- if settings.social_twitter_link != blank -%}<a target="_blank" href="{{ settings.social_twitter_link }}" class="footer__left__social__link"><i class="fa fa-twitter"></i></a>{%- endif -%}
-        {%- if settings.social_facebook_link != blank -%}<a target="_blank" href="{{ settings.social_facebook_link }}" class="footer__left__social__link"><i class="fa fa-facebook"></i></a>{%- endif -%}
-        {%- if settings.social_instagram_link != blank -%}<a target="_blank" href="{{ settings.social_instagram_link }}" class="footer__left__social__link"><i class="fa fa-instagram"></i></a>{%- endif -%}
+        {%- if settings.social_twitter_link != blank -%}
+          <a target="_blank" href="{{ settings.social_twitter_link }}" class="footer__left__social__link" aria-label="Follow us on Twitter">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+          </a>
+        {%- endif -%}
+        {%- if settings.social_facebook_link != blank -%}
+          <a target="_blank" href="{{ settings.social_facebook_link }}" class="footer__left__social__link" aria-label="Follow us on Facebook">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+          </a>
+        {%- endif -%}
+        {%- if settings.social_instagram_link != blank -%}
+          <a target="_blank" href="{{ settings.social_instagram_link }}" class="footer__left__social__link" aria-label="Follow us on Instagram">
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+          </a>
+        {%- endif -%}
       </div>
       <div class="footer__left__text_desc">
         <p class="footer__desc_text">We believe people have a right to high quality, fair priced, plant-based pain relief products. We strive to share our knowledge with the world and to clear up any misconceptions that are out there.</p>
@@ -26,7 +38,7 @@
     </div>
 
     <div class="footer__left__quick">
-      <h3 class="footer__heading">QUICK LINKS</h3>
+      <h2 class="footer__heading">QUICK LINKS</h2>
       <ul class="footer__left__quick__links">
         {% for link in linklists.footer.links %}
           <li>
@@ -38,28 +50,28 @@
 
     <div class="right_payments">
       <div class="footer__right__payment">
-        <h3 class="footer__heading">ACCEPTED PAYMENT METHODS</h3>
+        <h2 class="footer__heading">ACCEPTED PAYMENT METHODS</h2>
         <img class="footer__payment_img payment-methods" 
              src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/cc-logos_4038009d-e397-4bfe-bbe9-81e6dd6d98d9.png?v=1749067687" 
              width="280" 
              height="28" 
-             alt="Accepted Payment Methods"
+             alt="Visa, Mastercard, and Discover cards accepted"
              loading="lazy">
       </div>
       <div class="footer__right__payment top_margin">
-        <h3 class="footer__heading">SHIPPING SERVICES</h3>
+        <h2 class="footer__heading">SHIPPING SERVICES</h2>
         <img class="footer__payment_img shipping-logos" 
              src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/shipping_logos.png?v=1689892595" 
              width="200" 
              height="32" 
-             alt="Shipping Services"
+             alt="UPS and USPS shipping services"
              loading="lazy">
       </div>
     </div>
 
     <div class="newsletter_footer">
       <div class="footer__right__payment">
-        <h3 class="footer__heading">GET ON THE LIST</h3>
+        <h2 class="footer__heading">GET ON THE LIST</h2>
         <p class="newsletter_p">Get 20% Off Your First Order! Sign up today to get exclusive promotions and limited-time discounts.</p>
         <p class="newsletter_p_small">*Offer applies to new customers only. Limit 1 discount code per customer.</p>
       </div>
@@ -76,8 +88,8 @@
 </section>
 
 <style>
-  .footer { background-color:#e5e5e5; color:#565a5d; position:relative; z-index:10; width:100%; font-family: sans-serif; }
-  .footer p { color: #565a5d; font-size: 14px; line-height: 1.5; margin: 10px 0; }
+  .footer { background-color:#e5e5e5; color:#404040; position:relative; z-index:10; width:100%; font-family: sans-serif; }
+  .footer p { color: #404040; font-size: 14px; line-height: 1.6; margin: 10px 0; }
   
   .footer__link-text-area {
     padding: 45px 0 60px;
@@ -98,20 +110,20 @@
   .shipping-logos { width: 150px; }
 
   .footer__heading {
-    margin-bottom: 18px; font-weight: 900; color: #777; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase;
+    margin-bottom: 18px; font-weight: 900; color: #555; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase;
   }
   .footer__left__quick__links { list-style: none; padding: 0; margin: 0; }
-  .footer__left__quick__links__link { text-decoration: none; color: #565a5d; font-size: 14px; padding: 6px 0; display: block; transition: color .2s; }
+  .footer__left__quick__links__link { text-decoration: none; color: #404040; font-size: 15px; padding: 10px 0; display: block; transition: color .2s; }
   .footer__left__quick__links__link:hover { color: #b752b7; }
   
-  .newsletter_p { font-style: italic; font-size: 13px !important; }
-  .newsletter_p_small { font-size: 11px !important; opacity: 0.8; }
+  .newsletter_p { font-style: italic; font-size: 14px !important; }
+  .newsletter_p_small { font-size: 11px !important; opacity: 0.9; }
 
-  .footer__left__social { display: flex; gap: 12px; margin: 15px 0; }
-  .footer__left__social__link { color: #565a5d; font-size: 18px; transition: color .2s; }
+  .footer__left__social { display: flex; gap: 15px; margin: 15px 0; }
+  .footer__left__social__link { color: #404040; font-size: 22px; transition: color .2s; padding: 5px; }
   .footer__left__social__link:hover { color: #b752b7; }
 
-  .footer__copyright { border-top: 1px solid rgba(25,25,25,.1); padding: 25px 0; font-size: 11px; text-align: center; }
+  .footer__copyright { border-top: 1px solid rgba(0,0,0,0.1); padding: 25px 0; font-size: 11px; text-align: center; }
   .top_margin { margin-top: 25px; }
 
   @media screen and (max-width: 767px) {

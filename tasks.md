@@ -99,7 +99,18 @@
 - [x] **Aspect-ratio CLS:** `padding-top` percentage trick already in place per image's real aspect ratio — zero layout shift.
 - [x] **Dead comment blocks stripped (`snippets/media.liquid`):** Removed 21-line Liquid comment block + 3-line inline comment.
 - [x] **`window.performance.mark()` debug call removed (`snippets/media.liquid`):** Debut theme instrumentation eliminated.
-
+## Phase 7: Metafield-Driven Gallery Logic
+- [x] **Metafield identified:** `product.metafields.product.images_set` (namespace: `product`, key: `images_set`, type: `list.image_reference`).
+- [x] **Hardcoded main image replaced (`sections/product-patches.liquid`):**
+    - Removed hardcoded CDN URL (`cbd_path120_front_jpeg...`) from `<div class="product__galery__bigImage">`.
+    - Replaced with `main_gallery_image = gallery_images.first | default: product.featured_image`.
+    - Main image now uses `image_url: width: 800, format: 'webp'` with full `srcset` (400/600/800w) and `fetchpriority="high"`.
+    - `width`/`height` attributes pulled from image object — prevents CLS.
+    - Speed Win: LCP image now served at correct size via Shopify CDN, not a hardcoded master URL.
+- [x] **Duplicate metafield assignment removed:** `{% assign gallery_images %}` was called twice (inside each sub-div). Consolidated to one assignment at top of gallery block.
+- [x] **Thumbnail `data-src` upgraded:** `width: 500` → `width: 800` — matches Phase 6 display standard; prevents blurry image on variant switch.
+- [x] **Fallback implemented:** If `images_set` metafield is blank, thumbnails loop over `product.images` and main image falls back to `product.featured_image`. Gallery is never empty.
+- [ ] **Variant button `data-src` (deferred):** The 4 variant buttons (120mg/240mg/480mg/960mg) still use hardcoded CDN URLs for image swap on click. Requires a per-variant image metafield mapping — out of Phase 7 scope.
 
 
 ## Completed Tasks

@@ -1,19 +1,7 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
-
 body{
   font-family: 'Open Sans', sans-serif!important;
 }
-/*============================================================================
-  Debut | Built with Shopify Slate
-
-  Some things to know about this file:
-    - Sass is compiled on Shopify's server so you don't need to convert it to CSS yourself
-    - The output CSS is compressed and comments are removed
-    - You cannot use native CSS/Sass @imports in this file without a build script
-==============================================================================*/
-/*================ SASS HELPERS ================*/
-/*================ #Mixins ================*/
 /*============================================================================
   Prefix mixin for generating vendor prefixes.
   Based on https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/addons/_prefixer.scss

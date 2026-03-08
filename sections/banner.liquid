@@ -37,11 +37,17 @@
       {% endif %}
       class="banner__url"
       ><img
-        src="{{ section.settings.image | image_url }}"
+        src="{{ section.settings.image | image_url: width: 1200 }}"
+        width="{{ section.settings.image.width }}"
+        height="{{ section.settings.image.height }}"
+        loading="lazy"
         class="banner__image">
         {% if section.settings.image_mob %}
           <img
-          src="{{ section.settings.image_mob | image_url }}"
+          src="{{ section.settings.image_mob | image_url: width: 800 }}"
+          width="{{ section.settings.image_mob.width }}"
+          height="{{ section.settings.image_mob.height }}"
+          loading="lazy"
           class="banner__image mob">
         {% endif %}
     </a>

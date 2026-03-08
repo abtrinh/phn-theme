@@ -63,6 +63,7 @@ table {
   src: url(star.eot?#iefix) format("embedded-opentype"), url(star.woff) format("woff"), url(star.ttf) format("truetype"), url(star.svg#star) format("svg");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -70,6 +71,7 @@ table {
   src: url("Robotocondensedbold.woff2") format("woff2"), url("Robotocondensedbold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
+  font-display: swap;
 }
 @media screen and (min-width: 1001px) {
   .notDescTop {

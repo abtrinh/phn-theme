@@ -1,7 +1,5 @@
 autoSlider()
 
-// top slider
-
 function autoSlider(){
   setTimeout(nextSlide, 8000);
 }

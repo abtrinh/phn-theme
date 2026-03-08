@@ -12,9 +12,11 @@
                                                                     src="{{ block.settings.image | image_url: width: 1460 }}"
                                                                               srcset="{{ block.settings.image | image_url: width: 600 }} 600w, {{ block.settings.image | image_url: width: 900 }} 900w, {{ block.settings.image | image_url: width: 1200 }} 1200w, {{ block.settings.image | image_url: width: 1460 }} 1460w"
                                                                                         sizes="100vw"
-                                                                                                  loading="eager"
-                                                                                                            alt="{{ block.settings.image.alt | default: 'Purity Hemp Naturals hemp CBD products' | escape }}"
-                                                                                                                      class="opacityShow"
+                                                                                                  width="{{ block.settings.image.width }}"
+                                                                                                            height="{{ block.settings.image.height }}"
+                                                                                                                      {%- if forloop.first -%}fetchpriority="high" loading="eager"{%- else -%}loading="lazy"{%- endif -%}
+                                                                                                                                alt="{{ block.settings.image.alt | default: 'Purity Hemp Naturals hemp CBD products' | escape }}"
+                                                                                                                                          class="opacityShow"
                                                                                                                               >
                                                                                                                                     </a>
                                                                                                                                         {%- endfor -%}

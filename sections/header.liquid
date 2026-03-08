@@ -70,45 +70,6 @@
   </style>
 
 
-  <script>
-  //   // js/helper/dimensions.js
-  // function getStickyHeaderOffset() {
-  //   const documentStyles = getComputedStyle(document.documentElement);
-  //   return parseInt(documentStyles.getPropertyValue("--header-height") || 0) * parseInt(documentStyles.getPropertyValue("--enable-sticky-header") || 0) + parseInt(documentStyles.getPropertyValue("--announcement-bar-height") || 0) * parseInt(documentStyles.getPropertyValue("--enable-sticky-announcement-bar") || 0);
-  // }
-
-  // // js/custom-element/behavior/safe-sticky.js
-  // var SafeSticky = class extends HTMLElement {
-  //   connectedCallback() {
-  //     this.lastKnownY = window.scrollY;
-  //     this.currentTop = 0;
-  //     this.hasPendingRaf = false;
-  //     window.addEventListener("scroll", this._checkPosition.bind(this));
-  //   }
-  //   get initialTopOffset() {
-  //     return getStickyHeaderOffset() + (parseInt(this.getAttribute("offset")) || 0);
-  //   }
-  //   _checkPosition() {
-  //     if (this.hasPendingRaf) {
-  //       return;
-  //     }
-  //     this.hasPendingRaf = true;
-  //     requestAnimationFrame(() => {
-  //       let bounds = this.getBoundingClientRect(), maxTop = bounds.top + window.scrollY - this.offsetTop + this.initialTopOffset, minTop = this.clientHeight - window.innerHeight;
-  //       if (window.scrollY < this.lastKnownY) {
-  //         this.currentTop -= window.scrollY - this.lastKnownY;
-  //       } else {
-  //         this.currentTop += this.lastKnownY - window.scrollY;
-  //       }
-  //       this.currentTop = Math.min(Math.max(this.currentTop, -minTop), maxTop, this.initialTopOffset);
-  //       this.lastKnownY = window.scrollY;
-  //       this.style.top = `${this.currentTop}px`;
-  //       this.hasPendingRaf = false;
-  //     });
-  //   }
-  // };
-  // window.customElements.define("safe-sticky", SafeSticky);
-  </script>
 {% schema %}
 {
   "name": "Header",

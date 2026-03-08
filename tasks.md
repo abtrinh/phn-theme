@@ -83,6 +83,24 @@
 - [x] **Dead `console.log()` Statements:** Removed from `sections/product-patches.liquid` (2 statements) and `templates/product.pain-roll.liquid` (1 statement).
 - [x] **`window.performance.mark()` Debug Call (`sections/product-template.liquid`):** Removed Debut theme debug instrumentation inline script.
 - [x] **Broken noscript Block (`sections/product-template.liquid`):** Removed dead noscript block where `product_image_size` was always undefined.
+## Phase 6: Global Gallery & Thumbnail Standardization
+- [x] **Audit complete:** `snippets/media.liquid` + `sections/product-template.liquid` fully reviewed.
+- [x] **Featured gallery image — native LCP load (`snippets/media.liquid`):**
+    - Featured image switched from lazysizes `data-src` to native `src` + `srcset` with `fetchpriority="high"`.
+    - `srcset` serves 400/600/800/1000/1200w via `image_url` filter — no manual uploads required.
+    - `sizes="(min-width: 990px) 50vw, 100vw"` matches actual rendered column widths.
+    - Verified: no `.lazyload` opacity CSS applies to `feature-row__image` — safe to remove lazyload class.
+    - Speed Win: Browser can fetch LCP product image in parallel with HTML parse, without waiting for lazysizes JS.
+- [x] **Non-featured gallery images — lazysizes widths capped (`snippets/media.liquid`):**
+    - `data-widths` trimmed from `[180,360,540,720,900,1080,1296,1512,1728,2048]` to `[180,360,540,720,900,1080,1200]`.
+    - Zoom uses separate 1024x1024@2x URL — display cap at 1200 does not affect zoom quality.
+    - Speed Win: Eliminates potential 1296–2048px image requests for off-screen gallery slides.
+- [x] **Thumbnail sizing (`sections/product-template.liquid`):** Already at `110x110` @2x with `width`/`height` + `loading="lazy"` — no changes needed.
+- [x] **Aspect-ratio CLS:** `padding-top` percentage trick already in place per image's real aspect ratio — zero layout shift.
+- [x] **Dead comment blocks stripped (`snippets/media.liquid`):** Removed 21-line Liquid comment block + 3-line inline comment.
+- [x] **`window.performance.mark()` debug call removed (`snippets/media.liquid`):** Debut theme instrumentation eliminated.
+
+
 
 ## Completed Tasks
 *None. Ready for Phase 1 Audit.*

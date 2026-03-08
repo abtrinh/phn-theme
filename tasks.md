@@ -12,6 +12,10 @@
   - Wishpond `<script>` in `layout/theme.pagefly.liquid` line 259
 
 ## Phase 2: Above-the-Fold (LCP) Optimization
+- [x] **Hero Slider Height Fix (`assets/newstyle.css`):**
+    - Constrained `.main__slider` to `max-height: 650px` with `overflow: hidden`.
+    - Set slider images to `width: 100%; height: auto` to preserve full image display.
+    - Speed Win: Prevents oversized hero images from dominating viewport on large screens.
 - [x] **Hero Image Refactor (`sections/hero.liquid`):**
     - [x] Hero identified as `sections/hero.liquid` (custom Slick-based slideshow).
     - [x] Added `fetchpriority="high" loading="eager"` to first slide image.
@@ -62,6 +66,23 @@
     - Removed `console.log('No clickid found in the URL')` debug log.
 - [x] **`assets/my-scripts.js`:** Removed `// top slider` comment.
 - [ ] **Checkout Safety:** Manually verify "Add to Cart" and Checkout flow remain functional after script load-order changes.
+## Phase 5: Product Page Pattern Sync (Master Template: Pain Relief Patches)
+- [x] **Heuristic Audit:** Deep comparison of all 12 product templates + 3 key sections against gold standard. Full findings logged below.
+- [x] **Review Star Sync (`assets/newstyle.css`):** Extracted Yotpo `#FFD700` star CSS from `sections/product-patches.liquid` inline `<style>` → moved to global `newstyle.css`. Removed from patches inline style to eliminate duplication.
+    - Speed Win: Yotpo star color now consistent across all product pages without per-page style injection.
+- [x] **Gallery & Thumbnail Logic (`sections/product-template.liquid`):** Added `loading="lazy"` + `width="110" height="110"` to all thumbnail `<img>` tags.
+    - Speed Win: Defers off-screen thumbnail loads; explicit dimensions prevent CLS.
+- [ ] **Upsell/Quantity Logic:** Port the 'Buy More & Save' variant button behavior from patches to other relevant product pages.
+- [x] **Dead Open Sans Duplicate Font Loads (ALL custom product templates):** Removed redundant blocking `<link rel="stylesheet">` for Open Sans from all 9 affected templates. Retained Roboto (needed per template).
+    - Speed Win: Eliminates 9 redundant blocking font network requests per product page load.
+- [x] **Dead Comment Blocks — All Product Templates (NO COMMENTS violation):** Stripped all HTML comments, Liquid comment blocks, dead JS comment-only script blocks from all 11 product templates and 3 sections.
+- [x] **`product_general.js` Synchronous Load — All Templates:** Converted `script_tag` filter to `<script src="..." defer></script>` in all 11 product templates.
+    - Speed Win: Removes one blocking script from critical render path on every product page.
+- [x] **Trailing Spaces in Asset Filenames — CRITICAL BUG (`product.movability.liquid`, `product.immuniz.liquid`):** Fixed `'bootstrap.css '`, `'movability.css '`, `'immuniz.css '` — trailing spaces removed, asset URLs now valid.
+- [x] **Non-Standard CSS Link Format (`product.mobility-chew.liquid`, `product.zoomie-sticks.liquid`):** Standardized to `<link rel="stylesheet" href="...">`, removed redundant `type` and `media` attributes.
+- [x] **Dead `console.log()` Statements:** Removed from `sections/product-patches.liquid` (2 statements) and `templates/product.pain-roll.liquid` (1 statement).
+- [x] **`window.performance.mark()` Debug Call (`sections/product-template.liquid`):** Removed Debut theme debug instrumentation inline script.
+- [x] **Broken noscript Block (`sections/product-template.liquid`):** Removed dead noscript block where `product_image_size` was always undefined.
 
 ## Completed Tasks
 *None. Ready for Phase 1 Audit.*

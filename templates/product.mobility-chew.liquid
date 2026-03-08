@@ -1,8 +1,7 @@
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ 'product.css' | asset_url }}" as="style">
 <link rel="stylesheet" href="{{ 'cream.css' | asset_url }}" as="style">
-<link rel='stylesheet' type='text/css' media='screen' href='{{ 'mobility-chew.css' | asset_url }}'> 
+<link rel="stylesheet" href="{{ 'mobility-chew.css' | asset_url }}">
 
 {% section 'mobility-chew' %}
 
@@ -21,18 +20,8 @@
 {% render 'mobility-images' %}
 {% section 'product-recommendations' %}
 
-{% if collection %}
-  <!--
-    <div class="text-center return-link-wrapper page-width">
-      <a href="{{ collection.url }}" class="btn btn--secondary btn--has-icon-before return-link">
-        {% include 'icon-arrow-left' %}
-        {{ 'products.product.back_to_collection' | t: title: collection.title }}
-      </a>
-    </div>
-  -->
-{% endif %}
 {% assign current_variant = product.selected_or_first_available_variant %}
-{{ 'product_general.js' | asset_url | script_tag }}
+<script src="{{ 'product_general.js' | asset_url }}" defer></script>
 
 <script type="application/ld+json">
   {

@@ -350,3 +350,37 @@
   }
 
 }
+
+.yotpo-widget-instance,
+.yotpo-widget-instance > *,
+.yotpo-widget-instance iframe {
+  text-align: left !important;
+  justify-content: flex-start !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+.yotpo-layout-header-wrapper {
+  flex-direction: column !important;
+  align-items: flex-start !important;
+}
+.yotpo-new-review-btn-wrapper {
+  margin-top: 12px !important;
+  width: auto !important;
+}
+.yotpo-new-review-btn-wrapper .yotpo-new-review-btn {
+  text-align: center !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+[id^="yotpo_stars_gradient"] stop:first-child {
+  stop-color: #FFD700 !important;
+}
+.yotpo-widget-instance {
+  --primary-color: #FFD700 !important;
+}
+.star-container path[stroke],
+.star-container polygon[stroke] {
+  stroke: #FFD700 !important;
+}

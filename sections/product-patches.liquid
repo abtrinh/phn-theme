@@ -21,39 +21,6 @@
       box-sizing: border-box !important;
     }
   }
-  .yotpo-widget-instance,
-  .yotpo-widget-instance > *,
-  .yotpo-widget-instance iframe {
-    text-align: left !important;
-    justify-content: flex-start !important;
-    max-width: 100% !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-    .yotpo-layout-header-wrapper {
-    flex-direction: column !important;
-    align-items: flex-start !important;
-  }
-  .yotpo-new-review-btn-wrapper {
-    margin-top: 12px !important;
-    width: auto !important;
-  }
-  .yotpo-new-review-btn-wrapper .yotpo-new-review-btn {
-    text-align: center !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-  }
-  [id^="yotpo_stars_gradient"] stop:first-child {
-    stop-color: #FFD700 !important;
-  }
-  .yotpo-widget-instance {
-    --primary-color: #FFD700 !important;
-  }
-  .star-container path[stroke],
-  .star-container polygon[stroke] {
-    stroke: #FFD700 !important;
-  }
 </style>
 {% assign discount_percentage = product.compare_at_price
 | minus: product.price
@@ -232,11 +199,6 @@
                   data-currency="{{ shop.currency }}"
                   data-description="{{ product.description | escape }}">
                 </div>
-              {% comment %} <script type="text/javascript">
-                !function(){"use strict";!function(){if(void 0===window.OMNISEND_REVIEWS_SHOPIFY_LOADED){var e=(new Date).toISOString().slice(0,13);window.OMNISEND_REVIEWS_SHOPIFY_LOADED=!0;var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="".concat("https://omnisnippet1.com/","reviews/reviews.js?v=").concat(e);var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n)}}()}();
-                //# sourceMappingURL=shopify-product-reviews.js.map
-              </script>
-              <div id="omnisend-reviews-block"></div> {% endcomment %}
             </div>
           </div>
           <div id="video" style="display: none;text-align: center;">
@@ -263,7 +225,6 @@
   </div>
 </section>
 
-<!-- end of product selection -->
 
 <div class="section-3-1">
   <div class="underbg">
@@ -353,7 +314,6 @@
 {% for product in collections['patches-collection'].products %}
   {% assign prodjson = product.variants[0].compare_at_price | money %}
 {% endfor %}
-<!-- qwer -->
 <span>
   <script>
     let _prodtemplate= {};
@@ -400,8 +360,6 @@
       {% assign prod_price = prod_price | append: prodjson | append: ',' %}
       {% assign prod = prod | append: prodjson | append: ',' %}
     {% endfor %}
-      console.log('[_prod_array_base]',_prod_array_base);
-      console.log('[_prodbase_object_collect_set]',_prodbase_object_collect_set);
   </script>
 </span>
 <script>

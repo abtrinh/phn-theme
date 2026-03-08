@@ -5,9 +5,6 @@
   data-enable-history-state="true"
   data-ajax-enabled="{{ settings.enable_ajax }}"
 >
-  {% comment %}
-    Get first variant, or deep linked one
-  {% endcomment %}
   {%- assign current_variant = product.selected_or_first_available_variant -%}
   {%- assign product_image_zoom_size = '1024x1024' -%}
   {%- assign product_image_scale = '2' -%}
@@ -42,11 +39,6 @@
       {%- for media in product.media -%}
         {% include 'media', media: media, featured_media: featured_media, height: height, enable_image_zoom: enable_image_zoom, image_zoom_size: product_image_zoom_size, image_scale: product_image_scale %}
       {%- endfor -%}
-
-      <noscript>
-        {%comment%}{% capture product_image_size %}{{ height }}x{% endcapture %}{%endcomment%}
-        <img src="{{ featured_media | img_url: product_image_size, scale: product_image_scale }}" alt="{{ featured_media.alt }}" id="FeaturedMedia-{{ section.id }}" class="product-featured-media" style="max-width: {{ height }}px;">
-      </noscript>
 
       {% assign first_3d_model = product.media | where: "media_type", "model" | first %}
 
@@ -101,7 +93,7 @@
                         {%- endif -%}
                       {%- endcapture -%}
 
-                      <img class="product-single__thumbnail-image" src="{{ media.preview_image | img_url: '110x110', scale: 2 }}" alt="{{ thumbnailAlt }}">
+                      <img class="product-single__thumbnail-image" src="{{ media.preview_image | img_url: '110x110', scale: 2 }}" width="110" height="110" loading="lazy" alt="{{ thumbnailAlt }}">
                       {%- if media.media_type == 'video' or media.media_type =='external_video' -%}
                         <div class="product-single__thumbnail-badge">
                           {% include 'icon-video-badge-full-color' %}
@@ -136,7 +128,6 @@
       <div class="product-single__meta">
 
         <h1 class="product-single__title">{{ product.title }}</h1>
-        <script>window.performance.mark('debut:product:title_visible');</script>
 
           <div class="product__price">
             {% include 'product-price', variant: current_variant, show_vendor: section.settings.show_vendor %}
@@ -241,18 +232,11 @@
           {% endform %}
         </div>
 
-        {%- comment -%}
-          Live region for announcing updated price and availability to screen readers
-        {%- endcomment -%}
         <p class="visually-hidden" data-product-status
           aria-live="polite"
           role="status"
         ></p>
 
-        {%- comment -%}
-          Live region for announcing that the product form has been submitted and the
-          product is in the process being added to the cart
-        {%- endcomment -%}
         <p class="visually-hidden" data-loader-status
           aria-live="assertive"
           role="alert"

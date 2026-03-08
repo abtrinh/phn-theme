@@ -39,11 +39,10 @@
         <h2 class="product__info__head">{{ product.metafields.product.basic_title }}</h2>
       </div>
       {%- assign gallery_images = product.metafields.product.images_set.value -%}
-    {%- if gallery_images != blank -%}
-      {%- assign main_gallery_image = gallery_images.first -%}
-    {%- else -%}
-      {%- assign main_gallery_image = product.featured_image -%}
-    {%- endif -%}
+    {%- assign main_gallery_image = product.featured_image -%}
+    {%- for img in gallery_images limit: 1 -%}
+      {%- assign main_gallery_image = img -%}
+    {%- endfor -%}
     <div class="product__galery__bigImage" id="full_image">
         <img
           class="product__galery__bigImage_image"

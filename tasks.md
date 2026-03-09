@@ -110,6 +110,7 @@
 - [x] **Duplicate metafield assignment removed:** `{% assign gallery_images %}` was called twice (inside each sub-div). Consolidated to one assignment at top of gallery block.
 - [x] **Thumbnail `data-src` upgraded:** `width: 500` → `width: 800` — matches Phase 6 display standard; prevents blurry image on variant switch.
 - [x] **Fallback implemented:** If `images_set` metafield is blank, thumbnails loop over `product.images` and main image falls back to `product.featured_image`. Gallery is never empty.
+- [x] **Phase 7 Regression Fix (`sections/product-patches.liquid`):** Replaced `gallery_images.first` with `for img in gallery_images limit: 1` loop — `.first` on Shopify metafield arrays produces incompatible object type for `image_url` filter; loop variable is proven compatible (same mechanism as working thumbnail loop). `product.featured_image` fallback retained.
 - [ ] **Variant button `data-src` (deferred):** The 4 variant buttons (120mg/240mg/480mg/960mg) still use hardcoded CDN URLs for image swap on click. Requires a per-variant image metafield mapping — out of Phase 7 scope.
 
 

@@ -46,11 +46,9 @@
     <div class="product__galery__bigImage" id="full_image">
         <img
           class="product__galery__bigImage_image"
-          src="{{ main_gallery_image | image_url: width: 800, format: 'webp' }}"
-          srcset="{{ main_gallery_image | image_url: width: 400, format: 'webp' }} 400w, {{ main_gallery_image | image_url: width: 600, format: 'webp' }} 600w, {{ main_gallery_image | image_url: width: 800, format: 'webp' }} 800w"
+          src="{{ main_gallery_image | image_url: width: 1200, format: 'webp' }}"
+          srcset="{{ main_gallery_image | image_url: width: 600, format: 'webp' }} 600w, {{ main_gallery_image | image_url: width: 900, format: 'webp' }} 900w, {{ main_gallery_image | image_url: width: 1200, format: 'webp' }} 1200w"
           sizes="(max-width: 990px) 100vw, 50vw"
-          width="{{ main_gallery_image.width }}"
-          height="{{ main_gallery_image.height }}"
           fetchpriority="high"
           alt="{{ main_gallery_image.alt | default: product.title }}"
         >
@@ -62,7 +60,7 @@
               class="product__galery__smallImages_image{% if forloop.first %} active{% endif %}"
               onclick="changePhoto();"
               src="{{ image | image_url: width: 100, height: 100, crop: 'center', format: 'webp' }}"
-              data-src="{{ image | image_url: width: 800, format: 'webp' }}"
+              data-src="{{ image | image_url: width: 1200, format: 'webp' }}"
               width="100"
               height="100"
               loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
@@ -75,7 +73,7 @@
               class="product__galery__smallImages_image{% if forloop.first %} active{% endif %}"
               onclick="changePhoto();"
               src="{{ image | image_url: width: 100, height: 100, crop: 'center', format: 'webp' }}"
-              data-src="{{ image | image_url: width: 800, format: 'webp' }}"
+              data-src="{{ image | image_url: width: 1200, format: 'webp' }}"
               width="100"
               height="100"
               loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"

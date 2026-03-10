@@ -86,12 +86,12 @@
   }
 
   .product__galery__smallImages {
-    grid-template-columns: repeat(auto-fill, 100px);
+    grid-template-columns: repeat(auto-fill, 74px);
   }
 
   .product__galery__smallImages_image {
-    width: 100px;
-    height: 100px;
+    width: 74px;
+    height: 74px;
     object-fit: cover;
   }
 }

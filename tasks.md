@@ -131,8 +131,8 @@
 - [ ] **Horizontal Scroll Scan:** Audit CSS for `width: 100vw` or hard-coded `px` widths causing off-screen overflow on 375px viewports.
 - [ ] **Responsive Integrity Test:** Manually verify no text or icons overlap when scaling from 1440px down to 320px across all product templates.
 - [ ] **Hamburger Menu Check:** Confirm mobile nav menu does not push page content off-center when active.
-- [x] **Cart Icon Size — Mobile Header (`assets/main.css`, `sections/header.liquid`):** Set `.header__menu .header__svg` to `width: 76px; height: 76px` (explicit height was missing — HTML `height` attribute was capping it regardless of CSS width changes). Updated HTML attributes to match.
-    - Speed Win: Cart icon now renders at intended size on mobile; explicit height prevents browser from using HTML attribute as a constraint.
+- [x] **Cart Icon Size — Mobile Header (`assets/main.css.liquid`, `sections/header.liquid`):** Root cause: Shopify serves `main.css.liquid`, not `main.css` — all prior edits were going to the wrong file. Fixed in `main.css.liquid`: global rule sets `width: 30px; height: 30px` (desktop). Mobile ≤768px media query sets `width: 48px; height: 48px` on `.header__menu .header__svg`. Badge (`.header__menu_count`) repositioned from `left: 9px; top: 3px` → `right: 0; bottom: 0` to anchor to bottom-right corner of enlarged icon. `main.css` synced to match.
+    - Speed Win: Cart icon now renders at correct size on mobile without affecting desktop; badge stays anchored to icon corner at all sizes.
 
 ## Completed Tasks
 *None. Ready for Phase 1 Audit.*

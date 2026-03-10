@@ -84,6 +84,16 @@
     grid-column: 1 / -1;
     justify-self: center;
   }
+
+  .product__galery__smallImages {
+    grid-template-columns: repeat(auto-fill, 100px);
+  }
+
+  .product__galery__smallImages_image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
 }
 
 .upsell_product_list {

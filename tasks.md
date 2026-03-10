@@ -122,6 +122,10 @@
 - [x] **Trust Seals on Own Line (`assets/patches_productpatch.css`):** Forced `.product__info__seals` to `grid-row: 8; grid-column: 1 / -1; justify-self: center` at `max-width: 768px`, moving it below the Qty/ATC row.
     - Speed Win: Trust badge image now appears on its own centered line below Add to Cart.
 - [x] **No-Comments Compliance (`assets/patches_productpatch.css`):** Removed all illegal CSS comments from the file during mobile refactor.
+- [x] **Gallery Thumbnail Single-Row Swipe (`assets/patches_productpatch.css`):** Converted `.product__galery__smallImages` from CSS Grid to `display: flex; flex-wrap: nowrap; overflow-x: auto` at `max-width: 768px`. Added `justify-content: safe center` (centers when items fit, scrolls from start when overflow). Hidden scrollbar via `scrollbar-width: none` + `::-webkit-scrollbar`. Items are `flex: 0 0 74px` — no 2nd row possible.
+    - Speed Win: Thumbnails now display on a single centered scrollable row; excess thumbnails accessible by horizontal swipe without reflow.
+- [x] **Main Gallery Image Swipe (`sections/product-patches.liquid`):** Added vanilla JS IIFE touch handler on `#full_image`. Tracks `touchstart` X, on `touchend` detects swipe direction (50px threshold), navigates active thumbnail index ±1, updates main image `srcset`, scrolls new active thumbnail into view via `scrollIntoView`.
+    - Speed Win: Zero-library swipe implementation (~20 lines); synced with existing thumbnail active-class system; no DOM restructure required.
 - [ ] **Apply Responsive Fixes to All Other Product Pages:** Once 8mg patch page is verified in production, replicate the 3+1 button, 2-col qty/ATC, seals row, and autoship visibility fixes to all other `cream_prod` product pages.
 - [ ] **Viewport Audit:** Verify `theme.liquid` has correct `<meta name="viewport" content="width=device-width, initial-scale=1">` tag.
 - [ ] **Horizontal Scroll Scan:** Audit CSS for `width: 100vw` or hard-coded `px` widths causing off-screen overflow on 375px viewports.

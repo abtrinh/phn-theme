@@ -89,8 +89,13 @@
     justify-self: center;
   }
 
+  .product__info-prices {
+    margin-bottom: 0;
+  }
+
   .product__info__text {
-    margin-top: 6px;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
   .product__galery__smallImages {

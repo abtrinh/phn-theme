@@ -10,6 +10,17 @@
   }
 }
 
+.product__galery__bigImage {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.product__galery__bigImage_image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .product__info {
   display: grid;
   grid-template-columns: 44% 10% 27%;

@@ -1347,6 +1347,7 @@ em {
 }
 .header__menu .header__svg {
   width:30px;
+  height:30px;
 }
 .header__menu .cart_link {
   position:relative;
@@ -1410,12 +1411,18 @@ em {
 }
 
 @media(max-width:768px) {
+  .header__menu .header__svg {
+    width:48px;
+    height:48px;
+  }
   .header__menu_count {
-      width: 13px;
-      height: 13px;
-      font: bold 8px/14px Arial;
-      left: 9px;
-      top: 3px;
+    width: 13px;
+    height: 13px;
+    font: bold 8px/14px Arial;
+    left: auto;
+    top: auto;
+    right: 0;
+    bottom: 0;
   }
 }
 .header__menu_items {

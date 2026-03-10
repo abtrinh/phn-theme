@@ -131,6 +131,8 @@
 - [ ] **Horizontal Scroll Scan:** Audit CSS for `width: 100vw` or hard-coded `px` widths causing off-screen overflow on 375px viewports.
 - [ ] **Responsive Integrity Test:** Manually verify no text or icons overlap when scaling from 1440px down to 320px across all product templates.
 - [ ] **Hamburger Menu Check:** Confirm mobile nav menu does not push page content off-center when active.
+- [x] **Cart Icon Size — Mobile Header (`assets/main.css`, `sections/header.liquid`):** Set `.header__menu .header__svg` to `width: 76px; height: 76px` (explicit height was missing — HTML `height` attribute was capping it regardless of CSS width changes). Updated HTML attributes to match.
+    - Speed Win: Cart icon now renders at intended size on mobile; explicit height prevents browser from using HTML attribute as a constraint.
 
 ## Completed Tasks
 *None. Ready for Phase 1 Audit.*

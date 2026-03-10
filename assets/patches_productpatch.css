@@ -89,6 +89,10 @@
     justify-self: center;
   }
 
+  .product__info__text {
+    margin-top: 6px;
+  }
+
   .product__galery__smallImages {
     display: flex;
     flex-wrap: nowrap;

@@ -112,7 +112,21 @@
 - [x] **Fallback implemented:** If `images_set` metafield is blank, thumbnails loop over `product.images` and main image falls back to `product.featured_image`. Gallery is never empty.
 - [x] **Phase 7 Regression Fix (`sections/product-patches.liquid`):** Replaced `gallery_images.first` with `for img in gallery_images limit: 1` loop — `.first` on Shopify metafield arrays produces incompatible object type for `image_url` filter; loop variable is proven compatible (same mechanism as working thumbnail loop). `product.featured_image` fallback retained.
 - [ ] **Variant button `data-src` (deferred):** The 4 variant buttons (120mg/240mg/480mg/960mg) still use hardcoded CDN URLs for image swap on click. Requires a per-variant image metafield mapping — out of Phase 7 scope.
-
+## Phase 8: Multi-Device & Responsive Polish (Pain-Relief-Patches — 8mg first)
+- [x] **Autoship Box Visibility (`sections/product-patches.liquid`):** Changed `overflow: hidden !important` → `overflow: visible !important` in inline `<style>` at `max-width: 1000px`. Root cause was the grid container clipping the sub_box when rows overflowed.
+    - Speed Win: Autoship/subscription widget is now fully visible on tablet and mobile without layout shift.
+- [x] **Package Button 3+1 Layout (`assets/patches_productpatch.css`):** Added `flex: 0 0 calc(33.33% - 6px)` to `.product__info--button` at `max-width: 768px` inside `.product__info.cream_prod`. With `justify-content: center` on the changer, the 4th button wraps and centers automatically.
+    - Speed Win: Buttons now display 3 on top row + 1 centered below on all mobile phones.
+- [x] **Qty + Add to Cart Side-by-Side (`assets/patches_productpatch.css`):** Switched `.product__info.cream_prod` to `grid-template-columns: 1fr 1fr` at `max-width: 768px`. All siblings set to `grid-column: 1 / -1` via `> *` override. Qty pinned to col 1, ATC to col 2, `margin-left: 0`.
+    - Speed Win: Qty selector and Add to Cart button are now properly side-by-side and centered on mobile.
+- [x] **Trust Seals on Own Line (`assets/patches_productpatch.css`):** Forced `.product__info__seals` to `grid-row: 8; grid-column: 1 / -1; justify-self: center` at `max-width: 768px`, moving it below the Qty/ATC row.
+    - Speed Win: Trust badge image now appears on its own centered line below Add to Cart.
+- [x] **No-Comments Compliance (`assets/patches_productpatch.css`):** Removed all illegal CSS comments from the file during mobile refactor.
+- [ ] **Apply Responsive Fixes to All Other Product Pages:** Once 8mg patch page is verified in production, replicate the 3+1 button, 2-col qty/ATC, seals row, and autoship visibility fixes to all other `cream_prod` product pages.
+- [ ] **Viewport Audit:** Verify `theme.liquid` has correct `<meta name="viewport" content="width=device-width, initial-scale=1">` tag.
+- [ ] **Horizontal Scroll Scan:** Audit CSS for `width: 100vw` or hard-coded `px` widths causing off-screen overflow on 375px viewports.
+- [ ] **Responsive Integrity Test:** Manually verify no text or icons overlap when scaling from 1440px down to 320px across all product templates.
+- [ ] **Hamburger Menu Check:** Confirm mobile nav menu does not push page content off-center when active.
 
 ## Completed Tasks
 *None. Ready for Phase 1 Audit.*

@@ -39,8 +39,21 @@
   }
 
   .product__info.cream_prod .product__info--button {
-    flex: 0 0 calc(33.33% - 6px);
-    max-width: calc(33.33% - 6px);
+    flex: 0 0 125px;
+    width: 125px;
+    max-width: 125px;
+    height: 129.5px;
+  }
+
+  .product__info.cream_prod .product__info--button .popular {
+    height: 25.19px;
+    line-height: 25.19px;
+    font-size: 12px;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
   }
 
   .product__info.cream_prod .product__info__qty {

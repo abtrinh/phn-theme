@@ -42,7 +42,8 @@
     flex: 0 0 125px;
     width: 125px;
     max-width: 125px;
-    height: 129.5px;
+    height: 139.5px;
+    box-sizing: border-box;
   }
 
   .product__info.cream_prod .product__info--button .popular {

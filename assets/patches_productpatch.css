@@ -26,7 +26,7 @@
   }
 
   .product__info.cream_prod {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto 1fr;
   }
 
   .product__info.cream_prod > * {
@@ -46,21 +46,22 @@
   .product__info.cream_prod .product__info__qty {
     grid-column: 1;
     margin-left: 0;
-    justify-self: start;
     align-self: center;
+    min-width: 0;
   }
 
   .product__info.cream_prod .product__info__addToCart {
     grid-column: 2;
     margin-left: 0;
-    justify-self: start;
     align-self: center;
+    min-width: 0;
+    overflow: hidden;
   }
 
   .product__info.cream_prod .product__info__addToCart--button,
   .product__info.cream_prod .product__info__addToCart--disabled-btn {
-    width: 190px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 190px;
     margin-left: 0;
     box-sizing: border-box;
   }

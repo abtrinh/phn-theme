@@ -61,7 +61,8 @@
   .product__info.cream_prod .product__info__addToCart--button,
   .product__info.cream_prod .product__info__addToCart--disabled-btn {
     width: 100%;
-    max-width: 190px;
+    max-width: 244px;
+    min-height: 46px;
     margin-left: 0;
     box-sizing: border-box;
   }

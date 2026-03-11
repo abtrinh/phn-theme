@@ -135,10 +135,12 @@
   }
 
   .yotpo-head .yotpo-header-title,
-  .yotpo-head .y-label {
+  .yotpo-head .y-label,
+  .yotpo-headline {
     font-size: 30px !important;
     text-align: center !important;
     display: block !important;
+    white-space: nowrap !important;
   }
 
   .yotpo-bottom-line,

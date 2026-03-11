@@ -154,20 +154,30 @@
   .yotpo-layout-header-wrapper {
     margin: 0 !important;
     padding: 0 !important;
-    text-align: center !important;
     width: 100% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
   }
 
   .write-question-review-button,
   .write-review-btn,
   .yotpo-layout-header-wrapper a,
   .yotpo-layout-header-wrapper button {
-    display: inline-block !important;
-    margin: 0 auto !important;
+    position: static !important;
     float: none !important;
-    position: relative !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    margin: 0 auto !important;
+    display: inline-block !important;
+  }
+
+  .yotpo-bottom-line,
+  .yotpo-layout-header-wrapper,
+  .yotpo .bottom-line-items {
+    text-align: center !important;
   }
 
   .yotpo-bottom-line {

@@ -179,6 +179,12 @@
     margin: 0 auto !important;
   }
 
+  .yotpo-header-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
   .yotpo-new-review-btn,
   .yotpo-main-widget-btn {
     display: inline-block !important;

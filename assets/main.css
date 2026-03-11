@@ -1414,13 +1414,13 @@ em {
     height:48px;
   }
   .header__menu_count {
-    width: 13px;
-    height: 13px;
-    font: bold 8px/14px Arial;
+    width: 20px;
+    height: 20px;
+    font: bold 12px/20px Arial;
     left: auto;
     top: auto;
     right: 0;
-    bottom: 4px;
+    bottom: 10px;
   }
 }
 .header__menu_items {

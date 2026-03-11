@@ -374,7 +374,30 @@
   justify-content: center !important;
   align-items: center !important;
 }
-@media screen and (max-width: 991px) {
+@media screen and (min-width: 671px) and (max-width: 991px) {
+  .header .site_nav_sticky {
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+  .item_menu {
+    flex: 1;
+  }
+  .item_menu:first-child {
+    justify-content: flex-start;
+  }
+  .item_menu:last-child {
+    justify-content: flex-end;
+  }
+  .header__cart {
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+  }
+  .header__cart .header__menu {
+    padding: 0;
+  }
+}
+@media screen and (max-width: 670px) {
   .header .site_nav_sticky {
     align-items: center;
     flex-wrap: nowrap;

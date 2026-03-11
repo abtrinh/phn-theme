@@ -100,11 +100,12 @@
     justify-self: center;
   }
 
-  .product__info-prices {
+  .product__info.cream_prod .product__info-prices {
     margin-bottom: 0;
+    min-height: 0;
   }
 
-  .product__info__text {
+  .product__info.cream_prod .product__info__text {
     margin-top: 0;
     margin-bottom: 0;
   }

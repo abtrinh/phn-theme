@@ -403,6 +403,9 @@
     justify-content: space-between;
     align-items: center;
   }
+  .header__cart .header__menu {
+    padding: 0;
+  }
   .header_info__text {
     font-size: 16px;
     line-height: 1.3;

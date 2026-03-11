@@ -374,6 +374,21 @@
   justify-content: center !important;
   align-items: center !important;
 }
+@media screen and (max-width: 991px) {
+  .header .site_nav_sticky {
+    align-items: center;
+  }
+  .item_menu {
+    flex: 1;
+  }
+  .item_menu:first-child {
+    justify-content: flex-start;
+  }
+  .item_menu:last-child {
+    justify-content: flex-end;
+  }
+
+}
 [id^="yotpo_stars_gradient"] stop:first-child {
   stop-color: #FFD700 !important;
 }

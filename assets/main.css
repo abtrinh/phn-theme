@@ -1420,7 +1420,7 @@ em {
     left: auto;
     top: auto;
     right: -4px;
-    bottom: -4px;
+    bottom: 16px;
   }
 }
 .header__menu_items {

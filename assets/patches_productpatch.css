@@ -152,8 +152,10 @@
   }
 
   .yotpo-layout-header-wrapper {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
   }
 
   .write-question-review-button,
@@ -162,6 +164,11 @@
     margin: 0 auto !important;
     text-align: center !important;
     float: none !important;
+  }
+
+  .yotpo-bottom-line {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
   }
 
   .yotpo .filters-panel,

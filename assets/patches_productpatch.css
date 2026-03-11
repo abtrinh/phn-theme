@@ -110,6 +110,34 @@
     margin-bottom: 0;
   }
 
+  .yotpo-head {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  .yotpo-head .yotpo-header-title,
+  .yotpo-head .y-label {
+    font-size: 30px !important;
+  }
+
+  .yotpo-bottom-line {
+    text-align: center !important;
+  }
+
+  .yotpo-bottom-line .avg-score,
+  .yotpo-bottom-line .rating-stars-container,
+  .yotpo-bottom-line .reviews-amount {
+    text-align: center !important;
+  }
+
+  .write-question-review-button,
+  .write-review-btn {
+    display: block !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    float: none !important;
+  }
+
   .product__galery__smallImages {
     display: flex;
     flex-wrap: nowrap;

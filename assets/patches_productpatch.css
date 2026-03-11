@@ -161,17 +161,30 @@
     align-items: center !important;
   }
 
-  .write-question-review-button,
-  .write-review-btn,
-  .yotpo-layout-header-wrapper a,
-  .yotpo-layout-header-wrapper button {
+  .yotpo-layout-header-wrapper {
+    position: relative !important;
+  }
+
+  .yotpo-new-review-btn-wrapper,
+  .yotpo-new-review-btn-s,
+  .yotpo-layout-header-wrapper [class*="new-review-btn"] {
     position: static !important;
-    float: none !important;
-    left: auto !important;
     right: auto !important;
-    transform: none !important;
+    left: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    display: block !important;
+    text-align: center !important;
     margin: 0 auto !important;
+  }
+
+  .yotpo-new-review-btn,
+  .yotpo-main-widget-btn {
     display: inline-block !important;
+    margin: 0 auto !important;
+    float: none !important;
+    position: static !important;
   }
 
   .yotpo-bottom-line,

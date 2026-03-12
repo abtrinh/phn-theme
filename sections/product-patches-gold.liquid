@@ -9,6 +9,30 @@
 | money
 %}
 
+<style>
+  @media screen and (min-width: 1001px) {
+    .product__info.cream_prod {
+      grid-template-columns: 44% 10% 27% 19% !important;
+    }
+    .product__info.cream_prod > * {
+      min-width: 0 !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+    }
+  }
+  @media screen and (max-width: 1000px) {
+    .product__info.cream_prod {
+      grid-template-rows: 0 0 auto auto 390px auto auto auto 2fr !important;
+      width: 100% !important;
+      overflow: visible !important;
+    }
+    .product__info.cream_prod > * {
+      min-width: 0 !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+    }
+  }
+</style>
 <section class="product">
   <div class="product__container container">
     <div class="product__galery">
@@ -502,8 +526,30 @@ $('.product__info__wrapper--active,.product__info__review--active').click(functi
     
   }
   function checkboxClick(e){
-    
+
 	setSubs($('*[data-variant-id="'+id+'"]'),0)
-  }  
+  }
+  (function() {
+    var touchStartX = 0;
+    var gallery = document.getElementById('full_image');
+    if (!gallery) return;
+    gallery.addEventListener('touchstart', function(e) {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    gallery.addEventListener('touchend', function(e) {
+      var delta = e.changedTouches[0].screenX - touchStartX;
+      if (Math.abs(delta) < 50) return;
+      var thumbs = document.querySelectorAll('.product__galery__smallImages_image');
+      var activeIndex = -1;
+      thumbs.forEach(function(t, i) { if (t.classList.contains('active')) activeIndex = i; });
+      if (activeIndex === -1) return;
+      var newIndex = delta < 0 ? Math.min(activeIndex + 1, thumbs.length - 1) : Math.max(activeIndex - 1, 0);
+      if (newIndex === activeIndex) return;
+      thumbs[activeIndex].classList.remove('active');
+      thumbs[newIndex].classList.add('active');
+      thumbs[newIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      document.querySelector('.product__galery__bigImage_image').srcset = thumbs[newIndex].dataset.src;
+    }, { passive: true });
+  })();
 
 </script>

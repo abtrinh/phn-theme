@@ -307,6 +307,8 @@
   #shopify-section-product-recommendations .related__products {
     display: block;
     overflow: hidden;
+    margin-top: 0;
+    padding-top: 0;
   }
   #shopify-section-product-recommendations .swiper-wrapper {
     display: flex;
@@ -321,11 +323,20 @@
     box-sizing: border-box;
   }
   #shopify-section-product-recommendations .related__product__img--active {
+    height: 160px;
     overflow: hidden;
   }
   #shopify-section-product-recommendations .related__product__img--active img {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
+  }
+  #shopify-section-product-recommendations .related__product__title {
+    font-size: 20px;
+    line-height: 32px;
+  }
+  #shopify-section-product-recommendations .related__product__price {
+    font-size: 20px;
+    line-height: 24px;
   }
 }

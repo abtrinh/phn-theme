@@ -303,7 +303,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   #shopify-section-product-recommendations .related__products {
     display: block;
     overflow: hidden;
@@ -339,9 +339,13 @@
   #shopify-section-product-recommendations .related__product__title {
     font-size: 10px;
     line-height: 16px;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
   #shopify-section-product-recommendations .related__product__price {
     font-size: 10px;
     line-height: 12px;
+    white-space: nowrap;
   }
 }

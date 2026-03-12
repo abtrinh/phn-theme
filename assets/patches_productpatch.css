@@ -10,6 +10,12 @@
   }
 }
 
+.yotpo-headline-reviews,
+.yotpo-headline {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 .product__galery__bigImage {
   aspect-ratio: 1 / 1;
   overflow: hidden;

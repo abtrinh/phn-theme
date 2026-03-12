@@ -60,7 +60,7 @@
       <div class="product__info-prices">
         <span class="current_price">{{ product.price|money }}</span><span class="not-discount">{{ product.compare_at_price|money }}</span>
         <p class="save_text">You Save:<span id="precent">{{ discount_percentage }}%</span><span id="save-count">({{ discount_change }})</span></p>
-        <span><div class="yotpo-widget-instance" data-yotpo-instance-id="1267418" data-yotpo-product-id="{{product.id}}" data-yotpo-cart-product-id="{{item.product.id}}" data-yotpo-section-id="{{template.name}}"></div></span>
+        <span><div class="yotpo-widget-instance" data-yotpo-instance-id="1267419" data-yotpo-product-id="{{product.id}}" data-yotpo-name="{{ product.title | escape }}" data-yotpo-url="{{ shop.url }}{{ product.url }}" data-yotpo-image-url="{{ product.featured_image | product_img_url: 'large' | prepend: 'https:' | replace: '?', '%3F' | replace: '&','%26'}}" data-yotpo-price="{{ product.price | divided_by: 100.00 }}" data-yotpo-currency="{{ shop.currency }}" data-yotpo-description="{{ product.description | escape }}"></div></span>
       </div>
       <p class="product__info__text">Buy More and Save</p>
       <div class="product__info__changer">

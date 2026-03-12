@@ -1,7 +1,7 @@
 {%- if product.metafields.product.recommendations.value -%}
   {% assign product_recoms = product.metafields.product.recommendations.value %}
   <div class="related container">
-    <h2 class="related__head">Related products</h2>
+    <h2 class="related__head">Related Products</h2>
     <div class="related__products rown swiper-container" id="related-products-swiper">
       <div class="swiper-wrapper">
         {% for recom in product_recoms %}

@@ -47,7 +47,7 @@
       <div class="product__info-prices">
         <span class="current_price">$28.00</span><span class="not-discount">$56.75</span>
         <p class="save_text">You Save:<span id="precent">15%</span><span id="save-count">($8.52)</span></p>
-        <span><div class="yotpo-widget-instance" data-yotpo-instance-id="1267419" data-yotpo-product-id="{{product.id}}" data-yotpo-name="{{ product.title | escape }}" data-yotpo-url="{{ shop.url }}{{ product.url }}" data-yotpo-image-url="{{ product.featured_image | product_img_url: 'large' | prepend: 'https:' | replace: '?', '%3F' | replace: '&','%26'}}" data-yotpo-price="{{ product.price | divided_by: 100.00 }}" data-yotpo-currency="{{ shop.currency }}" data-yotpo-description="{{ product.description | escape }}"></div></span>
+        <span><div class="yotpo-widget-instance" data-yotpo-instance-id="1267418" data-yotpo-product-id="{{product.id}}" data-yotpo-name="{{ product.title | escape }}" data-yotpo-url="{{ shop.url }}{{ product.url }}" data-yotpo-image-url="{{ product.featured_image | product_img_url: 'large' | prepend: 'https:' | replace: '?', '%3F' | replace: '&','%26'}}" data-yotpo-price="{{ product.price | divided_by: 100.00 }}" data-yotpo-currency="{{ shop.currency }}" data-yotpo-description="{{ product.description | escape }}"></div></span>
       </div>
       <p class="product__info__text">Buy More and Save</p>
       <div class="product__info__changer">
@@ -154,15 +154,7 @@
             <div id="revie" style="display: block;">
               <div class="commentlist">
 
-                <div class="yotpo yotpo-main-widget"
-                  data-product-id="{{ product.id }}"
-                  data-name="{{ product.title | escape }}"
-                  data-url="{{ shop.url }}{{ product.url }}"
-                  data-image-url="{{ product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&','%26'}}"
-                  data-price="{{ variant.price | money_without_currency }}"
-                  data-currency="{{ shop.currency }}"
-                  data-description="{{ product.description | escape }}">
-                </div>
+                <div class="yotpo-widget-instance" data-yotpo-instance-id="1267419" data-yotpo-product-id="{{ product.id }}" data-yotpo-name="{{ product.title | escape }}" data-yotpo-url="{{ shop.url }}{{ product.url }}" data-yotpo-image-url="{{ product.featured_image | product_img_url: 'large' | prepend: 'https:' | replace: '?', '%3F' | replace: '&','%26'}}" data-yotpo-price="{{ product.price | divided_by: 100.00 }}" data-yotpo-currency="{{ shop.currency }}" data-yotpo-description="{{ product.description | escape }}"></div>
                 {% comment %} <script type="text/javascript">
                   !function(){"use strict";!function(){if(void 0===window.OMNISEND_REVIEWS_SHOPIFY_LOADED){var e=(new Date).toISOString().slice(0,13);window.OMNISEND_REVIEWS_SHOPIFY_LOADED=!0;var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="".concat("https://omnisnippet1.com/","reviews/reviews.js?v=").concat(e);var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n)}}()}();
                   //# sourceMappingURL=shopify-product-reviews.js.map

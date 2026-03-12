@@ -137,6 +137,12 @@
     - Speed Win: Eliminated ~50px of dead grid whitespace on mobile; prices section now sizes to content.
 - [x] **Cart Icon Size — Mobile Header (`assets/main.css.liquid`, `sections/header.liquid`):** Root cause: Shopify serves `main.css.liquid`, not `main.css` — all prior edits were going to the wrong file. Fixed in `main.css.liquid`: global rule sets `width: 30px; height: 30px` (desktop). Mobile ≤768px media query sets `width: 48px; height: 48px` on `.header__menu .header__svg`. Badge (`.header__menu_count`) repositioned from `left: 9px; top: 3px` → `right: 0; bottom: 0` to anchor to bottom-right corner of enlarged icon. `main.css` synced to match.
     - Speed Win: Cart icon now renders at correct size on mobile without affecting desktop; badge stays anchored to icon corner at all sizes.
+- [x] **Product Page Top Margin Removed (`assets/product.css`, `assets/patches_productpatch.css`):** Removed top padding from `.product` class: `padding: 38px 0 0` → `padding: 0` on desktop; `padding-top: 19px` → `padding-top: 0` on mobile (≤768px).
+    - Speed Win: Eliminated dead whitespace at top of all product pages.
+- [x] **Related Products — Section Order (`templates/product.*.liquid`):** Moved `{% section 'product-recommendations' %}` above `{% section 'product-image-section' %}` / `{% section 'calmex-image-section' %}` in 6 product templates (calm-relax, pain-relief-patches, pain-roll, pain-relief-patches-gold, pain-relief-cream, pain-relief-cream-sample). `div.related.container` now renders above `div#cachet` site-wide.
+    - Speed Win: No code change — structural reorder only; no layout shift impact.
+- [x] **Related Products — Mobile Swiper (`sections/product-recommendations.liquid`, `assets/product.css`, `assets/patches_productpatch.css`):** Added Swiper 5.x markup to `product-recommendations.liquid`: `.related__products` gains `swiper-container` class + id, products wrapped in `.swiper-wrapper`, each card gets `swiper-slide`. On desktop: `.related__products .swiper-wrapper { display: contents }` preserves existing CSS Grid layout. On mobile (≤768px): `.related__products` switches to `display: block; overflow: hidden`, `.swiper-wrapper` re-enabled as `display: flex`, each `.related__product` set to `width/max-width/min-width: 100%` (full-width slide). Swiper init runs only when `window.innerWidth <= 768` via inline IIFE.
+    - Speed Win: Zero new library weight (Swiper already global); mobile users get swipeable full-width product cards; desktop layout unchanged.
 
 ## Completed Tasks
 *None. Ready for Phase 1 Audit.*

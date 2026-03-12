@@ -2,24 +2,26 @@
   {% assign product_recoms = product.metafields.product.recommendations.value %}
   <div class="related container">
     <h2 class="related__head">Related products</h2>
-    <div class="related__products rown">
-      {% for recom in product_recoms %}
-        {% assign prod_length = forloop.length %}
-        <div class="related__product">
-          <div class="related__product__img related__product__img--active">
-            <img src="{{recom.featured_image | img_url:'450x250'  }}" data-link="{{recom.url}}">
-          </div>
-          <h2 class="related__product__title">{{ recom.metafields.product.basic_title }}</h2>
-          {%- if recom.metafields.my_fields.products_ref -%}
-            <div class="related__product__price">
-              {{ recom.compare_at_price | money }}
-              <span>–</span> {{ recom.metafields.my_fields.products_ref.value.compare_at_price | money }}
+    <div class="related__products rown swiper-container" id="related-products-swiper">
+      <div class="swiper-wrapper">
+        {% for recom in product_recoms %}
+          {% assign prod_length = forloop.length %}
+          <div class="related__product swiper-slide">
+            <div class="related__product__img related__product__img--active">
+              <img src="{{recom.featured_image | img_url:'450x250'}}" data-link="{{recom.url}}">
             </div>
-          {%- else -%}
-            <div class="related__product__price">{{ recom.compare_at_price | money }}</div>
-          {%- endif -%}
-        </div>
-      {% endfor %}
+            <h2 class="related__product__title">{{ recom.metafields.product.basic_title }}</h2>
+            {%- if recom.metafields.my_fields.products_ref -%}
+              <div class="related__product__price">
+                {{ recom.compare_at_price | money }}
+                <span>–</span> {{ recom.metafields.my_fields.products_ref.value.compare_at_price | money }}
+              </div>
+            {%- else -%}
+              <div class="related__product__price">{{ recom.compare_at_price | money }}</div>
+            {%- endif -%}
+          </div>
+        {% endfor %}
+      </div>
     </div>
   </div>
 
@@ -28,6 +30,17 @@
       grid-template-columns:repeat({{ prod_length }},1fr);
     }
   </style>
+
+  <script>
+    (function() {
+      if (window.innerWidth <= 768) {
+        new Swiper('#related-products-swiper', {
+          slidesPerView: 1,
+          spaceBetween: 0,
+        });
+      }
+    })();
+  </script>
 {%- endif -%}
 {% schema %}
 {

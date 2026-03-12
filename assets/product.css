@@ -1080,6 +1080,9 @@ div.footer__right__text>p.footer__right__text__text{
 .related__products .rown{
   grid-template-columns: unset;
 }
+.related__products .swiper-wrapper {
+  display: contents;
+}
 
 @media screen and (max-width: 1000px) {
   .related__products {

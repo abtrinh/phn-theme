@@ -331,12 +331,17 @@
     max-height: 100%;
     object-fit: contain;
   }
+  #shopify-section-product-recommendations .related__product__img {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+  }
   #shopify-section-product-recommendations .related__product__title {
-    font-size: 20px;
-    line-height: 32px;
+    font-size: 10px;
+    line-height: 16px;
   }
   #shopify-section-product-recommendations .related__product__price {
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 10px;
+    line-height: 12px;
   }
 }

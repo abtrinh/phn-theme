@@ -57,15 +57,20 @@
           onclick="changePhoto();"
           src="//cdn.shopify.com/s/files/1/0555/4300/5364/files/gold_patches_18.jpg"
           data-src="https://cdn.shopify.com/s/files/1/0555/4300/5364/files/gold_patches_18_22f76cfb-0da6-47b1-8eec-c6bbd2684771.jpg?v=1678637849"
+          width="100"
+          height="100"
+          loading="eager"
         >
         {% assign images_set = product.metafields.product.images_set.value %}
         {% for file in images_set %}
-          
           <img
           class="product__galery__smallImages_image"
           onclick="changePhoto();"
           src="{{ file.preview_image |img_url  }}"
           data-src="{{ file | img_url: 'master'  }}"
+          width="100"
+          height="100"
+          loading="lazy"
         >
         {% endfor %}
       </div>

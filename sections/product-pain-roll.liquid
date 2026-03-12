@@ -58,16 +58,20 @@
           onclick="changePhoto();"
           src="{{ product.featured_image| img_url: 'small'  }}"
           data-src="{{ product.featured_image| img_url: 'grande'  }}"
+          width="100"
+          height="100"
+          loading="eager"
         >
-
         {% assign images_set = product.metafields.product.images_set.value %}
         {% for file in images_set %}
-          
           <img
           class="product__galery__smallImages_image"
           onclick="changePhoto();"
           src="{{ file.preview_image |img_url  }}"
           data-src="{{ file | img_url: 'master'  }}"
+          width="100"
+          height="100"
+          loading="lazy"
         >
         {% endfor %}
         

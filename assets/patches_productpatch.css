@@ -307,6 +307,16 @@
   display: none;
 }
 
+@media (min-width: 769px) and (max-width: 1000px) {
+  #shopify-section-product-recommendations .related__product__img--active {
+    height: 80px;
+  }
+  #shopify-section-product-recommendations .related__product__title {
+    font-size: 10px;
+    line-height: 14px;
+  }
+}
+
 @media (max-width: 1024px) {
   #shopify-section-product-recommendations .related__products {
     display: block;

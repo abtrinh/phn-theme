@@ -40,12 +40,14 @@
         new Swiper('#related-products-swiper', {
           slidesPerView: 2.2,
           spaceBetween: 8,
+          {% if product.template_suffix == 'pain-roll' %}
           breakpoints: {
             769: {
               slidesPerView: 3.5,
               spaceBetween: 8,
             }
-          }
+          },
+          {% endif %}
         });
       }
     })();

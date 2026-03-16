@@ -467,7 +467,8 @@
 
 
   const percentDiscount = [16,44,50]
-    
+  const priceBeforeDiscount = {{ product.metafields.custom.price_before_discount.value | json }}
+
 // clean id's
   var dirtyProdArr = `{{ prod }}`;
   var prodArr = '['+(dirtyProdArr.slice(0,-1))+']'
@@ -534,10 +535,8 @@ $('.product__info__wrapper--active,.product__info__review--active').click(functi
   
   var elPrice = prodPriceArr[0]*0.85+0.005 
   elPrice = elPrice.toFixed(2)
-  var notDiscount = elPrice/(1-(percentDiscount[0]/100))
-  notDiscount = notDiscount.toFixed(2)
-  var saveCount = notDiscount - elPrice
-  saveCount = saveCount.toFixed(2) 
+  var notDiscount = parseFloat(priceBeforeDiscount[0])
+  var saveCount = (notDiscount - elPrice).toFixed(2)
   
   $('.current_price').html('$'+elPrice)
   $('.not-discount').html('($'+ notDiscount +')')
@@ -549,10 +548,8 @@ $('.product__info__wrapper--active,.product__info__review--active').click(functi
                   
             var elPrice = prodPriceArr[index]*0.85+0.005
             elPrice = elPrice.toFixed(2)
-            var notDiscount = elPrice/(1-(percentDiscount[index]/100))                    
-            notDiscount = notDiscount.toFixed(2)
-            var saveCount = notDiscount - elPrice
-            saveCount = saveCount.toFixed(2)
+            var notDiscount = parseFloat(priceBeforeDiscount[index])
+            var saveCount = (notDiscount - elPrice).toFixed(2)
             $('.current_price').html('$'+elPrice)
             $('.not-discount').html('($'+ notDiscount +')')
             $('#save-count').html('$'+saveCount)

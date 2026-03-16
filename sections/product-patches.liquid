@@ -371,6 +371,7 @@
 <script>
   
   const percentDiscount = {{product.metafields.discount.discount}}
+  const priceBeforeDiscount = {{ product.metafields.custom.price_before_discount | json }}
   var qty = 1;  
   document.querySelectorAll('.product__info--button').forEach((el,index)=> {
     el.dataset.variantId = _prod_array_base[index].id
@@ -433,9 +434,8 @@ $('.product__info__wrapper--active,.product__info__review--active').click(functi
   })
   
   var elPrice = (_prod_array_base[0].price)
-  var notDiscount = (_prod_array_base[0].compare)
-  var saveCount = notDiscount - elPrice
-  saveCount = saveCount.toFixed(2) 
+  var notDiscount = parseFloat(priceBeforeDiscount[0])
+  var saveCount = (notDiscount - elPrice).toFixed(2)
   
   $('.current_price').html('$'+elPrice)
   $('.not-discount').html('$'+ notDiscount +'')
@@ -445,9 +445,8 @@ $('.product__info__wrapper--active,.product__info__review--active').click(functi
             el.addEventListener('click', function () {
               var count_patches=$(el).find('.patch_size').text().split(' ')[0];
               var elPrice = _prod_array_base[index].price
-              var notDiscount = _prod_array_base[index].compare                    
-              var saveCount = notDiscount - elPrice
-              saveCount = saveCount.toFixed(2)
+              var notDiscount = parseFloat(priceBeforeDiscount[index])
+              var saveCount = (notDiscount - elPrice).toFixed(2)
               var perPatch=((elPrice)/count_patches).toFixed(2);
               $('.current_price').html('$'+elPrice)
               $('.not-discount').html('$'+ notDiscount +'')

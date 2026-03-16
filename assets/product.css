@@ -506,8 +506,7 @@ table {
   color: #333;
   font-size: 37px;
 }
-.product__info-prices .not-discount,
-.not-discount{
+.product__info-prices .not-discount{
   color: #ff0000;
   font-weight: 400;
   font-size: 20px;

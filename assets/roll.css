@@ -1,3 +1,21 @@
+@media screen and (min-width: 1001px) and (max-width: 1630px) {
+  .roll__top .cream__top--man {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1000px) {
+  .roll__top .cream__top--man {
+    display: flex;
+    position: relative;
+    left: 0;
+    justify-content: center;
+  }
+  .roll__top .cream__top--man img {
+    width: 100%;
+  }
+}
+
 .cream__top__box--li:nth-child(1) {
   background: url(//cdn.shopify.com/s/files/1/0555/4300/5364/files/1.png?v=1714338817);
   background-position: top left;

@@ -158,6 +158,16 @@ table {
   }
 }
 
+@media screen and (min-width: 1001px) and (max-width: 1070px) {
+  .product__info {
+    padding-right: 15px;
+  }
+  .product__info__wrapper__viewType {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .product__galery__smallImages {
     display: flex;

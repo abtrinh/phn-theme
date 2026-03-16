@@ -196,3 +196,19 @@
     grid-area: 5 / span 4;
   }
 }
+
+@media screen and (min-width: 768px) and (max-width: 1000px) {
+  .product__galery__bigImage {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+  }
+  .product__galery__bigImage_image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+  .product__galery__smallImages {
+    justify-content: center;
+  }
+}

@@ -260,6 +260,15 @@
   }
 }
 
+@media screen and (min-width: 768px) and (max-width: 1000px) {
+  .roll__top .cream__top__box--left {
+    display: none;
+  }
+  .roll__top .cream__top__box__contant {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .cream__top__box__contant{
     padding-right:15px;

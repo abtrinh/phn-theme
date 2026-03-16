@@ -151,6 +151,12 @@ table {
   opacity: 1;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1000px) {
+  .product__galery__bigImage_image {
+    transform: scale(0.8);
+  }
+}
+
 @media screen and (max-width: 768px) {
   .product__galery__smallImages {
     display: flex;

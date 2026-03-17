@@ -158,8 +158,9 @@ table {
   }
 }
 
-@media screen and (min-width: 1001px) and (max-width: 1070px) {
+@media screen and (min-width: 1001px) and (max-width: 1284px) {
   .product__info {
+    overflow: hidden;
     padding-right: 15px;
   }
   .product__info__wrapper__viewType {

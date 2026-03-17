@@ -249,6 +249,16 @@
   .yotpo-widget-instance {
     overflow-x: hidden !important;
   }
+  .yotpo-widget-instance * {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .yotpo-bottom-line {
+    max-width: 100% !important;
+    width: 100% !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+  }
   .product__info.cream_prod {
     margin: 0 !important;
     padding-right: 0 !important;

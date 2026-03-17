@@ -1,3 +1,8 @@
+#video iframe {
+  aspect-ratio: 16 / 9;
+  height: auto;
+}
+
 @media (min-width: 636px) and (max-width: 1244px) {
   .product__info.cream_prod {
     grid-template-rows: 80px auto auto auto 390px auto auto auto minmax(100px, 2fr);

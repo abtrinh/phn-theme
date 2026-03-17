@@ -242,6 +242,10 @@
   .yotpo * {
     max-width: 100% !important;
     box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+  .product__info__wrapper__viewArea .commentlist {
+    overflow-x: hidden !important;
   }
   .product__info.cream_prod {
     margin: 0 !important;

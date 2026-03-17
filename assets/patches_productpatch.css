@@ -247,7 +247,6 @@
   .yotpo * {
     max-width: 100% !important;
     box-sizing: border-box !important;
-    overflow-x: hidden !important;
   }
   .product__info__wrapper,
   .product__info__wrapper__viewArea .commentlist,

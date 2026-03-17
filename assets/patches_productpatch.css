@@ -243,6 +243,26 @@
     max-width: 100% !important;
     box-sizing: border-box !important;
   }
+  .product__info.cream_prod {
+    margin: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+  }
+  .product__info.cream_prod .product__info__changer {
+    justify-content: center !important;
+    gap: 8px !important;
+    flex-wrap: wrap !important;
+  }
+  .product__info.cream_prod .product__info__changer .product__info--button {
+    flex: 0 0 136px !important;
+    max-width: 136px !important;
+  }
+  .product__info.cream_prod .product__info__changer .product__info--button:nth-child(n+4) {
+    flex: 0 0 100% !important;
+    max-width: 136px !important;
+    margin: 0 auto !important;
+  }
 }
 
 .upsell_product_list {

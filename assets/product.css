@@ -167,10 +167,18 @@ table {
   .product__info--sub_box,
   .product__info__wrapper {
     min-width: 0;
+    grid-column: 1 / -1;
   }
   .product__info__wrapper__viewType {
     display: flex;
     flex-wrap: wrap;
+  }
+  .product__info__wrapper__viewArea {
+    overflow: hidden;
+  }
+  #video iframe {
+    max-width: 100%;
+    height: auto;
   }
 }
 

@@ -206,13 +206,6 @@
                   </button>
                 </div>
                 <h2 class="related__product__title">{{ product.title }}</h2>
-                <div class="related__product__price">
-                  {{ product.compare_at_price | money }}
-                  {% if product.metafields.my_fields.products_ref %}
-                    <span>–</span>
-                    {{ product.metafields.my_fields.products_ref.value.compare_at_price | money }}
-                  {% endif %}
-                </div>
               </div>
 
             {% else %}
@@ -383,17 +376,6 @@
       .related__product__title {
         font-size: 16px;
       }
-    }
-
-    .related__product__price {
-      color: #000;
-      line-height: 22px;
-      font-size: 18px;
-      font-weight: 600;
-    }
-
-    .related__product__price span {
-      color: #b752b7;
     }
 </style>
 {% schema %}

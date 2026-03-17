@@ -259,6 +259,11 @@
     overflow-x: hidden !important;
     box-sizing: border-box !important;
   }
+  #video iframe {
+    width: 100% !important;
+    aspect-ratio: 16 / 9 !important;
+    height: unset !important;
+  }
   .product__info.cream_prod {
     margin: 0 !important;
     padding-right: 0 !important;

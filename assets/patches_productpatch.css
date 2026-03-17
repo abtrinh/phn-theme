@@ -227,6 +227,24 @@
   }
 }
 
+@media (min-width: 769px) and (max-width: 1024px) {
+  .product__info__wrapper__viewArea,
+  .product__info--sub_box,
+  #video,
+  .yotpo.yotpo-main-widget,
+  .yotpo .main-widget,
+  .yotpo .yotpo-regular-box {
+    max-width: 100% !important;
+    width: 100% !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+  }
+  .yotpo * {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
+
 .upsell_product_list {
   display: flex;
   justify-content: space-between;

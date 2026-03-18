@@ -248,6 +248,9 @@
     flex-wrap: nowrap !important;
     overflow-x: auto !important;
   }
+  .product__info__wrapper--active {
+    font-size: 12.6px !important;
+  }
 
   .product__info__wrapper__viewArea .commentlist {
     overflow-x: visible !important;

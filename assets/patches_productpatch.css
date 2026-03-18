@@ -276,6 +276,19 @@
     max-width: 136px !important;
     margin: 0 auto !important;
   }
+  .yotpo-review-left-panel {
+    min-width: 0 !important;
+    flex: 0 0 110px !important;
+    max-width: 110px !important;
+  }
+  .yotpo-review-center-panel {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+  }
+  .yotpo-review-right-panel {
+    min-width: 0 !important;
+    flex-shrink: 0 !important;
+  }
   .yotpo-date-format {
     white-space: nowrap !important;
   }

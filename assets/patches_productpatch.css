@@ -262,7 +262,7 @@
     padding-right: 0 !important;
     box-sizing: border-box !important;
     width: 100% !important;
-    overflow-x: hidden !important;
+    column-gap: 0 !important;
   }
   .product__info__changer {
     justify-content: center !important;

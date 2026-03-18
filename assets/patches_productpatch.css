@@ -235,17 +235,10 @@
 @media (min-width: 769px) and (max-width: 1024px) {
   .product__info__wrapper__viewArea,
   .product__info--sub_box,
-  #video,
-  .yotpo.yotpo-main-widget,
-  .yotpo .main-widget,
-  .yotpo .yotpo-regular-box {
+  #video {
     max-width: 100% !important;
     width: 100% !important;
     overflow-x: hidden !important;
-    box-sizing: border-box !important;
-  }
-  .yotpo * {
-    max-width: 100% !important;
     box-sizing: border-box !important;
   }
   .product__info__wrapper,
@@ -253,14 +246,9 @@
   .yotpo-widget-instance {
     overflow-x: hidden !important;
   }
-  .yotpo-widget-instance * {
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-  }
   .yotpo-bottom-line {
     max-width: 100% !important;
     width: 100% !important;
-    overflow-x: hidden !important;
     box-sizing: border-box !important;
   }
   #video iframe {

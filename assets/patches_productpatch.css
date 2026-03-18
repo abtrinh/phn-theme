@@ -257,12 +257,12 @@
     box-sizing: border-box !important;
   }
   .yotpo-star-distribution {
-    padding-left: 0 !important;
+    padding-left: 15px !important;
     padding-right: 0 !important;
   }
   .yotpo-summary-section {
     padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding-right: 10px !important;
   }
   #video iframe {
     width: 100% !important;

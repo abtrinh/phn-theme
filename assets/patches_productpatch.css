@@ -256,6 +256,14 @@
     max-width: 100% !important;
     box-sizing: border-box !important;
   }
+  .yotpo-star-distribution {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .yotpo-summary-section {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
   #video iframe {
     width: 100% !important;
     aspect-ratio: 16 / 9 !important;

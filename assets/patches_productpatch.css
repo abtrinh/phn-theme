@@ -252,6 +252,13 @@
     box-sizing: border-box !important;
     margin-right: 0 !important;
   }
+  .yotpo-base-layout {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .yotpo-layout-header-wrapper {
+    justify-content: flex-start !important;
+  }
   #video iframe {
     width: 100% !important;
     aspect-ratio: 16 / 9 !important;

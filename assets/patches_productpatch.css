@@ -258,6 +258,7 @@
   }
   .product__info.cream_prod {
     margin: 0 !important;
+    padding-left: 10px !important;
     padding-right: 0 !important;
     box-sizing: border-box !important;
     width: 100% !important;

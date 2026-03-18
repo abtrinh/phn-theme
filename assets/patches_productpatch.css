@@ -273,8 +273,7 @@
     max-width: 136px !important;
   }
   .product__info__changer .product__info--button:nth-child(n+4) {
-    flex: 0 0 auto !important;
-    width: 136px !important;
+    flex: 0 0 100% !important;
     max-width: 136px !important;
     margin: 0 auto !important;
   }

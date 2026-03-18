@@ -272,8 +272,15 @@
     flex: 0 0 136px !important;
     max-width: 136px !important;
   }
+  .product__info__changer::after {
+    content: '' !important;
+    flex-basis: 100% !important;
+    order: 0 !important;
+    height: 0 !important;
+  }
   .product__info__changer .product__info--button:nth-child(n+4) {
-    flex: 0 0 100% !important;
+    order: 1 !important;
+    flex: 0 0 136px !important;
     max-width: 136px !important;
     margin: 0 auto !important;
   }

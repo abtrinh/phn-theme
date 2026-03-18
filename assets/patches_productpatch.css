@@ -241,9 +241,11 @@
     overflow-x: hidden !important;
     box-sizing: border-box !important;
   }
-  .product__info__wrapper,
-  .product__info__wrapper__viewArea .commentlist {
+  .product__info__wrapper {
     overflow-x: hidden !important;
+  }
+  .product__info__wrapper__viewArea .commentlist {
+    overflow-x: visible !important;
   }
   .yotpo-bottom-line {
     max-width: 100% !important;

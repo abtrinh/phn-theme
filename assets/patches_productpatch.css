@@ -21,6 +21,16 @@
   padding: 0 !important;
 }
 
+@media (min-width: 769px) {
+  .yotpo-headline {
+    font-size: 30px !important;
+  }
+  .yotpo-head {
+    margin-top: 28px !important;
+    margin-bottom: 22px !important;
+  }
+}
+
 .product__galery__bigImage {
   aspect-ratio: 1 / 1;
   overflow: hidden;

@@ -250,6 +250,7 @@
   .yotpo-bottom-line {
     max-width: 100% !important;
     box-sizing: border-box !important;
+    margin-right: 0 !important;
   }
   #video iframe {
     width: 100% !important;

@@ -262,7 +262,6 @@
     padding-right: 0 !important;
     box-sizing: border-box !important;
     width: 100% !important;
-    column-gap: 0 !important;
   }
   .product__info__changer {
     justify-content: center !important;
@@ -300,6 +299,12 @@
   }
   .yotpo-date-format {
     white-space: nowrap !important;
+  }
+}
+
+@media (min-width: 1001px) and (max-width: 1024px) {
+  .product__info.cream_prod {
+    column-gap: 0 !important;
   }
 }
 

@@ -242,8 +242,7 @@
     box-sizing: border-box !important;
   }
   .product__info__wrapper,
-  .product__info__wrapper__viewArea .commentlist,
-  .yotpo-widget-instance {
+  .product__info__wrapper__viewArea .commentlist {
     overflow-x: hidden !important;
   }
   .yotpo-bottom-line {

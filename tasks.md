@@ -193,6 +193,8 @@
   - Speed Win: Gallery footprint reduced 25% on tablet landscape viewports; no layout shift since aspect-ratio is preserved by the existing `patches_productpatch.css` `aspect-ratio: 1/1` rule on the container.
 - [x] **Header Help Text — 2-Line Max on Mobile (`assets/newstyle.css`):** Inside `@media screen and (max-width: 670px)`: reduced `.header_info__text { font-size }` from `16px` → `11px`; added `.site_nav_sticky .item_menu:last-child { padding-left: 0 }` (specificity 0,2,1 overrides inline header style's 0,2,0). At 320px (narrowest real phone): text area = 102px; "Need Help? Call or" (91px) fits line 1, "Text (970) 718-2801" (94px) fits line 2 — guaranteed 2 lines with no HTML change. No `!important` required.
   - Speed Win: Zero 3-line wrapping from 305px–670px; no markup changes; mobile-only via media query.
+- [x] **Homepage Product Card Equal Sizing at ≥768px (`assets/theme.css`):** Root cause: `.main__products__center` is `display: flex; flex-wrap: wrap` with no explicit `width` on `.main__products__item` — each card sized to its own image/title content, causing unequal card widths. The pain-relief-patches card is the largest, hitting the `max-width: 260px` cap on `main__products__item-img`. Fix: added `width: 260px` to the global `.main__products__center .main__products__item` rule. Total box = 260px content + 35px × 2 padding = 330px. The existing `@media (max-width: 767px)` rule's `width: 45%` has equal specificity and loads after → overrides at mobile. Row-mate items already equalize in height via `align-items: stretch` (flex default).
+  - Speed Win: One property added; all product cards are now uniform 330px wide at ≥768px with no layout change at mobile.
 
 ## Completed Tasks
 *None. Ready for Phase 1 Audit.*

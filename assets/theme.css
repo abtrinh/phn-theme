@@ -7048,6 +7048,7 @@ margin:0 auto;
     border: 1px solid #cccccc;
     display: flex;
     flex-direction: column;
+    width: 260px;
 }
 .main__products__center{
   margin-bottom: 70px;

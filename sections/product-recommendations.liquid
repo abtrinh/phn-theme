@@ -7,9 +7,9 @@
         {% for recom in product_recoms %}
           {% assign prod_length = forloop.length %}
           <div class="related__product swiper-slide">
-            <div class="related__product__img related__product__img--active">
-              <img src="{{recom.featured_image | img_url:'450x250'}}" data-link="{{recom.url}}">
-            </div>
+            <a href="{{recom.url}}" class="related__product__img related__product__img--active">
+              <img src="{{recom.featured_image | img_url:'450x250'}}" alt="{{ recom.title | escape }}">
+            </a>
             <h2 class="related__product__title">{{ recom.metafields.product.basic_title }}</h2>
             {%- if recom.metafields.my_fields.products_ref -%}
               <div class="related__product__price">

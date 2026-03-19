@@ -36,60 +36,51 @@
           ></a>
         </div>
       </div>
+      {%- assign gallery_images = product.metafields.product.images_set.value -%}
+      {%- assign main_gallery_image = product.featured_image -%}
+      {%- for img in gallery_images limit: 1 -%}
+        {%- assign main_gallery_image = img -%}
+      {%- endfor -%}
       <div class="product__galery__bigImage" id="full_image">
         <img
           class="product__galery__bigImage_image"
-          src="//cdn.shopify.com/s/files/1/0555/4300/5364/files/cbd_cream_n2-e1586902107531-1_91d5c7f1-f3a6-4b1e-a08f-d6640171e817.jpg"
+          src="{{ main_gallery_image | image_url: width: 1200, format: 'webp' }}"
+          srcset="{{ main_gallery_image | image_url: width: 600, format: 'webp' }} 600w, {{ main_gallery_image | image_url: width: 900, format: 'webp' }} 900w, {{ main_gallery_image | image_url: width: 1200, format: 'webp' }} 1200w"
+          sizes="(max-width: 990px) 100vw, 50vw"
+          fetchpriority="high"
+          alt="{{ main_gallery_image.alt | default: product.title }}"
         >
       </div>
       <div class="product__galery__smallImages">
-        <img
-          class="product__galery__smallImages_image active"
-          onclick="changePhoto();"
-          src="//cdn.shopify.com/s/files/1/0555/4300/5364/files/cbd_cream_n2-e1586902107531-1_91d5c7f1-f3a6-4b1e-a08f-d6640171e817.jpg"
-          data-src="//cdn.shopify.com/s/files/1/0555/4300/5364/files/cbd_cream_n2-e1586902107531-1_91d5c7f1-f3a6-4b1e-a08f-d6640171e817.jpg"
-          width="100"
-          height="100"
-          loading="eager"
-        >
-        <img
-          class="product__galery__smallImages_image"
-          onclick="changePhoto();"
-          src="//cdn.shopify.com/s/files/1/0555/4300/5364/files/62E7DCB7_100x100_b137f205-0a4d-4c81-bbad-ba9359b5b342.jpg"
-          data-src="//cdn.shopify.com/s/files/1/0555/4300/5364/files/6DC7CD5E_78424e7e-6538-49cd-b8a6-541f523db829.jpg"
-          width="100"
-          height="100"
-          loading="lazy"
-        >
-        <img
-          class="product__galery__smallImages_image"
-          onclick="changePhoto();"
-          src="//cdn.shopify.com/s/files/1/0555/4300/5364/files/6DC7CD5E_100x100_2fa9a5ad-053c-4943-ada6-e6e637a1aa73.jpg?v=1616801778"
-          data-src="//cdn.shopify.com/s/files/1/0555/4300/5364/files/pickle_ball_2.jpg?v=1672966029"
-          width="100"
-          height="100"
-          loading="lazy"
-        >
-
-        <img
-          class="product__galery__smallImages_image"
-          onclick="changePhoto();"
-          src="//cdn.shopify.com/s/files/1/0555/4300/5364/files/shoulder-cream_2.jpg?v=1672967305"
-          data-src="//cdn.shopify.com/s/files/1/0555/4300/5364/files/shoulder-cream.jpg?v=1672965682"
-          width="100"
-          height="100"
-          loading="lazy"
-        >
+        {% if gallery_images != blank %}
+          {% for image in gallery_images %}
+            <img
+              class="product__galery__smallImages_image{% if forloop.first %} active{% endif %}"
+              onclick="changePhoto();"
+              src="{{ image | image_url: width: 100, height: 100, crop: 'center', format: 'webp' }}"
+              data-src="{{ image | image_url: width: 1200, format: 'webp' }}"
+              width="110"
+              height="110"
+              loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
+            >
+          {% endfor %}
+        {% else %}
+          {% for image in product.images %}
+            <img
+              class="product__galery__smallImages_image{% if forloop.first %} active{% endif %}"
+              onclick="changePhoto();"
+              src="{{ image | image_url: width: 100, height: 100, crop: 'center', format: 'webp' }}"
+              data-src="{{ image | image_url: width: 1200, format: 'webp' }}"
+              width="110"
+              height="110"
+              loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
+            >
+          {% endfor %}
+        {% endif %}
       </div>
     </div>
     <div class="product__info cream_prod">
       <h2 class="product__info__head onlyDescTop">{{ product.metafields.product.basic_title }}</h2>
-      <div class="product__info__review review onlyDescTop">
-        <span></span>
-        <a href="javascript:void(0)" class="product__info__review--active" data-name="Reviews">
-          <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
-        </a>
-      </div>
       <div class="product__info-prices">
         <span class="current_price">$39.73</span><span class="not-discount">$46.74</span>
         <p class="save_text">You Save:<span id="precent">15%</span><span id="save-count">($5.96)</span></p>

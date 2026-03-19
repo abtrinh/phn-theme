@@ -379,7 +379,10 @@ em {
   }
 }
 .main__products__item-img {
-  max-width:260px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 .main__products__item {
   -ms-flex-item-align:center;

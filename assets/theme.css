@@ -7352,10 +7352,6 @@ display:none;
     width: 230px;
   }
 
-  .main__products__item-text{
-    margin-bottom: 26px;
-  }
-
   .main__banner__grid{
     grid-template-columns: 1fr 1fr;
   }

@@ -23,7 +23,6 @@
   }
 </style>
 
-<!-- product selection -->
         <section class="product">
             <div class="product__container container">
                 <div class="product__galery">
@@ -54,9 +53,8 @@
                 <div class="product__info cream_prod">
                     <h2 class="product__info__head onlyDescTop">Hot + Cool Hemp Relief Cream Sample 250 mg</h2>
                     <div class="product__info-prices">
-                        <span class="current_price">$12.95</span><span class="not-discount" >$46.74</span>  
-<!--                       <span class="price_details">($39.73/Jar)</span> -->
-                        <p class="save_text" >You Save:<span id="precent">15%</span><span id="save-count">($5.96)</span></p>
+                        <span class="current_price">$12.95</span><span class="not-discount">$46.74</span>
+                        <p class="save_text">You Save:<span id="precent">15%</span><span id="save-count">($5.96)</span></p>
                         <span><div class="yotpo-widget-instance" data-yotpo-instance-id="1267418" data-yotpo-product-id="{{product.id}}" data-yotpo-name="{{ product.title | escape }}" data-yotpo-url="{{ shop.url }}{{ product.url }}" data-yotpo-image-url="{{ product.featured_image | product_img_url: 'large' | prepend: 'https:' | replace: '?', '%3F' | replace: '&','%26'}}" data-yotpo-price="{{ product.price | divided_by: 100.00 }}" data-yotpo-currency="{{ shop.currency }}" data-yotpo-description="{{ product.description | escape }}"></div></span>
                     </div>
                     <p class="product__info__text" style="display:none;">Buy More and Save</p>
@@ -64,7 +62,6 @@
                         <button class="product__info--button active" onclick="changePhoto('button');" data-variant-id="" data-src="//cdn.shopify.com/s/files/1/0555/4300/5364/files/pain_cream_sample2-300x300.jpg">
                             <img class="abs_lower_prc" src="//cdn.shopify.com/s/files/1/0555/4300/5364/files/pain_cream_sample2-300x300.jpg">
                             <b class="weight">1,000 mg</b>
-                            <!-- <span class="price_details">($46.74 per Jar)</span> -->
                             <span class="patch_size">1 PACK</span>
                             <span class="red_save"></span>
                         </button>
@@ -115,11 +112,6 @@
                             <div id="revie" style="display: block;">
                               <div class="commentlist">
                                 <div class="yotpo-widget-instance" data-yotpo-instance-id="1267419" data-yotpo-product-id="{{ product.id }}" data-yotpo-name="{{ product.title | escape }}" data-yotpo-url="{{ shop.url }}{{ product.url }}" data-yotpo-image-url="{{ product.featured_image | product_img_url: 'large' | prepend: 'https:' | replace: '?', '%3F' | replace: '&','%26'}}" data-yotpo-price="{{ product.price | divided_by: 100.00 }}" data-yotpo-currency="{{ shop.currency }}" data-yotpo-description="{{ product.description | escape }}"></div>
-                                {% comment %} <script type="text/javascript">
-                                  !function(){"use strict";!function(){if(void 0===window.OMNISEND_REVIEWS_SHOPIFY_LOADED){var e=(new Date).toISOString().slice(0,13);window.OMNISEND_REVIEWS_SHOPIFY_LOADED=!0;var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="".concat("https://omnisnippet1.com/","reviews/reviews.js?v=").concat(e);var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n)}}()}();
-                                  //# sourceMappingURL=shopify-product-reviews.js.map
-                                </script>
-                                <div id="omnisend-reviews-block"></div> {% endcomment %}
                               </div>
                             </div>
                             <div id="video" style="display: none;text-align: center;">
@@ -147,7 +139,6 @@
             </div>
         </section>
 
-<!-- end of product selection -->
 
 
 <div class="cream">
@@ -236,13 +227,9 @@
     <div class="cream__bottom--bottle">
       <img src="//cdn.shopify.com/s/files/1/0555/4300/5364/files/bottle_right.png">
     </div>
-    <!-- <div class="cream__bottom--bottle_mobile">
-<img src="//cdn.shopify.com/s/files/1/0555/4300/5364/files/bottle_right_mobile.png" />
-</div> -->
   </div>
 </div>
 
-<!-- qwer --> 
 <span>
     <script>
   
@@ -282,13 +269,11 @@
     {% assign prod_price = prod_price | append: prodjson | append: ',' %}
     {% assign prod = prod | append: prodjson | append: ',' %}
   {% endfor %}
-  console.log('[_prod_array_base]',_prod_array_base);
-  console.log('[_prodpercent]',_prodpercent);
- </script>
+</script>
 </span>
 <script>
 
-    const percentDiscount = [15,43,49]
+    const percentDiscount = {{product.metafields.discount.discount}}
     const priceBeforeDiscount = {{ product.metafields.custom.price_before_discount.value | json }}
 
  var qty = 1; 
@@ -352,8 +337,7 @@ $('.product__info__wrapper--active,.product__info__review--active').click(functi
   $('.current_price').html('$'+elPrice)
   $('.not-discount').html('$'+ notDiscount +'')
   $('#save-count').html('($'+saveCount+')')  
-  $('#precent').html(percentDiscount[0]+'%')  
-  $('.price_details').html(' ($1.90/patch)')
+  $('#precent').html(percentDiscount[0]+'%')
   document.querySelectorAll('.product__info--button').forEach((el,index)=> {
             el.addEventListener('click', function () {
               var count_patches=$(el).find('.patch_size').text().split(' ')[0];
@@ -364,8 +348,7 @@ $('.product__info__wrapper--active,.product__info__review--active').click(functi
               $('.current_price').html('$'+elPrice)
               $('.not-discount').html('$'+ notDiscount +'')
               $('#save-count').html('($'+saveCount+')')
-              $('#precent').html(percentDiscount[index]+'%') 
-  		      $('.price_details').html(' ($'+perPatch+'/patch)')
+              $('#precent').html(percentDiscount[index]+'%')
               if(_prodpercent[id]){
           	  	$('#product__info--sub_box').show()
               }else{
@@ -403,7 +386,6 @@ $('.product__info__wrapper--active,.product__info__review--active').click(functi
     const textField = document.querySelector('#subText')
     price_off=(_prodpercent[id].compare-_prodpercent[id].a_price)
     price_subs=parseFloat(_prodpercent[id].a_price)
-    console.log(size)
     switch (size) {
       case '1':
           monthlySave = _prodpercent[id].a_percent+'% ($'+(price_off).toFixed(2)+')';

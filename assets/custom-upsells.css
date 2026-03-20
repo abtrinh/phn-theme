@@ -192,6 +192,8 @@ body.modal_open{
   animation-timing-function: cubic-bezier(.25,0,.1,1);
   color: #000000;
   overflow-x: hidden!important;
+  overflow-y: auto;
+  max-height: calc(100vh - 40px);
   cursor: initial;
   position: relative;
   z-index: 101;
@@ -310,12 +312,6 @@ body.modal_open{
 .up-viewcart a{
   color: #ffffff;
   padding-top:20px;
-/*   background: #b07c89; */
-/*   padding: 15px 35px;
-  font-size: 16px;
-  font-weight: 100; */
-/*   display: block; */
-/*   transition: all .2s ease-in-out; */
 }
 
 .up-proditem-saletext{
@@ -521,9 +517,6 @@ body.modal_open{
   font-size: 14px;  
 }
 
-/*.up_price{
-  display: none;
-}*/
 
 @media (max-width: 991px){
   .upsell_block{
@@ -566,14 +559,15 @@ body.modal_open{
   .upsell_overlay {
     position: fixed;
     overflow-x: hidden;
-    overflow-y: auto;
-    height: 100%;
+    overflow-y: hidden;
+    top: 70px;
+    height: calc(100vh - 70px);
     align-items: flex-start;
-    margin-top:70px;
-
   }
   .upsell_block {
     max-width: 575px;
+    max-height: calc(100vh - 90px);
+    overflow-y: auto;
     height: auto;
     margin: 0px;
   }

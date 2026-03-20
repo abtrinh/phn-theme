@@ -146,7 +146,7 @@
         </select>
       </div>
       <div class="product__info--sub_box" id="product__info--sub_box">
-        <h3>Subscribe & Save For More Savings!</h3>
+        <h3>Sign Up For Autoship Today And Save Even More!</h3>
         <label class="product__info--input-area" for="one" style="display: none;">
           <input type="radio" name="subsc" value="false" id="one">
           One-time purchase
@@ -162,7 +162,7 @@
           >
           <label for="two"></label>
           <span id="subPrice" style="display: none;">25.61</span>
-          <span id="subText" class="subText">Receive 15 Patches for $25.45 every month.</span>
+          <span id="subText" class="subText">Yes, Subscribe & Save!</span>
         </label>
       </div>
       <div class="product__info__qty">
@@ -507,9 +507,9 @@ $('.product__info__wrapper--active,.product__info__review--active').click(functi
   }
     
     if($('#two').is(':checked')){
-        textField.innerHTML = `Receive 15 Patches for $25.45 every month.<br><span class="save_green">Monthly Savings 26% ($8.04)</span><br>Free shipping! Modify or cancel anytime.`
+        textField.innerHTML = `Yes, Subscribe & Save! Automatically Receive<br><b>${size} Patches, for $${price_subs.toFixed(2)} + Free Shipping. Every 30 Days.</b> <br><span class="save_green">Total Monthly Savings: ${monthlySave}</span><br>Cancel Anytime. No Contracts!`
     }else{
-      textField.innerHTML = 'Receive 15 Patches for $25.45 every month.'
+      textField.innerHTML = 'Yes, Subscribe & Save!'
     }
     
   }

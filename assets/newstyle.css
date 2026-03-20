@@ -453,3 +453,9 @@
   text-align: center !important;
   justify-content: center !important;
 }
+@media screen and (max-width: 767px) {
+  .stars .yotpo-widget-instance {
+    transform: scale(0.8);
+    transform-origin: center;
+  }
+}

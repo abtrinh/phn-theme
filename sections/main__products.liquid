@@ -1,11 +1,19 @@
 <div class="main__products__center">
-<!--   <h2 class="main__banner__with__bold">Discover our <b>top sellers</b></h2> -->
-  {%- for block in section.blocks -%} 
+  {%- for block in section.blocks -%}
     <div class="main__products__item">
       <a href="{{ block.settings.product.url }}"><img src="{{ block.settings.image|image_url }}" class="main__products__item-img"></a>
       <a href="{{ block.settings.product.url }}" class="main__products__item-text">{{ block.settings.custom_title }}</a>
       <div class="stars">
-        <span class="shopify-product-reviews-badge" data-id="{{ block.settings.product.id }}"></span>
+        <div class="yotpo-widget-instance"
+          data-yotpo-instance-id="1267418"
+          data-yotpo-product-id="{{ block.settings.product.id }}"
+          data-yotpo-name="{{ block.settings.product.title | escape }}"
+          data-yotpo-url="{{ shop.url }}{{ block.settings.product.url }}"
+          data-yotpo-image-url="{{ block.settings.product.featured_image | product_img_url: 'large' | prepend: 'https:' | replace: '?', '%3F' | replace: '&','%26' }}"
+          data-yotpo-price="{{ block.settings.product.price | divided_by: 100.00 }}"
+          data-yotpo-currency="{{ shop.currency }}"
+          data-yotpo-description="{{ block.settings.product.description | escape }}">
+        </div>
       </div>
       <div class="priced_set_main"><span class="compared_priced">{{ block.settings.product.compare_at_price | money }}</span> <span class="normal_priced">{{ block.settings.product.price | money }}</span></div>
       <button type="button" variantId="{{ block.settings.product.selected_or_first_available_variant.id }}" class="button_active addToCart">Add to cart</button>
@@ -17,7 +25,6 @@
     let id = $(this).attr('variantId');
     let button = $(this);
     data_set={id:id,quantity:1}
-    // console.log($(this));
     button.text('Adding...');
     $.ajax({
         type: 'POST', 
@@ -26,8 +33,6 @@
         data: data_set,
         success: function(){
 			cartUpdate();
-            console.log(button);
-            
             button.text('Added!');
             setTimeout(function(){
               button.text('Add to cart');

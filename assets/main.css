@@ -1404,40 +1404,11 @@ em {
   color:#fff;
   text-align:center;
   position:absolute;
-  left:13px;
-  top:-3px;
+  left:auto;
+  top:auto;
+  right:-4px;
+  bottom:-4px;
   cursor:pointer;
-}
-
-@media(min-width:671px) and (max-width:991px) {
-  .header__menu .header__svg {
-    width:36px;
-    height:36px;
-  }
-  .header__menu_count {
-    width: 13px;
-    height: 13px;
-    font: bold 8px/13px Arial;
-    left: auto;
-    top: auto;
-    right: -4px;
-    bottom: -4px;
-  }
-}
-@media(max-width:670px) {
-  .header__menu .header__svg {
-    width:60px;
-    height:60px;
-  }
-  .header__menu_count {
-    width: 13px;
-    height: 13px;
-    font: bold 8px/13px Arial;
-    left: auto;
-    top: auto;
-    right: -4px;
-    bottom: 16px;
-  }
 }
 .header__menu_items {
   position:absolute;

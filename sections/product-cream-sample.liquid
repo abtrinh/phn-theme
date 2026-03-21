@@ -41,8 +41,8 @@
                           <img
                           class="product__galery__smallImages_image"
                           onclick="changePhoto();"
-                          src="{{ file.preview_image |img_url  }}"
-                          data-src="{{ file | img_url: 'grande'  }}"
+                          src="{{ file | image_url: width: 100, height: 100, crop: 'center', format: 'webp' }}"
+                          data-src="{{ file | image_url: width: 1200, format: 'webp' }}"
                           width="100"
                           height="100"
                           loading="lazy"

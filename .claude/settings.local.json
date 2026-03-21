@@ -4,7 +4,8 @@
       "Bash(for f in \"product.pain-roll\" \"product.immuniz\" \"product.zoomie-sticks\" \"product.cream-sample\")",
       "Bash(do echo \"=== $f ===\")",
       "Read(//c/Users/Allan Trinh/Desktop/Claude Code/phn-theme/templates/**)",
-      "Bash(done)"
+      "Bash(done)",
+      "Bash(grep -n \"\\\\.product__galery__smallImages\" \"/c/Users/Allan Trinh/Desktop/Claude Code/phn-theme/assets\"/*.css | head -80)"
     ]
   }
 }

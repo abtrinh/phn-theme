@@ -80,7 +80,7 @@ table {
 }
 
 @media screen and (max-width: 1000px) {
-  .onlyDescTop {
+  .notDescTop {
     display: none;
   }
 }
@@ -143,6 +143,8 @@ table {
 .product__galery__smallImages_image {
   max-width: 126px;
   width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
   cursor: pointer;
   opacity: .5;
 }

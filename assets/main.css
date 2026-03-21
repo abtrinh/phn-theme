@@ -1566,6 +1566,9 @@ em {
   .normal_priced{
     font-weight:600;
   }
-  .priced_set_main, .stars{
+  .priced_set_main{
+    margin:0;
+  }
+  .stars{
     margin:10px 0px;
   }

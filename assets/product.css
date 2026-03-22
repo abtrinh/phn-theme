@@ -83,6 +83,7 @@ table {
   .notDescTop {
     display: block;
     order: 1;
+    margin-top: 10px;
   }
   .product__info__head.onlyDescTop {
     display: none;
